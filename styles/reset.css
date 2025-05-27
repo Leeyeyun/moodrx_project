@@ -1,0 +1,42 @@
+/* HTML초기화용 */
+* {box-sizing:border-box;}
+/* block */
+body,html,
+h1,h2,h3,h4,h5,h6,fieldset,input,button,select,textarea,
+p,ul,ol,li,dl,dt,dd,table,tr,td,th,thead,tbody,tfoot,
+div,header,nav,aside,article,section,footer,figure,
+address,blockquote,video,iframe,hr,
+/* inline */
+span,em,strong,q,a,sub,sup,details,figcaption,summary,time,s,del,code,mark,img {
+    font-family:'Pretendard', sans-serif; /* 가장 근접한 글꼴 */
+    font-size:1.0em;
+    font-weight:normal;
+    font-style:normal;
+    line-height:1.0; margin:0; padding:0;
+}
+a {color:#000; text-decoration:none;}
+ul,ol,li {list-style:none;}
+/* table에만 들어가는 reset정보 */
+table, tr, td, th {border-collapse:collapse;}
+th {text-align:left;}
+/* fieldset */
+fieldset {border:0;}
+/* 숨기고 싶은 속성 */
+.skip {display:none;}
+input, button, label {cursor:pointer;}
+/* font-awesome 적용속성값 */
+.fa {
+    font-weight:600;
+    font-family:
+        'Font Awesome 5 free'
+        'Font Awesome 5 Brands'
+        'Font Awesome 5 solid';
+}
+/* 스크롤바 꾸미기 */
+body::-webkit-scrollbar {
+    background:#d9d9d9;
+    width:8px; height:10px;
+}
+body::-webkit-scrollbar-thumb {
+    background:#485131;
+}

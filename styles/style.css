@@ -1,0 +1,17 @@
+main {margin:0 auto;}
+/* main section 공통 디자인 */
+main div {
+    height:100vh;
+    border:0.5px solid red;
+    padding:0 140px;
+}
+
+/* 1. main-intro */
+main .intro {
+    background-color:#5CBFFF;
+}
+
+/* 2. main-what is */
+main .whatis {
+
+}
