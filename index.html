@@ -24,6 +24,9 @@
     <!--플러그인 필수 JS cdn 연결-->
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <!-- JS 연결 -->
     <script src="./script/script.js" defer></script>
 </head>
@@ -47,43 +50,85 @@
     <!--=============== main ===============-->
     <main>
         <!-- 1. intro -->
-        <div class="intro"></div>
+        <div class="section intro"><p class="temporary">intro</p></div>
         <!-- e.intro -->
         <!-- 2. whatis -->
-        <div class="whatis">
+        <div class="section whatis">
             <div class="txt">
                 <h1>What is</h1>
                 <p>
-                    MoodRx에서는 다양한 감정 별 패키지를 제공합니다.<br>
-                    기쁨 증폭, 슬픔 완화, 설렘 전환 등의 다양한 패키지를 통해 감정을 처방받아 보세요.<br>
-                    오늘의 감정은 어떠신가요?
+                    MoodRx는 감정 결핍이 일상화된 시대에, 8가지 대표 감정을 알약 형태로 시각화하여 제안합니다.<br>
+                    감정 알약은 지금의 당신에게 필요한 감정을 인식하고, 주도적으로 케어할 수 있도록 돕는 새로운 감정 솔루션입니다.
                 </p>
             </div>
             <!-- 원형 배경 -->
             <div class="bg"></div>
-            
+            <!-- 감정알약 main slider -->
+            <div class="swiper pill-slide">
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide pill_1">
+                        <img src="./images/pill_01.svg" alt="알약이미지1">
+                    </div>
+                    <div class="swiper-slide pill_2">
+                        <img src="./images/pill_02.svg" alt="알약이미지1">
+                    </div>
+                    <div class="swiper-slide pill_3">
+                        <img src="./images/pill_03.svg" alt="알약이미지1">
+                    </div>
+                    <div class="swiper-slide pill_4">
+                        <img src="./images/pill_04.svg" alt="알약이미지1">
+                    </div>
+                    <div class="swiper-slide pill_5">
+                        <img src="./images/pill_05.svg" alt="알약이미지1">
+                    </div>
+                    <div class="swiper-slide pill_6">
+                        <img src="./images/pill_06.svg" alt="알약이미지1">
+                    </div>
+                    <div class="swiper-slide pill_7">
+                        <img src="./images/pill_07.svg" alt="알약이미지1">
+                    </div>
+                    <div class="swiper-slide pill_8">
+                        <img src="./images/pill_08.svg" alt="알약이미지1">
+                    </div>
+                </div>
+            </div>
+            <div class="pill_pagination">
+                <div class="prev_next">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
         </div>
         <!-- e.whatis -->
         <!-- 3. about -->
-        <div class="about"></div>
+        <div class="section about"><p class="temporary">About us</p></div>
         <!-- e.about -->
         <!-- 4. package -->
-        <div class="package"></div>
+        <div class="section package"><p class="temporary">Emotion Package</p></div>
         <!-- e.package -->
         <!-- 5. contents_slogan -->
-        <div class="slogan"></div>
+        <div class="section slogan"><p class="temporary">Contents Slogan</p></div>
         <!-- e.contents_slogan -->
         <!-- 6. main_contents -->
-        <div class="main_ct"></div>
+        <div class="section main_ct">
+            <p class="temporary">Emotion Contents</p>
+            <div class="card">
+                <img src="./images/card_1.png" alt="card1">
+                <img src="./images/card_2.png" alt="card2">
+                <img src="./images/card_3.png" alt="card3">
+            </div>
+        </div>
         <!-- e.main_contents -->
         <!-- 7. main_collection -->
-        <div class="main_cl"></div>
+        <div class="section main_cl"><p class="temporary">Collection</p></div>
         <!-- e.main_collection -->
         <!-- 8. diagnosis_banner -->
-        <div class="diag_bn"></div>
+        <div class="section diag_bn"><p class="temporary">Go to Diagnosis</p></div>
         <!-- e.diagnosis_banner -->
         <!-- 9. more -->
-        <div class="more"></div>
+        <div class="section more"><p class="temporary">More</p></div>
         <!-- e.more -->
     </main>
     <!--=============== footer ===============-->

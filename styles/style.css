@@ -1,9 +1,24 @@
 main {margin:0 auto;}
+.temporary {
+    font-size:3rem; font-weight:400; text-align:left; padding:100px 0 0;
+}
 /* main section 공통 디자인 */
-main div {
+main .section {
     height:100vh;
-    border:0.5px solid red;
+    border-bottom:0.5px solid red;
     padding:0 140px;
+}
+main .section .txt h1 {
+    margin:100px 0 24px;
+    font-family: "Urbanist", sans-serif;
+    font-weight:700; font-size:5rem;
+    letter-spacing:-0.01em; line-height:1.2;
+    color:#2B2B2B;
+}
+main .section .txt p {
+    font-weight:500; font-size:1.13rem;
+    text-align:center; letter-spacing:-0.03em; line-height:1.6;
+    margin-bottom:90px;
 }
 
 /* 1. main-intro */
@@ -12,6 +27,63 @@ main .intro {
 }
 
 /* 2. main-what is */
-main .whatis {
-
+main .whatis {position:relative;}
+main .whatis .txt {text-align:center;}
+.swiper, .swiper .swiper-wrapper {height:400px;}
+.swiper-slide {
+    transition: all 0.5s ease;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
 }
+
+.swiper-slide img {
+    transition: all 0.5s ease;
+}
+
+.swiper-slide img {
+    width: 175px;
+    height: 175px;
+    opacity: 0.3;
+    transform: translateY(155px);
+    transition: all 0.5s ease;
+}
+
+.swiper-slide-active img {
+    width: 350px;
+    height: 350px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+main .whatis .pill_pagination {position:absolute; left:0; right:0; bottom:300px;}
+main .whatis .pill_pagination .swiper-button-prev {left:140px;}
+main .whatis .pill_pagination .swiper-button-next {right:140px;}
+
+/* 3. main-about us */
+main .about {
+    height:720px; background-color:#F5F7FA;
+}
+
+/* 4. main-emotion package */
+main .package {
+    overflow:hidden;
+}
+
+/* 5. main-contents slogan */
+/* 5. main-emotion contents */
+main .main_ct {
+    background-color:#F5F7FA; overflow:hidden;
+    display:flex; align-items:center; flex-direction:column;
+}
+main .main_ct > p {margin-bottom:160px;}
+main .main_ct .card {
+    width: 100%;
+    flex-direction:column; background-color:beige;
+    display:flex; align-items:center; justify-content:center;
+}
+main .main_ct .card img {}
+/* main .main_ct .card img:nth-child(2) {
+    transform:translateY(-800px);
+} */

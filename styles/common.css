@@ -2,7 +2,7 @@
 header {
     margin:0 auto;
     background-color:#fff; width:100vw;
-    position:fixed; left:0; top:0; z-index:1;
+    position:fixed; left:0; top:0; z-index:100;
     border-bottom:1px solid #ABBED1;
 }
 header .top_wrap {
