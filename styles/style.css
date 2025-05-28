@@ -73,17 +73,55 @@ main .package {
 
 /* 5. main-contents slogan */
 /* 5. main-emotion contents */
-main .main_ct {
-    background-color:#F5F7FA; overflow:hidden;
+/* main .main_ct {
+    overflow:hidden;
     display:flex; align-items:center; flex-direction:column;
 }
 main .main_ct > p {margin-bottom:160px;}
 main .main_ct .card {
     width: 100%;
-    flex-direction:column; background-color:beige;
+    flex-direction:column;
     display:flex; align-items:center; justify-content:center;
 }
-main .main_ct .card img {}
+main .main_ct .card img {height:600px;} */
 /* main .main_ct .card img:nth-child(2) {
     transform:translateY(-800px);
 } */
+
+
+.main_ct {
+    height: 1600px; /* 실제 카드 2개가 위로 올라올 공간 확보 */
+    background: #F5F7FA;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    height: 800px;
+    margin-top:90px;
+}
+
+.card-img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    height: 800px;
+    object-fit: contain;
+}
+
+.card-img:nth-child(1) {
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.15));
+}
+
+/* 초기 Y 위치만 별도로 지정 */
+.card-img:nth-child(2) {
+    top: 800px;
+}
