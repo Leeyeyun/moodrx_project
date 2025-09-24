@@ -236,5 +236,5 @@ main .main_ct .card img {height:600px;} */
 
 /* 초기 Y 위치만 별도로 지정 */
 .card-img:nth-child(2) {
-    top: 800px;
+    transform: translateX(-300px) !important;
 }

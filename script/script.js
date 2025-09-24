@@ -40,6 +40,7 @@ ScrollTrigger.create({
 
 // 카드2: 스크롤 0 ~ 800px → 위로 올라옴 (카드1 위치에서 멈춤)
 gsap.to(".card-img:nth-child(2)", {
+    x: -300,
     y: -800, // 위로 올라오게
     ease: "none",
     scrollTrigger: {
