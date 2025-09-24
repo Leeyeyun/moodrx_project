@@ -49,3 +49,7 @@ gsap.to(".card-img:nth-child(2)", {
         scrub: true,
     },
 });
+
+window.addEventListener('pageshow', () => {
+    ScrollTrigger.refresh(true);
+});

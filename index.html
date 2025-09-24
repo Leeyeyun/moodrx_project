@@ -10,14 +10,13 @@
     <link rel="shortcut icon" href="./images/moodrx_favicon.svg" type="image/x-icon">
     <link rel="icon" href="./images/moodrx_favicon.svg" type="image/x-icon">
     <!-- 웹폰트 연결 -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <!-- CSS 연결 -->
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/common.css">
+    <link rel="stylesheet" href="./styles/animation.css">
     <!--플러그인 필수 css cdn 연결-->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
@@ -32,10 +31,13 @@
 </head>
 <body>
     <!--=============== header ===============-->
-    <!--=============== header ===============-->
     <header>
         <div class="top_wrap">
-            <h1><a href="./index.html"><img src="/images/logo.svg" alt="logo"></a></h1>
+            <h1>
+                <a href="./index.html" onclick="location.href='./index.html'; return false;">
+                    <img src="/images/logo.svg" alt="logo">
+                </a>
+            </h1>
             <nav>
                 <ul class="gnb">
                     <li><a href="./aboutus.html">About us</a></li>
@@ -51,7 +53,33 @@
     <!--=============== main ===============-->
     <main>
         <!-- 1. intro -->
-        <div class="section intro"><p class="temporary">intro</p></div>
+        <div class="section intro">
+            <!-- gradient 배경 -->
+            <div class="bg"></div>
+            <!-- 슬로건 -->
+            <div class="slogan">
+                <h1 class="slogan_txt">Your Mo    d,<br>    ur Rx.</h1>
+                <img src="./images/pill_01.svg" alt="알약이미지1">
+                <img src="./images/pill_08.svg" alt="알약이미지2">
+            </div>
+            <!-- 설명 텍스트 모음 -->
+            <ul class="txt_wrap">
+                <li class="txt txt_1">
+                    <span>2048년, 감정은 더 이상 사람 사이에서 교류되지 않습니다. 사람들은 감정을 AI에게 맡기고, 그로부터 위로받는 데 익숙해졌습니다. 그 결과, 우리는 ‘감정 결핍’이라는 새로운 문제를 마주하게 되었습니다.</span>
+                </li>
+                <li class="txt txt_2">
+                    <span>MoodRx는 이 감정 결핍 시대를 위한 맞춤형 감정 처방 플랫폼입니다. 챗봇 기반 상담으로 사용자의 감정을 진단하고, 사용자가 원하는 방향(완화, 증폭, 전환)에 맞춰 감정 패키지를 제공합니다.</span>
+                </li>
+                <li class="txt txt_3">
+                    <span>감정은 이제 흘러가는 것이 아니라, 선택하고 설계하는 것입니다. MoodRx와 함께 지금 이 순간의 감정을 정의하고, 당신의 하루를 주도해보세요. 이제, 원하는 감정을 당신의 방식으로 처방받을 차례입니다.</span>
+                </li>
+            </ul>
+            <!-- 마우스 스크롤 -->
+            <div class="mouse_wrap">
+                <div class="mouse"><div class="wheel"></div></div>
+                <div><span class="unu"></span> <span class="doi"></span> <span class="trei"></span> </div>
+            </div>
+        </div>
         <!-- e.intro -->
         <!-- 2. whatis -->
         <div class="section whatis">
