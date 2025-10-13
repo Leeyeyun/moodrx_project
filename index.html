@@ -81,6 +81,7 @@
             </div>
         </div>
         <!-- e.intro -->
+        
         <!-- 2. whatis -->
         <div class="section whatis">
             <div class="txt">
@@ -90,8 +91,6 @@
                     감정 알약은 지금의 당신에게 필요한 감정을 인식하고, 주도적으로 케어할 수 있도록 돕는 새로운 감정 솔루션입니다.
                 </p>
             </div>
-            <!-- 원형 배경 -->
-            <div class="bg"></div>
             <!-- 감정알약 main slider -->
             <div class="swiper pill-slide">
                 <div class="swiper-wrapper">
@@ -122,6 +121,12 @@
                     </div>
                 </div>
             </div>
+            <!-- 감정알약 이름 및 설명 -->
+            <div class="pill_txt">
+                <h1 class="pillName">JOY</h1>
+                <h2 class="pillNameKor">기쁨</h2>
+                <p class="pill_desc">마음이 가볍고 모든 것이 괜찮게 느껴지는 순간.</p>
+            </div>
             <div class="pill_pagination">
                 <div class="prev_next">
                     <div class="swiper-button-prev"></div>
@@ -129,16 +134,677 @@
                 </div>
             </div>
             <div class="swiper-pagination"></div>
+            <!-- 원형 배경 -->
+            <div id="app_bg">
+                <p class="eclipse"><img src="./images/eclipse.png" alt=""></p>
+            </div>
         </div>
         <!-- e.whatis -->
+        
         <!-- 3. about -->
-        <div class="section about"><p class="temporary">About us</p></div>
+        <div class="section about">
+            <h1>About us</h1>
+            <div class="line"></div>
+            <div class="txtbtn">
+                <h2><img src="./images/logo.svg" alt="로고"></h2>
+                <span>Your Emotions, Carefully Prescribed.</span>
+                <p>
+                    MoodRx는 감정이 상품화된 2048년의 미래를 배경으로, 감정 결핍이 일상화된 사회에서 사용자의 정서 상태를 정밀하게 분석하고,<br><strong>감정을 진단하고 처방하는 새로운 감정 케어 솔루션을 제안합니다.</strong>
+                    <br><br>
+                    지금, 당신의 감정은 어떤 상태인가요?<br>MoodRx는 인간이 감정을 스스로 선택하고 관리할 수 있는 시대를 위해, 감정을 보다 풍부하고 깊이 있게 전달합니다.
+                </p>
+                <a href="./aboutus.html" class="aboutBtn">
+                    <span>About us</span>
+                    <img src="./images/arrow_btn_blue.svg" alt="">
+                </a>
+            </div>
+        </div>
         <!-- e.about -->
+        
         <!-- 4. package -->
-        <div class="section package"><p class="temporary">Emotion Package</p></div>
+        <div class="section package">
+            <div class="left">
+                <div class="txt">
+                    <h1>Emotion Packages</h1>
+                    <p>
+                        MoodRx에서는 다양한 감정 별 패키지를 제공합니다.<br>기쁨 증폭, 슬픔 완화, 설렘 전환 등의 다양한 패키지를 통해 감정을 처방받아 보세요.
+                    </p>
+                </div>
+                <ul class="package_txt">
+                    <li>
+                        <div class="package_name">
+                            <img src="./images/package_icn_01.png" alt="">
+                            <h3>단일 감정 케어 패키지</h3>
+                        </div>
+                        <p class="package_desc">
+                            사용자의 감정 상태와 목표에 따라 하나의 주요 감정을 중심으로 구성된 맞춤형 패키지입니다.<br>AI 진단 결과를 바탕으로, 감정을 증폭(Amplify) 하거나 완화(Soothe) 하거나 전환(Shift)하는 방향으로 설계됩니다.
+                        </p>
+                    </li>
+                    <li>
+                        <div class="package_name">
+                            <img src="./images/package_icn_01.png" alt="">
+                            <h3>단일 감정 케어 패키지</h3>
+                        </div>
+                        <p class="package_desc">
+                            사용자의 감정 상태와 목표에 따라 하나의 주요 감정을 중심으로 구성된 맞춤형 패키지입니다.<br>AI 진단 결과를 바탕으로, 감정을 증폭(Amplify) 하거나 완화(Soothe) 하거나 전환(Shift)하는 방향으로 설계됩니다.
+                        </p>
+                    </li>
+                    <li>
+                        <div class="package_name">
+                            <img src="./images/package_icn_01.png" alt="">
+                            <h3>단일 감정 케어 패키지</h3>
+                        </div>
+                        <p class="package_desc">
+                            사용자의 감정 상태와 목표에 따라 하나의 주요 감정을 중심으로 구성된 맞춤형 패키지입니다.<br>AI 진단 결과를 바탕으로, 감정을 증폭(Amplify) 하거나 완화(Soothe) 하거나 전환(Shift)하는 방향으로 설계됩니다.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="right">
+                <!-- 감정알약패키지 main slider-left -->
+                <div class="package_area">
+                    <ul class="package_wrap">
+                        <li class="package_card">
+                            <div class="pill_wrap">
+                                <img src="./images/joy_wrap.png" alt="">
+                            </div>
+                            <div class="txt_wrap">
+                                <h3>JOY</h3>
+                                <p>기쁨 패키지</p>
+                            </div>
+                            <div class="txt_hover">
+                                <h4>#감정에너지충전<br>#일상속기쁨복용</h4>
+                                <p>
+                                    무뎌졌던 감각을 깨우고, 작고 소소한 순간들에서 기쁨을 다시 발견할 수 있도록 도와줍니다. 지친 하루에도 웃을 수 있는 힘, JOY 캡슐이 당신에게 처방됩니다.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="package_card">
+                            <div class="pill_wrap">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                            </div>
+                            <div class="txt_wrap">
+                                <h3>JOY</h3>
+                                <p>기쁨 패키지</p>
+                            </div>
+                            <div class="txt_hover">
+                                <h4>#감정에너지충전<br>#일상속기쁨복용</h4>
+                                <p>
+                                    무뎌졌던 감각을 깨우고, 작고 소소한 순간들에서 기쁨을 다시 발견할 수 있도록 도와줍니다. 지친 하루에도 웃을 수 있는 힘, JOY 캡슐이 당신에게 처방됩니다.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="package_card">
+                            <div class="pill_wrap">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                            </div>
+                            <div class="txt_wrap">
+                                <h3>JOY</h3>
+                                <p>기쁨 패키지</p>
+                            </div>
+                            <div class="txt_hover">
+                                <h4>#감정에너지충전<br>#일상속기쁨복용</h4>
+                                <p>
+                                    무뎌졌던 감각을 깨우고, 작고 소소한 순간들에서 기쁨을 다시 발견할 수 있도록 도와줍니다. 지친 하루에도 웃을 수 있는 힘, JOY 캡슐이 당신에게 처방됩니다.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="package_card">
+                            <div class="pill_wrap">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                            </div>
+                            <div class="txt_wrap">
+                                <h3>JOY</h3>
+                                <p>기쁨 패키지</p>
+                            </div>
+                            <div class="txt_hover">
+                                <h4>#감정에너지충전<br>#일상속기쁨복용</h4>
+                                <p>
+                                    무뎌졌던 감각을 깨우고, 작고 소소한 순간들에서 기쁨을 다시 발견할 수 있도록 도와줍니다. 지친 하루에도 웃을 수 있는 힘, JOY 캡슐이 당신에게 처방됩니다.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="package_card">
+                            <div class="pill_wrap">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                            </div>
+                            <div class="txt_wrap">
+                                <h3>JOY</h3>
+                                <p>기쁨 패키지</p>
+                            </div>
+                            <div class="txt_hover">
+                                <h4>#감정에너지충전<br>#일상속기쁨복용</h4>
+                                <p>
+                                    무뎌졌던 감각을 깨우고, 작고 소소한 순간들에서 기쁨을 다시 발견할 수 있도록 도와줍니다. 지친 하루에도 웃을 수 있는 힘, JOY 캡슐이 당신에게 처방됩니다.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="package_card">
+                            <div class="pill_wrap">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                            </div>
+                            <div class="txt_wrap">
+                                <h3>JOY</h3>
+                                <p>기쁨 패키지</p>
+                            </div>
+                            <div class="txt_hover">
+                                <h4>#감정에너지충전<br>#일상속기쁨복용</h4>
+                                <p>
+                                    무뎌졌던 감각을 깨우고, 작고 소소한 순간들에서 기쁨을 다시 발견할 수 있도록 도와줍니다. 지친 하루에도 웃을 수 있는 힘, JOY 캡슐이 당신에게 처방됩니다.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="package_card">
+                            <div class="pill_wrap">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                            </div>
+                            <div class="txt_wrap">
+                                <h3>JOY</h3>
+                                <p>기쁨 패키지</p>
+                            </div>
+                            <div class="txt_hover">
+                                <h4>#감정에너지충전<br>#일상속기쁨복용</h4>
+                                <p>
+                                    무뎌졌던 감각을 깨우고, 작고 소소한 순간들에서 기쁨을 다시 발견할 수 있도록 도와줍니다. 지친 하루에도 웃을 수 있는 힘, JOY 캡슐이 당신에게 처방됩니다.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="package_card">
+                            <div class="pill_wrap">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                            </div>
+                            <div class="txt_wrap">
+                                <h3>JOY</h3>
+                                <p>기쁨 패키지</p>
+                            </div>
+                            <div class="txt_hover">
+                                <h4>#감정에너지충전<br>#일상속기쁨복용</h4>
+                                <p>
+                                    무뎌졌던 감각을 깨우고, 작고 소소한 순간들에서 기쁨을 다시 발견할 수 있도록 도와줍니다. 지친 하루에도 웃을 수 있는 힘, JOY 캡슐이 당신에게 처방됩니다.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="package_card">
+                            <div class="pill_wrap">
+                                <img src="./images/joy_wrap.png" alt="">
+                            </div>
+                            <div class="txt_wrap">
+                                <h3>JOY</h3>
+                                <p>기쁨 패키지</p>
+                            </div>
+                            <div class="txt_hover">
+                                <h4>#감정에너지충전<br>#일상속기쁨복용</h4>
+                                <p>
+                                    무뎌졌던 감각을 깨우고, 작고 소소한 순간들에서 기쁨을 다시 발견할 수 있도록 도와줍니다. 지친 하루에도 웃을 수 있는 힘, JOY 캡슐이 당신에게 처방됩니다.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="package_card">
+                            <div class="pill_wrap">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                            </div>
+                            <div class="txt_wrap">
+                                <h3>JOY</h3>
+                                <p>기쁨 패키지</p>
+                            </div>
+                            <div class="txt_hover">
+                                <h4>#감정에너지충전<br>#일상속기쁨복용</h4>
+                                <p>
+                                    무뎌졌던 감각을 깨우고, 작고 소소한 순간들에서 기쁨을 다시 발견할 수 있도록 도와줍니다. 지친 하루에도 웃을 수 있는 힘, JOY 캡슐이 당신에게 처방됩니다.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="package_card">
+                            <div class="pill_wrap">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                            </div>
+                            <div class="txt_wrap">
+                                <h3>JOY</h3>
+                                <p>기쁨 패키지</p>
+                            </div>
+                            <div class="txt_hover">
+                                <h4>#감정에너지충전<br>#일상속기쁨복용</h4>
+                                <p>
+                                    무뎌졌던 감각을 깨우고, 작고 소소한 순간들에서 기쁨을 다시 발견할 수 있도록 도와줍니다. 지친 하루에도 웃을 수 있는 힘, JOY 캡슐이 당신에게 처방됩니다.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="package_card">
+                            <div class="pill_wrap">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                            </div>
+                            <div class="txt_wrap">
+                                <h3>JOY</h3>
+                                <p>기쁨 패키지</p>
+                            </div>
+                            <div class="txt_hover">
+                                <h4>#감정에너지충전<br>#일상속기쁨복용</h4>
+                                <p>
+                                    무뎌졌던 감각을 깨우고, 작고 소소한 순간들에서 기쁨을 다시 발견할 수 있도록 도와줍니다. 지친 하루에도 웃을 수 있는 힘, JOY 캡슐이 당신에게 처방됩니다.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="package_card">
+                            <div class="pill_wrap">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                            </div>
+                            <div class="txt_wrap">
+                                <h3>JOY</h3>
+                                <p>기쁨 패키지</p>
+                            </div>
+                            <div class="txt_hover">
+                                <h4>#감정에너지충전<br>#일상속기쁨복용</h4>
+                                <p>
+                                    무뎌졌던 감각을 깨우고, 작고 소소한 순간들에서 기쁨을 다시 발견할 수 있도록 도와줍니다. 지친 하루에도 웃을 수 있는 힘, JOY 캡슐이 당신에게 처방됩니다.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="package_card">
+                            <div class="pill_wrap">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                            </div>
+                            <div class="txt_wrap">
+                                <h3>JOY</h3>
+                                <p>기쁨 패키지</p>
+                            </div>
+                            <div class="txt_hover">
+                                <h4>#감정에너지충전<br>#일상속기쁨복용</h4>
+                                <p>
+                                    무뎌졌던 감각을 깨우고, 작고 소소한 순간들에서 기쁨을 다시 발견할 수 있도록 도와줍니다. 지친 하루에도 웃을 수 있는 힘, JOY 캡슐이 당신에게 처방됩니다.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="package_card">
+                            <div class="pill_wrap">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                            </div>
+                            <div class="txt_wrap">
+                                <h3>JOY</h3>
+                                <p>기쁨 패키지</p>
+                            </div>
+                            <div class="txt_hover">
+                                <h4>#감정에너지충전<br>#일상속기쁨복용</h4>
+                                <p>
+                                    무뎌졌던 감각을 깨우고, 작고 소소한 순간들에서 기쁨을 다시 발견할 수 있도록 도와줍니다. 지친 하루에도 웃을 수 있는 힘, JOY 캡슐이 당신에게 처방됩니다.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="package_card">
+                            <div class="pill_wrap">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                            </div>
+                            <div class="txt_wrap">
+                                <h3>JOY</h3>
+                                <p>기쁨 패키지</p>
+                            </div>
+                            <div class="txt_hover">
+                                <h4>#감정에너지충전<br>#일상속기쁨복용</h4>
+                                <p>
+                                    무뎌졌던 감각을 깨우고, 작고 소소한 순간들에서 기쁨을 다시 발견할 수 있도록 도와줍니다. 지친 하루에도 웃을 수 있는 힘, JOY 캡슐이 당신에게 처방됩니다.
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="package_area">
+                    <ul class="package_wrap">
+                        <li class="package_card">
+                            <div class="pill_wrap">
+                                <img src="./images/joy_wrap.png" alt="">
+                            </div>
+                            <div class="txt_wrap">
+                                <h3>JOY</h3>
+                                <p>기쁨 패키지</p>
+                            </div>
+                            <div class="txt_hover">
+                                <h4>#감정에너지충전<br>#일상속기쁨복용</h4>
+                                <p>
+                                    무뎌졌던 감각을 깨우고, 작고 소소한 순간들에서 기쁨을 다시 발견할 수 있도록 도와줍니다. 지친 하루에도 웃을 수 있는 힘, JOY 캡슐이 당신에게 처방됩니다.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="package_card">
+                            <div class="pill_wrap">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                            </div>
+                            <div class="txt_wrap">
+                                <h3>JOY</h3>
+                                <p>기쁨 패키지</p>
+                            </div>
+                            <div class="txt_hover">
+                                <h4>#감정에너지충전<br>#일상속기쁨복용</h4>
+                                <p>
+                                    무뎌졌던 감각을 깨우고, 작고 소소한 순간들에서 기쁨을 다시 발견할 수 있도록 도와줍니다. 지친 하루에도 웃을 수 있는 힘, JOY 캡슐이 당신에게 처방됩니다.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="package_card">
+                            <div class="pill_wrap">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                            </div>
+                            <div class="txt_wrap">
+                                <h3>JOY</h3>
+                                <p>기쁨 패키지</p>
+                            </div>
+                            <div class="txt_hover">
+                                <h4>#감정에너지충전<br>#일상속기쁨복용</h4>
+                                <p>
+                                    무뎌졌던 감각을 깨우고, 작고 소소한 순간들에서 기쁨을 다시 발견할 수 있도록 도와줍니다. 지친 하루에도 웃을 수 있는 힘, JOY 캡슐이 당신에게 처방됩니다.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="package_card">
+                            <div class="pill_wrap">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                            </div>
+                            <div class="txt_wrap">
+                                <h3>JOY</h3>
+                                <p>기쁨 패키지</p>
+                            </div>
+                            <div class="txt_hover">
+                                <h4>#감정에너지충전<br>#일상속기쁨복용</h4>
+                                <p>
+                                    무뎌졌던 감각을 깨우고, 작고 소소한 순간들에서 기쁨을 다시 발견할 수 있도록 도와줍니다. 지친 하루에도 웃을 수 있는 힘, JOY 캡슐이 당신에게 처방됩니다.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="package_card">
+                            <div class="pill_wrap">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                            </div>
+                            <div class="txt_wrap">
+                                <h3>JOY</h3>
+                                <p>기쁨 패키지</p>
+                            </div>
+                            <div class="txt_hover">
+                                <h4>#감정에너지충전<br>#일상속기쁨복용</h4>
+                                <p>
+                                    무뎌졌던 감각을 깨우고, 작고 소소한 순간들에서 기쁨을 다시 발견할 수 있도록 도와줍니다. 지친 하루에도 웃을 수 있는 힘, JOY 캡슐이 당신에게 처방됩니다.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="package_card">
+                            <div class="pill_wrap">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                            </div>
+                            <div class="txt_wrap">
+                                <h3>JOY</h3>
+                                <p>기쁨 패키지</p>
+                            </div>
+                            <div class="txt_hover">
+                                <h4>#감정에너지충전<br>#일상속기쁨복용</h4>
+                                <p>
+                                    무뎌졌던 감각을 깨우고, 작고 소소한 순간들에서 기쁨을 다시 발견할 수 있도록 도와줍니다. 지친 하루에도 웃을 수 있는 힘, JOY 캡슐이 당신에게 처방됩니다.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="package_card">
+                            <div class="pill_wrap">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                            </div>
+                            <div class="txt_wrap">
+                                <h3>JOY</h3>
+                                <p>기쁨 패키지</p>
+                            </div>
+                            <div class="txt_hover">
+                                <h4>#감정에너지충전<br>#일상속기쁨복용</h4>
+                                <p>
+                                    무뎌졌던 감각을 깨우고, 작고 소소한 순간들에서 기쁨을 다시 발견할 수 있도록 도와줍니다. 지친 하루에도 웃을 수 있는 힘, JOY 캡슐이 당신에게 처방됩니다.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="package_card">
+                            <div class="pill_wrap">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                            </div>
+                            <div class="txt_wrap">
+                                <h3>JOY</h3>
+                                <p>기쁨 패키지</p>
+                            </div>
+                            <div class="txt_hover">
+                                <h4>#감정에너지충전<br>#일상속기쁨복용</h4>
+                                <p>
+                                    무뎌졌던 감각을 깨우고, 작고 소소한 순간들에서 기쁨을 다시 발견할 수 있도록 도와줍니다. 지친 하루에도 웃을 수 있는 힘, JOY 캡슐이 당신에게 처방됩니다.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="package_card">
+                            <div class="pill_wrap">
+                                <img src="./images/joy_wrap.png" alt="">
+                            </div>
+                            <div class="txt_wrap">
+                                <h3>JOY</h3>
+                                <p>기쁨 패키지</p>
+                            </div>
+                            <div class="txt_hover">
+                                <h4>#감정에너지충전<br>#일상속기쁨복용</h4>
+                                <p>
+                                    무뎌졌던 감각을 깨우고, 작고 소소한 순간들에서 기쁨을 다시 발견할 수 있도록 도와줍니다. 지친 하루에도 웃을 수 있는 힘, JOY 캡슐이 당신에게 처방됩니다.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="package_card">
+                            <div class="pill_wrap">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                            </div>
+                            <div class="txt_wrap">
+                                <h3>JOY</h3>
+                                <p>기쁨 패키지</p>
+                            </div>
+                            <div class="txt_hover">
+                                <h4>#감정에너지충전<br>#일상속기쁨복용</h4>
+                                <p>
+                                    무뎌졌던 감각을 깨우고, 작고 소소한 순간들에서 기쁨을 다시 발견할 수 있도록 도와줍니다. 지친 하루에도 웃을 수 있는 힘, JOY 캡슐이 당신에게 처방됩니다.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="package_card">
+                            <div class="pill_wrap">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                            </div>
+                            <div class="txt_wrap">
+                                <h3>JOY</h3>
+                                <p>기쁨 패키지</p>
+                            </div>
+                            <div class="txt_hover">
+                                <h4>#감정에너지충전<br>#일상속기쁨복용</h4>
+                                <p>
+                                    무뎌졌던 감각을 깨우고, 작고 소소한 순간들에서 기쁨을 다시 발견할 수 있도록 도와줍니다. 지친 하루에도 웃을 수 있는 힘, JOY 캡슐이 당신에게 처방됩니다.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="package_card">
+                            <div class="pill_wrap">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                            </div>
+                            <div class="txt_wrap">
+                                <h3>JOY</h3>
+                                <p>기쁨 패키지</p>
+                            </div>
+                            <div class="txt_hover">
+                                <h4>#감정에너지충전<br>#일상속기쁨복용</h4>
+                                <p>
+                                    무뎌졌던 감각을 깨우고, 작고 소소한 순간들에서 기쁨을 다시 발견할 수 있도록 도와줍니다. 지친 하루에도 웃을 수 있는 힘, JOY 캡슐이 당신에게 처방됩니다.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="package_card">
+                            <div class="pill_wrap">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                            </div>
+                            <div class="txt_wrap">
+                                <h3>JOY</h3>
+                                <p>기쁨 패키지</p>
+                            </div>
+                            <div class="txt_hover">
+                                <h4>#감정에너지충전<br>#일상속기쁨복용</h4>
+                                <p>
+                                    무뎌졌던 감각을 깨우고, 작고 소소한 순간들에서 기쁨을 다시 발견할 수 있도록 도와줍니다. 지친 하루에도 웃을 수 있는 힘, JOY 캡슐이 당신에게 처방됩니다.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="package_card">
+                            <div class="pill_wrap">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                            </div>
+                            <div class="txt_wrap">
+                                <h3>JOY</h3>
+                                <p>기쁨 패키지</p>
+                            </div>
+                            <div class="txt_hover">
+                                <h4>#감정에너지충전<br>#일상속기쁨복용</h4>
+                                <p>
+                                    무뎌졌던 감각을 깨우고, 작고 소소한 순간들에서 기쁨을 다시 발견할 수 있도록 도와줍니다. 지친 하루에도 웃을 수 있는 힘, JOY 캡슐이 당신에게 처방됩니다.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="package_card">
+                            <div class="pill_wrap">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                            </div>
+                            <div class="txt_wrap">
+                                <h3>JOY</h3>
+                                <p>기쁨 패키지</p>
+                            </div>
+                            <div class="txt_hover">
+                                <h4>#감정에너지충전<br>#일상속기쁨복용</h4>
+                                <p>
+                                    무뎌졌던 감각을 깨우고, 작고 소소한 순간들에서 기쁨을 다시 발견할 수 있도록 도와줍니다. 지친 하루에도 웃을 수 있는 힘, JOY 캡슐이 당신에게 처방됩니다.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="package_card">
+                            <div class="pill_wrap">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                                <img src="./images/pill_01.svg" alt="Joy">
+                            </div>
+                            <div class="txt_wrap">
+                                <h3>JOY</h3>
+                                <p>기쁨 패키지</p>
+                            </div>
+                            <div class="txt_hover">
+                                <h4>#감정에너지충전<br>#일상속기쁨복용</h4>
+                                <p>
+                                    무뎌졌던 감각을 깨우고, 작고 소소한 순간들에서 기쁨을 다시 발견할 수 있도록 도와줍니다. 지친 하루에도 웃을 수 있는 힘, JOY 캡슐이 당신에게 처방됩니다.
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
         <!-- e.package -->
+        
         <!-- 5. contents_slogan -->
-        <div class="section slogan"><p class="temporary">Contents Slogan</p></div>
+        <div class="section contentsSlogan">
+            <div class="slogan_area">
+                <p>
+                    With
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    carefully prescribed<br>
+                    content, music
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    emotion<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    we offer an immersive journey toward<br>emotional transformation.
+                </p>
+                <div class="contents_wrap">
+                    <img src="./images/contentsSlogan_01.png" alt="">
+                    <img src="./images/contentsSlogan_02.png" alt="">
+                    <img src="./images/contentsSlogan_03.png" alt="">
+                    <img src="./images/contentsSlogan_04.png" alt="">
+                </div>
+            </div>
+            <div class="slogan_desc">
+                <p>호흡 유도 프로그램, 추천 여행지, 근육 이완 프로그램 등의 풍부한 콘텐츠를 통해 당신의 감정을 섬세하게 조절합니다.<br>이 외에도 음악, 미술, AI 상담 등 다채로운 처방을 경험해보세요.</p>
+            </div>
+        </div>
         <!-- e.contents_slogan -->
         <!-- 6. main_contents -->
         <div class="section main_ct">

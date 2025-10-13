@@ -1,3 +1,4 @@
+/* 2420 * 1200px로 웹 크기 설정해놓고 작업하기 */
 main {margin:0 auto;}
 .temporary {
     font-size:3rem; font-weight:400; text-align:left; padding:100px 0 0;
@@ -5,8 +6,7 @@ main {margin:0 auto;}
 /* main section 공통 디자인 */
 main .section {
     height:100vh;
-    border-bottom:0.5px solid red;
-    padding:0 120px;
+    padding:0 140px;
 }
 main .section .txt h1 {
     margin:100px 0 24px;
@@ -47,11 +47,11 @@ main .intro .slogan {
     z-index:1;
     width:fit-content;
     margin:0 auto;
-    top:15%;
+    top:20%;
 }
 main .intro .slogan .slogan_txt {
     font-family: "PP Monument Narrow";
-    font-size: 10rem;
+    font-size: 11rem;
     font-weight:800;
     text-align:center;
     color:#fff;
@@ -78,7 +78,7 @@ main .intro .slogan img:nth-of-type(2) {
 main .intro .txt_wrap {
     z-index:1;
     list-style:none;
-    margin:200px auto 0;
+    margin:300px auto 0;
     max-width:100%;
     display:flex;
     justify-content:space-between;
@@ -88,7 +88,7 @@ main .intro .txt_wrap {
 }
 main .intro .txt_wrap .txt {
     z-index:1;
-    opacity: 1; max-width: calc((100% - 80px) / 3);
+    opacity: 1; max-width: calc((100% - 100px) / 3);
     width:0;
     padding:20px 0;
     border-top: 1px solid white;
@@ -138,11 +138,19 @@ main .intro .mouse_wrap div > span {
 /* e:mouse 스크롤다운 */
 
 
-
 /* -------- 2. main-what is -------- */
-main .whatis {position:relative;}
+main .whatis {position:relative; overflow:hidden;}
 main .whatis .txt {text-align:center;}
-.swiper, .swiper .swiper-wrapper {height:400px;}
+main .whatis > .txt p {margin-bottom:50px;}
+/* what is-원형배경 */
+main .whatis #app_bg {
+    text-align:center; height:100vh; position:absolute; width:100vw;
+    left:0; bottom:0; transform:scale(1.2); z-index:-100;
+}
+main .whatis #app_bg .eclipse {position:relative; top:40%; width:100%;}
+main .whatis #app_bg .eclipse > img {width:100%;}
+
+.pill-slide, .pill-slide .swiper-wrapper {height:400px; overflow:visible;}
 .swiper-slide {
     transition: all 0.5s ease;
     display:flex;
@@ -150,38 +158,201 @@ main .whatis .txt {text-align:center;}
     align-items:center;
     text-align:center;
 }
-
-.swiper-slide img {
+.pill-slide .swiper-slide img {
     transition: all 0.5s ease;
 }
-
-.swiper-slide img {
+.pill-slide .swiper-slide img {
     width: 175px;
     height: 175px;
-    opacity: 0.3;
-    transform: translateY(155px);
+    opacity: 0.7;
+    transform: translateY(120px);
     transition: all 0.5s ease;
 }
-
-.swiper-slide-active img {
+.pill-slide .swiper-slide-active img {
     width: 350px;
     height: 350px;
     opacity: 1;
     transform: translateY(0);
 }
+main .whatis .swiper-pagination {bottom:80px;}
 
-main .whatis .pill_pagination {position:absolute; left:0; right:0; bottom:300px;}
-main .whatis .pill_pagination .swiper-button-prev {left:140px;}
-main .whatis .pill_pagination .swiper-button-next {right:140px;}
-
-/* 3. main-about us */
-main .about {
-    height:720px; background-color:#F5F7FA;
+main .whatis .pill_txt {text-align:center; color:#919191; z-index:500;}
+main .whatis .pill_txt .pillName {
+    font-family: "PP Monument Narrow";
+    font-size:3rem; font-weight:700;
+}
+main .whatis .pill_txt .pillNameKor {
+    font-size:1.125rem; margin:10px 0 20px;
+}
+main .whatis .pill_txt .pill_desc {
+    font-size:1.5rem; line-height:1.6;
 }
 
-/* 4. main-emotion package */
+main .whatis .pill_pagination {position:absolute; left:0; right:0; bottom:550px;}
+main .whatis .pill_pagination .swiper-button-prev {
+    background-image:url(/images/swiper_arrow.png);
+    background-size:100%; transform:rotate(180deg);
+    background-repeat:no-repeat;
+    background-position:center;
+    width:70px; height:70px;
+    color:transparent; filter:drop-shadow(0px -3px 4px rgba(0, 0, 0, 0.25));
+    left:140px; transition:background-size 0.3s ease;
+}
+main .whatis .pill_pagination .swiper-button-next {
+    background-image:url(/images/swiper_arrow.png);
+    background-size:100%;
+    background-repeat:no-repeat;
+    background-position:center;
+    width:70px; height:70px;
+    color:transparent; filter:drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.25));
+    right:140px; transition:background-size 0.3s ease;
+}
+main .whatis .pill_pagination .swiper-button-prev:hover {
+    background-size:110%;
+}
+main .whatis .pill_pagination .swiper-button-next:hover {
+    background-size:110%;
+}
+
+/* -------- 3. main-about -------- */
+main .about {
+    height:max-content; background-color:#F5F7FA;
+    display:flex; align-items:flex-start;
+    padding-top:100px; padding-bottom:160px;
+}
+main .about h1 {
+    font-family: "PP Monument Narrow";
+    text-align:left; font-size:2.5rem;
+    padding:10px 0;
+}
+main .about .line {
+    width:200px; height:1px;
+    background-color:#ABBED1;
+    margin:30px 30px; text-align:left;
+}
+main .about .txtbtn {
+    display:flex; flex-direction:column;
+}
+main .about .txtbtn h2 {
+    height:max-content;
+}
+main .about .txtbtn h2 > img {height:50px;}
+main .about .txtbtn > span {
+    font-family: "PP Monument Narrow";
+    font-size:2.25rem; line-height:1.6;
+    color:#5CBFFF; padding:20px 0 60px;
+}
+main .about .txtbtn p {
+    text-align:left; font-weight:400;
+    font-size:1.125rem; line-height:1.6;
+}
+main .about .txtbtn p strong {font-weight:600;}
+main .about .txtbtn .aboutBtn {
+    display:flex; align-items:center;
+    padding:16px 24px; background-color:#CEECFF;
+    border-radius:30px; width:max-content;
+    margin-top:40px;
+}
+main .about .txtbtn .aboutBtn > span {
+    font-family: "PP Monument Narrow";
+    font-size:1.5rem; margin-right:12px;
+    color:#5CBFFF;
+}
+
+/* -------- 4. main-emotion package -------- */
 main .package {
     overflow:hidden;
+    display:flex; justify-content:space-between;
+}
+main .package .left {
+    height:100%;
+    display:flex; flex-direction:column;
+    justify-content:space-between;
+    padding:100px 0 90px;
+}
+main .package .left .txt {}
+main .package .left > .txt h1 {margin-top:50px;}
+main .package > .left .txt > p {text-align:left;}
+main .package .left .package_txt {width:650px;}
+main .package .left .package_txt li {padding:10px 0;}
+main .package .left .package_txt li .package_name {
+    display:flex; align-items:center;
+}
+main .package .left .package_txt li .package_name h3 {
+    font-size:1.25rem; font-weight:700;
+    color:#717171; margin-left:10px;
+}
+main .package .left .package_txt li > p {
+    color:#89939E; font-size:1.125rem;
+    font-weight:500; line-height:1.6; padding:16px 0;
+}
+main .package .left .package_txt li:nth-child(2) {
+    border-top:1px solid #ABBED1;
+    border-bottom:1px solid #ABBED1;
+}
+
+/* 오른쪽 패키지 슬라이드 */
+main .package .right {display:flex;}
+main .package .right .package_area:first-child {margin-right:36px;}
+main .package .right .package_area .package_wrap {
+    display:flex; flex-direction:column;
+    animation: scrollUp 30s linear infinite;
+}
+main .package .right .package_area:last-child .package_wrap {
+    animation: scrollDown 30s linear infinite;
+}
+main .package .right .package_area .package_wrap .package_card {
+    margin-bottom:20px;
+}
+main .package .right .package_area .package_wrap .package_card:nth-last-child {
+    margin-bottom:0;
+}
+
+/* 패키지 카드 디자인 */
+.package_card {
+    width:400px; height:550px;
+    border-radius:50px; border:5px solid rgba(255, 209, 96, 0.3); overflow:hidden;
+    padding:42px 50px; position:relative;
+}
+.package_card .pill_wrap {
+    position:absolute; left:0; top:0;
+    width:100%; height:100%; border-radius:50px;
+}
+.package_card .pill_wrap > img {
+    
+    /* opacity:1; position:absolute;
+    transform:translateY(0px); */
+}
+/* 패키지카드 내 감정알약이미지 크기 */
+/* .package_card .pill_wrap > img:nth-child(1) {
+    scale:2.0; filter:blur(12px);
+    right:0; top:30%;
+}
+.package_card .pill_wrap > img:nth-child(2) {
+    scale:2.4;
+    right:5%; bottom:10%;
+}
+.package_card .pill_wrap > img:nth-child(3) {
+    scale:1.2; filter:blur(5px);
+    left:-5%; bottom:-2%;
+}
+.package_card .pill_wrap > img:nth-child(4) {
+    left:10%; bottom:0;
+} */
+
+.package_card .txt_wrap {
+    text-align:left;
+}
+.package_card .txt_wrap h3 {
+    font-family: "PP Monument Narrow";
+    font-size:3rem; color:#2b2b2b;
+}
+.package_card .txt_wrap p {
+    font-size:1.25rem; letter-spacing:-0.03em;
+    font-weight:500; margin-top:10px; color:#2b2b2b;
+}
+.package_card .txt_hover {
+    display:none;
 }
 
 /* 5. main-contents slogan */
@@ -201,6 +372,31 @@ main .main_ct .card img {height:600px;} */
     transform:translateY(-800px);
 } */
 
+/* -------- 5. main-slogan contents -------- */
+main .contentsSlogan {
+    height:max-content; position:relative;
+    margin-top:200px; margin-bottom:90px;
+}
+main .contentsSlogan .slogan_area {text-align:center;}
+main .contentsSlogan .slogan_area > p {
+    font-family: "PP Monument Narrow";
+    font-size:6.25rem; line-height:1.4;
+    letter-spacing:-0.03em; width:100%;
+}
+main .contentsSlogan .slogan_area .contents_wrap {}
+/* 슬로건 내 타원 이미지 */
+main .contentsSlogan .slogan_area .contents_wrap > img {
+    position:absolute; left:0; top:0;
+}
+main .contentsSlogan .slogan_area .contents_wrap > img:first-child {left:25%; rotate:-6deg;}
+main .contentsSlogan .slogan_area .contents_wrap > img:nth-child(2) {left:42%; top:21%; rotate:3deg;}
+main .contentsSlogan .slogan_area .contents_wrap > img:nth-child(3) {left:6%; top:38%; rotate:0deg;}
+main .contentsSlogan .slogan_area .contents_wrap > img:nth-child(4) {left:15%; top:58%; rotate:-10deg;}
+main .contentsSlogan .slogan_desc > p {
+    text-align:center; font-size:1.125rem;
+    line-height:1.6; letter-spacing:-0.003em;
+    margin-top:120px; font-weight:400;
+}
 
 .main_ct {
     height: 1600px; /* 실제 카드 2개가 위로 올라올 공간 확보 */
