@@ -74,21 +74,21 @@ ScrollTrigger.create({
     pin: true,
 }); */
 
-gsap.registerPlugin(ScrollTrigger);
+/* gsap.registerPlugin(ScrollTrigger); */
 
 // pin 메인 섹션
-ScrollTrigger.create({
+/* ScrollTrigger.create({
     trigger: ".main_ct",
     start: "top top",
-    end: "+=800", // 총 스크롤 길이
+    end: "+=800",
     scrub: true,
     pin: true,
 });
-
+ */
 // 카드2: 스크롤 0 ~ 800px → 위로 올라옴 (카드1 위치에서 멈춤)
-gsap.to(".card-img:nth-child(2)", {
+/* gsap.to(".card-img:nth-child(2)", {
     x: -300,
-    y: -800, // 위로 올라오게
+    y: -800,
     ease: "none",
     scrollTrigger: {
         trigger: ".main_ct",
@@ -100,18 +100,4 @@ gsap.to(".card-img:nth-child(2)", {
 
 window.addEventListener('pageshow', () => {
     ScrollTrigger.refresh(true);
-});
-
-
-/* const swiperLeft = new Swiper('.package-slide-left', {
-    direction: 'vertical',
-    loop: true,
-    speed: 5000,
-    autoplay: {
-        delay: 1,
-        disableOnInteraction: false,
-    },
-    allowTouchMove: false,
-    slidesPerView: 'auto',
-    spaceBetween: 0,
 }); */

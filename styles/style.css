@@ -145,13 +145,13 @@ main .whatis > .txt p {margin-bottom:50px;}
 /* what is-원형배경 */
 main .whatis #app_bg {
     text-align:center; height:100vh; position:absolute; width:100vw;
-    left:0; bottom:0; transform:scale(1.2); z-index:-100;
+    left:0; bottom:-100px; transform:scale(1.2); z-index:-100;
 }
 main .whatis #app_bg .eclipse {position:relative; top:40%; width:100%;}
 main .whatis #app_bg .eclipse > img {width:100%;}
 
 .pill-slide, .pill-slide .swiper-wrapper {height:400px; overflow:visible;}
-.swiper-slide {
+.pill-slide .swiper-slide {
     transition: all 0.5s ease;
     display:flex;
     justify-content:center;
@@ -165,7 +165,7 @@ main .whatis #app_bg .eclipse > img {width:100%;}
     width: 175px;
     height: 175px;
     opacity: 0.7;
-    transform: translateY(120px);
+    transform: translateY(30px);
     transition: all 0.5s ease;
 }
 .pill-slide .swiper-slide-active img {
@@ -176,7 +176,10 @@ main .whatis #app_bg .eclipse > img {width:100%;}
 }
 main .whatis .swiper-pagination {bottom:80px;}
 
-main .whatis .pill_txt {text-align:center; color:#919191; z-index:500;}
+main .whatis .pill_txt {
+    text-align:center; color:#919191; z-index:500;
+    margin-top:30px;
+}
 main .whatis .pill_txt .pillName {
     font-family: "PP Monument Narrow";
     font-size:3rem; font-weight:700;
@@ -355,23 +358,6 @@ main .package .right .package_area .package_wrap .package_card:nth-last-child {
     display:none;
 }
 
-/* 5. main-contents slogan */
-/* 5. main-emotion contents */
-/* main .main_ct {
-    overflow:hidden;
-    display:flex; align-items:center; flex-direction:column;
-}
-main .main_ct > p {margin-bottom:160px;}
-main .main_ct .card {
-    width: 100%;
-    flex-direction:column;
-    display:flex; align-items:center; justify-content:center;
-}
-main .main_ct .card img {height:600px;} */
-/* main .main_ct .card img:nth-child(2) {
-    transform:translateY(-800px);
-} */
-
 /* -------- 5. main-slogan contents -------- */
 main .contentsSlogan {
     height:max-content; position:relative;
@@ -398,8 +384,22 @@ main .contentsSlogan .slogan_desc > p {
     margin-top:120px; font-weight:400;
 }
 
+/* -------- 6. main-card contents -------- */
+/* main .main_ct {
+    overflow:hidden;
+    display:flex; align-items:center; flex-direction:column;
+}
+main .main_ct > p {margin-bottom:160px;}
+main .main_ct .card {
+    width: 100%;
+    flex-direction:column;
+    display:flex; align-items:center; justify-content:center;
+}
+main .main_ct .card img {height:600px;} */
+/* main .main_ct .card img:nth-child(2) {
+    transform:translateY(-800px);
+} */
 .main_ct {
-    height: 1600px; /* 실제 카드 2개가 위로 올라올 공간 확보 */
     background: #F5F7FA;
     overflow: hidden;
     display: flex;
@@ -407,6 +407,7 @@ main .contentsSlogan .slogan_desc > p {
     align-items: center;
     justify-content: center;
     position: relative;
+    height:1500px;
 }
 
 .card {
@@ -433,4 +434,137 @@ main .contentsSlogan .slogan_desc > p {
 /* 초기 Y 위치만 별도로 지정 */
 .card-img:nth-child(2) {
     transform: translateX(-300px) !important;
+}
+
+/* -------- 7. main-rx archive -------- */
+main .rx_archive {
+    height:max-content;
+    padding-top:90px; padding-bottom:90px;
+}
+main .rx_archive .archive_table {
+    width:100%; height:100%;
+}
+main .rx_archive .archive_table .text_wrap {
+    display:flex;
+    height:120px;
+}
+main .rx_archive .archive_table .text_wrap > h2 {
+    font-family: "PP Monument Narrow";
+    font-size:5rem; line-height:120px;
+    letter-spacing:-0.01em;
+    color:#fff; background-color:#4D4D4D;
+    padding-left:30px;
+    width:35%; border:1px solid #2B2B2B;
+}
+main .rx_archive .archive_table .text_wrap > p {
+    font-size:1.125rem; color:#717171;
+    line-height:1.6; width:65%;
+    padding-left:30px; text-align:left;
+    display:flex; align-items:center;
+    background-color:#F0F9FF;
+    border:1px solid #2B2B2B; height:100%;
+}
+main .rx_archive .archive_table .rader_pick {
+    display:flex; width:100%; height:800px;
+}
+main .rx_archive .archive_table .rader_pick .rader_wrap {
+    position:relative; height:100%; width:35%;
+    border:1px solid #2B2B2B;
+}
+main .rx_archive .archive_table .rader_pick .rader_wrap > img {
+    position:absolute; left:50%; top:50%;
+    width:90%; transform:translate(-50%, -50%);
+    display:none;
+}
+main .rx_archive .archive_table .rader_pick .rader_wrap > img:first-child {display:block;}
+main .rx_archive .archive_table .rader_pick .situation_list {
+    width:65%; height:100%; border:1px solid #2B2B2B;
+}
+/* 상황 4가지 리스트 디자인 */
+main .rx_archive .archive_table .rader_pick .situation_list .situation_card {
+    position:relative; display:flex; align-items:flex-start;
+    justify-content:space-between;
+    width:100%; height:calc(100% /4);
+    border:1px solid #2B2B2B; border-left:0;
+    padding:25px 36px;
+}
+main .rx_archive .archive_table .rader_pick .situation_list .situation_card .left_txt h3 {
+    font-family: 'Pretendard Variable', sans-serif;
+    font-variation-settings: "wght" 300;
+    transition: font-variation-settings 0.5s ease-out;
+    font-size:2.25rem;
+    line-height:1.6;
+    transition:all 0.5s ease-out;
+}
+main .rx_archive .archive_table .rader_pick .situation_list .situation_card .left_txt p:nth-child(2) {
+    font-family: 'Pretendard Variable', sans-serif;
+    font-variation-settings: "wght" 300;
+    transition: font-variation-settings 0.5s ease-out;
+    font-size:1.125rem;
+    padding:6px 0 30px;
+    transition:all 0.5s ease-out;
+}
+main .rx_archive .archive_table .rader_pick .situation_list .situation_card .left_txt .situ_hover {
+    line-height:1.6; letter-spacing:-0.003em;
+    transition:all 0.5s ease-out; opacity:0;
+}
+main .rx_archive .archive_table .rader_pick .situation_list .situation_card .right_icn > img {padding-top:10px;}
+main .rx_archive .archive_table .rader_pick .situation_list .situation_card .line_hover {
+    position:absolute; left:0; bottom:0;
+    height:2px; width:0; background-color:#2b2b2b;
+    transition:all 0.5s ease-out;
+}
+/* hover 시 애니메이션 */
+main .rx_archive .archive_table .rader_pick .situation_list .situation_card:hover .line_hover {width:100%;}
+main .rx_archive .archive_table .rader_pick .situation_list .situation_card:hover .left_txt h3 {font-variation-settings: "wght" 500;}
+main .rx_archive .archive_table .rader_pick .situation_list .situation_card:hover .left_txt p:nth-child(2) {font-variation-settings: "wght" 400;}
+main .rx_archive .archive_table .rader_pick .situation_list .situation_card:hover .left_txt .situ_hover {opacity:1;}
+
+/* -------- 8. main-diag_bn -------- */
+main .diag_banner {
+    height:max-content;
+    padding:150px 140px; display:flex; flex-direction:column;
+    justify-content:center; align-items:center;
+}
+main .diag_banner > .text_wrap {text-align:center;}
+main .diag_banner > .text_wrap h2 {
+    font-family: "PP Monument Narrow";
+    font-size:5rem; line-height:120px;
+    letter-spacing:-0.01em;
+}
+main .diag_banner > .text_wrap > p {
+    font-size:1.125rem; font-weight:400;
+    line-height:1.6; letter-spacing:-0.003em;
+    margin-top:24px; margin-bottom:90px;
+}
+main .diag_banner .diag_btn {
+    padding:18px 26px; display:flex;
+    width:max-content; border-radius:30px;
+    align-items:center; justify-content:space-between;
+    background-color:#CEECFF;
+}
+main .diag_banner .diag_btn > span {
+    font-size:1.5rem; font-weight:400;
+    color:#5CBFFF; margin-right:12px;
+}
+main .diag_banner .diag_btn > img {}
+
+/* -------- 8. main-diag_bn -------- */
+main .more {
+    overflow:hidden; position:relative;
+    background:linear-gradient(linear-gradient(180deg, #fcfcdc, #f3f3f6));
+}
+main .more .more_link {position:absolute; width:max-content; display:block; left:0; top:0;}
+main .more .more_link > img {}
+main .more .more_link > span {
+    position:absolute; left:0; top:0;
+    z-index:5; line-height:1.6;
+    font-size:4rem; font-weight:600;
+    display:none;
+}
+main .more .more_link:first-child {
+    left:-73%; top:40%;
+}
+main .more .more_link:last-child {
+    left:51%; top:-140%;
 }
