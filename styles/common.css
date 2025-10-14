@@ -45,3 +45,48 @@ header .top_wrap .diag a:hover {
 html, body {
     overflow-x: hidden;
 }
+
+/* footer 디자인 */
+footer {
+    padding:56px 80px; height:max-content;
+    display:flex; align-items:flex-start;
+    justify-content:space-between;
+}
+footer .left_logo {
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+}
+footer .left_logo > a {height:45px;}
+footer .left_logo > a > img {height:100%;}
+footer .left_logo > p {
+    font-size:1.125rem; text-align:left;
+    font-weight:400; line-height:1.4;
+    margin-top:22px;
+}
+footer .right_info .info_wrap {
+    display:flex;
+}
+footer .right_info .info_wrap .info {margin-left:140px;}
+footer .right_info .info_wrap .info:first-child {margin-left:0;}
+footer .right_info .info_wrap .info h3 {
+    font-size:1.125rem; font-weight:600;
+    line-height:1.6; letter-spacing:-0.003em;
+    color:#4D4D4D; margin-bottom:15px;
+}
+footer .right_info .info_wrap .info p {
+    font-size:1.125rem; font-weight:400;
+    line-height:1.6; letter-spacing:-0.003em;
+    color:#4D4D4D;
+}
+footer .right_info .info_wrap .info .link_wrap {
+    display:flex; align-items:center;
+}
+footer .right_info .info_wrap .info .link_wrap > a:first-child {margin-right:5px;}
+footer .right_info .info_wrap .info .link_wrap > a {
+    opacity:1;
+    transition:opacity 0.3s ease;
+}
+footer .right_info .info_wrap .info .link_wrap > a:hover {
+    opacity:0.7;
+}

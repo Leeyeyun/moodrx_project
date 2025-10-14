@@ -1,0 +1,19 @@
+main {margin:0 auto;}
+main .about_product {
+    height:100vh;
+    padding:0 140px; padding-bottom:140px;
+    background-image:url(/images/product_bg.png);
+    background-size:cover; background-position:center;
+}
+main .about_product .title_wrap {
+    height:100%; display:flex; flex-direction:column;
+    justify-content:flex-end;
+}
+main .about_product .title_wrap h1 {
+    font-family: "PP Monument Narrow";
+    font-size:25rem; letter-spacing:-0.04em;
+}
+main .about_product .title_wrap p {
+    font-size:1.25rem; font-weight:500;
+    letter-spacing:-0.03em;
+}
