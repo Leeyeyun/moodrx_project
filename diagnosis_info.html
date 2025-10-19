@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOODRX | Your Mood, Our Rx.</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./images/moodrx_favicon.svg" type="image/x-icon">
+    <link rel="icon" href="./images/moodrx_favicon.svg" type="image/x-icon">
+    <!-- 웹폰트 연결 -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- CSS 연결 -->
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/common.css">
+    <link rel="stylesheet" href="./styles/diagnosis_info.css">
+    <link rel="stylesheet" href="./styles/animation.css">
+    <!--플러그인 필수 css cdn 연결-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!--플러그인 필수 JS cdn 연결-->
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- JS 연결 -->
+    <script src="./script/diagnosis.js" defer></script>
+</head>
+<body>
+    <main>
+        <div class="diag_info">
+            <div class="top_bar">
+                <a class="back_btn" href="/diagnosis.html"><img src="./images/back_btn.svg" alt="뒤로가기"><span>BACK</span></a>
+            </div>
+            <div class="user_info">
+                <h1><img src="./images/logo.svg" alt="로고"></h1>
+                <h2>
+                    감정 처방을 시작하기 전에, 간단한 정보를 입력해주세요.<br>입력하신 정보는 더 정교한 감정 진단을 위해 사용됩니다.
+                </h2>
+                <!-- form - 사용자 이름 -->
+                <form action="#" method="post" id="user_form" autocomplete="off">
+                    <fieldset>
+                        <legend class="skip">사용자 이름 입력 폼</legend>
+                        <!-- USER 1 -->
+                        <dl class="user_name">
+                            <dt>이름</dt>
+                            <dd class="input_wrap">
+                            <input type="text" id="user" name="user" maxlength="20" placeholder="이름을 작성해주세요" required>
+                            </dd>
+                        </dl>
+                    </fieldset>
+                </form>
+                <!-- form - 사용자 생년월일 -->
+                <form id="birth_form" autocomplete="off">
+                    <fieldset>
+                        <legend class="skip">생년월일 선택 폼</legend>
+
+                        <dl class="user_birth">
+                            <dt>생년월일</dt>
+                            <dd class="select_wrap">
+                                <!-- 년 선택 -->
+                                <select id="birth_year" name="birth_year" required>
+                                    <option value="" disabled selected hidden>YYYY</option>
+                                    <!-- 연도는 JS로 동적으로 생성 가능 -->
+                                </select>
+        
+                                <!-- 월 선택 -->
+                                <select id="birth_month" name="birth_month" required>
+                                    <option value="" disabled selected hidden>MM</option>
+                                </select>
+        
+                                <!-- 일 선택 -->
+                                <select id="birth_day" name="birth_day" required>
+                                    <option value="" disabled selected hiddend>DD</option>
+                                </select>
+                            </dd>
+                        </dl>
+                    </fieldset>
+                </form>
+                <!-- 진단 시작 버튼 -->
+                <a class="start_btn" href="./diag_test.html">진단 하러 가기</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

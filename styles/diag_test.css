@@ -1,0 +1,62 @@
+main {margin:0 auto;}
+main .diag_test {
+    height:100vh;
+    padding:0 140px;
+    text-align:center; position:relative;
+    display:flex; justify-content:center; align-items:center;
+}
+
+main .diag_test .top_bar {
+    width:100%; text-align:left;
+    position:absolute; left:100px; top:70px;
+}
+main .diag_test .top_bar .back_btn {
+    display:flex; align-items:center;
+}
+main .diag_test .top_bar .back_btn span {
+    font-size:1.25rem; line-height:1.6;
+    color:#4D4D4D; letter-spacing:-0.003em;
+    font-weight:500;
+}
+
+/* 테스트 순서 디자인 */
+main .diag_test .procedure {display:none; left:0; top:25%;}
+
+main .diag_test .question_area {
+    display:flex; flex-direction:column;
+    align-items:center;
+}
+main .diag_test .question_area .q_section {
+    display:none;
+}
+main .diag_test .question_area .q_section:first-child {
+    display:flex; flex-direction:column;
+    align-items:center;
+}
+main .diag_test .question_area .q_section .q_txt {}
+main .diag_test .question_area .q_section .q_txt h1 {
+    font-family: "PP Monument Narrow";
+    font-size:1.5rem; color:#89939E;
+    line-height:1.2;
+}
+main .diag_test .question_area .q_section .q_txt h2 {
+    font-size:2.25rem; font-weight:300;
+    color:#2b2b2b; line-height:1.4;
+    margin:60px 0 15px;
+}
+main .diag_test .question_area .q_section .q_txt p {
+    color:#717171; font-weight:500;
+    font-size:1.25rem; line-height:1.6; letter-spacing:-0.003em;
+}
+main .diag_test .question_area .q_section .select_card_wrap {
+    display:flex; align-items:center;
+    margin-top:100px;
+}
+main .diag_test .question_area .q_section .select_card_wrap .select_card {
+    width:230px; height:265px;
+    background-color:#fff;
+    filter: drop-shadow(4px 6px 10px rgba(0, 0, 0, 0.3)); border-radius:30px;
+    display:flex; flex-direction:column;
+    align-items:center; justify-content:center;
+}
+

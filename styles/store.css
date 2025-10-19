@@ -1,59 +1,86 @@
 /* main */
-main .journal {max-width:1640px; margin:0 auto; position:relative;}
-main .journal .title {
+main .store {max-width:1640px; margin:0 auto; position:relative;}
+main .store .title {
     font-family: "PP Monument Narrow";
     font-size:4rem; letter-spacing:0.1px; padding-top:150px; color:#5CBFFF;
 }
-main .journal > p {font-size:1.25rem; font-weight:500; padding:25px 0; border-bottom:1px solid #e0e0e0; color:#5F5F5F;}
-main .journal h2 {font-size:1.125rem; font-weight:700; letter-spacing:0.2px; margin:49px 0 16px;}
+main .store > p {font-size:1.25rem; font-weight:500; padding:25px 0; border-bottom:1px solid #e0e0e0; color:#5F5F5F;}
+main .store > h2 {font-size:1.125rem; font-weight:700; letter-spacing:0.2px; margin:49px 0 16px;}
 
 /* 추천 패키지 */
-main .package_recommend {display:flex; justify-content:space-between;}
-main .package_recommend p {
+main .store .package_recommend {
+    display:flex; justify-content:space-between;
+}
+main .store .package_recommend .package_wrap {
     width:calc((100% - 32px) / 2);
-    height:530px; display:flex;
+    height:610px; display:flex;
     align-items:center;
     border:1px solid #E0E0E0;
+    display:flex; flex-direction:column;
+    align-items:center;
 }
-main .package_recommend p img {width:100%;}
+main .store .package_recommend .package_wrap > a {width:100%; height:530px; overflow:hidden; text-align:center;}
+main .store .package_recommend .package_wrap > a > img {width:100%; transition:all 0.5s ease;}
+main .store .package_recommend .package_wrap > a:hover > img {scale:1.05;}
+main .store .package_recommend .package_wrap .package_desc {
+    display:flex; align-items:flex-start; justify-content:space-between;
+    width:100%; padding:16px; background-color:#F5F7FA;
+    height:80px;
+}
+main .store .package_recommend .package_wrap .package_desc > h2 {
+    font-size:1.125rem; font-weight:700; letter-spacing:0.2px; margin-top:6px;
+}
+main .store .package_recommend .package_wrap .package_desc > p {
+    text-align:right; color:#5F5F5F;
+    line-height:1.5;
+}
 
-/* 저널 카테고리 */
-main .journal .journal_type_search {margin:90px 0 20px; display:flex; justify-content:space-between; align-items:flex-start; position:relative; z-index:200;}
-main .journal .journal_type_search .journal_category {}
-main .journal .journal_type_search .journal_category > a {font-size:1.25rem; color:#9d9d9d; margin-right:46px; transition:color 0.5s;}
-main .journal .journal_type_search .journal_category > a:hover {color:#485131;}
-main .journal .journal_type_search .journal_category > a:first-child {font-weight:700; color:#485131;}
-main .journal .journal_type_search #j_search_frm {}
-main .journal .journal_type_search #j_search_frm .j_search_wrap {}
-/* 검색 form 디자인 */
-main .journal .journal_type_search #j_search_frm .j_search_wrap input[name^=journal] {
-    border:1px solid #e0e0e0; padding:16px; background-image:url(../images/j_search_icn.svg);
-    background-repeat:no-repeat; background-position:right 16px center;
-    outline:0; font-size:0.875rem; font-weight:500; color:#282828;
-    width:330px;
+
+main .store .store_category {
+    margin:116px 0 45px;
 }
-main .journal .journal_type_search #j_search_frm .j_search_wrap input[name^=journal]::placeholder {
-    color:#959595; font-size:0.875rem; font-weight:500; 
+
+/* 상품 모음 */
+main .store .product_container {display:flex; flex-flow:row wrap; justify-content:flex-start; z-index:200; gap:30px;}
+main .store .product_container .store_contents {
+    padding:36px 28px;
+    width:calc((100% - 60px) / 3); margin-bottom:60px;
+    border:1px solid #C3CEDF; height:400px; overflow:hidden; border-radius:15px;
+    position:relative;
 }
-/* 저널 콘텐츠 모음 */
-main .journal .journal_container {display:flex; flex-flow:row wrap; justify-content:space-between; position:relative; z-index:200;}
-main .journal .journal_container .journal_contents {
-    width:calc((100% - 60px) / 3); margin-bottom:90px;
+main .store .product_container .store_contents .txt_wrap {
+    display:flex; flex-direction:column;
+    align-items:flex-start; justify-content:space-between;
+    height:100%;
+    position:relative; z-index:20;
 }
-main .journal .journal_container .journal_contents > p {height:350px; overflow:hidden; display:flex; justify-content:center; align-items:center;}
-main .journal .journal_container .journal_contents > p > img {width:100%; transition:transform 0.5s;}
-main .journal .journal_container .j_002 > p > img {width:103%;}
-main .journal .journal_container .journal_contents > p > img:hover {transform:scale(1.05);}
-main .journal .journal_container .journal_contents .text {display:flex; justify-content:space-between; align-items:flex-start; margin-top:12px;}
-main .journal .journal_container .journal_contents .text h3 {font-size:0.875rem; font-weight:700;}
-main .journal .journal_container .journal_contents .text h3 span {color:#5F5F5F; margin-right:6px; font-weight:700;}
-main .journal .journal_container .journal_contents .text .date_view {display:flex; align-items:center;}
-main .journal .journal_container .journal_contents .text .date_view .date,
-main .journal .journal_container .journal_contents .text .date_view .view {font-size:0.875rem; font-weight:500; color:#9d9d9d; margin-left:10px;}
-/* 하단 page 디자인 */
-main .journal .page {margin-bottom:90px; text-align:center; position:relative; z-index:200;}
-main .journal .page a {margin-right:18px; font-weight:500; color:#959595; padding:4px;}
-main .journal .page a:nth-child(2) {color:#000;}
-main .journal .page a:last-child {margin-right:0;}
-main .journal .page a:last-child img {transform:rotate(-180deg);}
-main .journal .page a img {position:relative; top:3px;}
+main .store .product_container .store_contents .txt_wrap .top_txt h3 {
+    font-family: "PP Monument Narrow"; color:#4D4D4D;
+    font-size:2.5rem; line-height:1.2; margin-bottom:10px;
+}
+main .store .product_container .store_contents .txt_wrap .top_txt > p {
+    font-size:1.25rem; letter-spacing:-0.003em;
+    font-weight:700; color:#717171;
+}
+main .store .product_container .store_contents .txt_wrap .btm_txt h4 {
+    color:#717171;
+    font-size:1.125rem; line-height:1.6; letter-spacing:-0.003em; font-weight:400;
+}
+main .store .product_container .store_contents .txt_wrap .btm_txt p {
+    letter-spacing:-0.003em;
+    color:#9D9D9D; line-height:1.6;
+}
+main .store .product_container .store_contents .txt_wrap .btm_txt .effect_txt:first-child {margin-bottom:10px;}
+
+/* 오른쪽 알약 그래픽 이미지 */
+main .store .product_container .store_contents .right_pill {
+    position:absolute; left:40%; top:15%;
+    height:100%; width:100%;
+}
+main .store .product_container .store_contents .right_pill > img {width:294px;}
+main .store .product_container .store_contents .right_pill > img:first-child {position:relative; z-index:10;}
+main .store .product_container .store_contents .right_pill > img:first-child {position:relative; z-index:10;}
+main .store .product_container .store_contents .right_pill > img:last-child {
+    position:relative; z-index:5;
+    top:-30%; filter:blur(20px); opacity:0.3;
+}

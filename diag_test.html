@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOODRX | Your Mood, Our Rx.</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./images/moodrx_favicon.svg" type="image/x-icon">
+    <link rel="icon" href="./images/moodrx_favicon.svg" type="image/x-icon">
+    <!-- 웹폰트 연결 -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- CSS 연결 -->
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/common.css">
+    <link rel="stylesheet" href="./styles/diag_test.css">
+    <link rel="stylesheet" href="./styles/animation.css">
+    <!--플러그인 필수 css cdn 연결-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!--플러그인 필수 JS cdn 연결-->
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- JS 연결 -->
+    <script src="./script/diagnosis.js" defer></script>
+</head>
+<body>
+    <main>
+        <div class="diag_test">
+            <div class="top_bar">
+                <a class="back_btn" href="/diagnosis.html"><img src="./images/back_btn.svg" alt="뒤로가기"><span>BACK</span></a>
+            </div>
+            <div class="procedure">
+                <span class="num">01</span>
+                <span class="line"></span>
+                <span class="num">02</span>
+                <span class="line"></span>
+                <span class="num">03</span>
+                <span class="line"></span>
+                <span class="num">04</span>
+            </div>
+            <div class="question_area">
+                <section class="q_section q1">
+                    <div class="q_txt">
+                        <h1>Step 1</h1>
+                        <h2>오늘 하루는 어땠나요?</h2>
+                        <p>홍길동 님의 감정과 가장 유사한 감정 카드를 선택해주세요.</p>
+                    </div>
+                    <ul class="select_card_wrap">
+                        <li class="select_card">
+                            <span>마음이 좀<br>복잡했어요</span>
+                            <img src="./images/emotion_01.png" alt="감정 이모티콘">
+                        </li>
+                        <li class="select_card">
+                            <span>마음이 좀<br>복잡했어요</span>
+                            <img src="./images/emotion_01.png" alt="감정 이모티콘">
+                        </li>
+                        <li class="select_card">
+                            <span>마음이 좀<br>복잡했어요</span>
+                            <img src="./images/emotion_01.png" alt="감정 이모티콘">
+                        </li>
+                        <li class="select_card">
+                            <span>마음이 좀<br>복잡했어요</span>
+                            <img src="./images/emotion_01.png" alt="감정 이모티콘">
+                        </li>
+                        <li class="select_card">
+                            <span>마음이 좀<br>복잡했어요</span>
+                            <img src="./images/emotion_01.png" alt="감정 이모티콘">
+                        </li>
+                    </ul>
+                </section>
+                <section class="q_section q2">...</section>
+                <section class="q_section q3">...</section>
+                <section class="qn_section q4">...</section>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
