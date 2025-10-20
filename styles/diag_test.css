@@ -1,9 +1,21 @@
-main {margin:0 auto;}
+main {margin:0 auto; position:relative;}
+main .result {display:none;}
 main .diag_test {
     height:100vh;
-    padding:0 140px;
-    text-align:center; position:relative;
+    padding:0 140px; overflow:hidden;
+    text-align:center; position:relative; z-index:1000;
     display:flex; justify-content:center; align-items:center;
+}
+main .diag_test .question_area {
+    display:flex; flex-direction:column;
+    justify-content:flex-start; height:max-content;
+    position:absolute; top:0;
+    transition: top 0.8s ease-in-out;
+}
+main .diag_test .question_area .q_section {
+    height:100vh; width:max-content;
+    display:flex; flex-direction:column;
+    align-items:center; justify-content:center;
 }
 
 main .diag_test .top_bar {
@@ -26,13 +38,7 @@ main .diag_test .question_area {
     display:flex; flex-direction:column;
     align-items:center;
 }
-main .diag_test .question_area .q_section {
-    display:none;
-}
-main .diag_test .question_area .q_section:first-child {
-    display:flex; flex-direction:column;
-    align-items:center;
-}
+/* 질문 폰트 공통 디자인 */
 main .diag_test .question_area .q_section .q_txt {}
 main .diag_test .question_area .q_section .q_txt h1 {
     font-family: "PP Monument Narrow";
@@ -48,15 +54,185 @@ main .diag_test .question_area .q_section .q_txt p {
     color:#717171; font-weight:500;
     font-size:1.25rem; line-height:1.6; letter-spacing:-0.003em;
 }
-main .diag_test .question_area .q_section .select_card_wrap {
+/* ------ Q1 오늘 하루는 어땠나요? ------ */
+main .diag_test .question_area .q1 .select_card_wrap {
     display:flex; align-items:center;
     margin-top:100px;
 }
-main .diag_test .question_area .q_section .select_card_wrap .select_card {
+main .diag_test .question_area .q1 .select_card_wrap .select_card {
     width:230px; height:265px;
     background-color:#fff;
     filter: drop-shadow(4px 6px 10px rgba(0, 0, 0, 0.3)); border-radius:30px;
     display:flex; flex-direction:column;
     align-items:center; justify-content:center;
+    margin-right:-15px;
+    transition:all 0.5s ease;
+    pointer-events:auto; cursor: pointer;
+}
+main .diag_test .question_area .q1 .select_card_wrap .select_card span {
+    font-size:1.125rem; font-weight:500;
+    line-height:1.6; letter-spacing:-0.003em;
+    color:#2b2b2b; margin-bottom:20px;
+}
+/* q1 - 카드 내 이미지 세부조정 */
+main .diag_test .question_area .q1 .select_card_wrap .select_card:nth-child(1) img {scale:1.2; transform:translateY(10px);}
+main .diag_test .question_area .q1 .select_card_wrap .select_card:nth-child(3) img {scale:1.2;}
+
+/* q1 - 카드 rotate */
+main .diag_test .question_area .q1 .select_card_wrap .select_card:nth-child(1) {
+    rotate:-7deg;
+}
+main .diag_test .question_area .q1 .select_card_wrap .select_card:nth-child(3) {
+    rotate:7deg;
+}
+main .diag_test .question_area .q1 .select_card_wrap .select_card:nth-child(4) {
+    rotate:-5deg;
+}
+main .diag_test .question_area .q1 .select_card_wrap .select_card:nth-child(5) {
+    rotate:8deg;
+}
+/* 카드 Hover 시 디자인 */
+main .diag_test .question_area .q1 .select_card_wrap .select_card:hover {
+    background-color:#5CBFFF; cursor:url(/images/cursor.png) 40 40, auto;
+    transform:translateY(-10px);
 }
 
+/* ------ Q2 왜 그렇게 느꼈나요? ------ */
+main .diag_test .question_area .q2 {}
+main .diag_test .question_area .q2 .select_circle_wrap {
+    display:flex; margin-top:80px;
+}
+main .diag_test .question_area .q2 .select_circle_wrap .select_circle {
+    margin-right:50px; width:260px; height:260px;
+    border-radius:130px; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;
+    pointer-events:auto; cursor:pointer;
+}
+main .diag_test .question_area .q2 .select_circle_wrap .select_circle > p {
+    font-size:1.125rem; font-weight:500;
+    line-height:1.6; letter-spacing:-0.003em;
+    color:#2b2b2b; position:relative; z-index:10;
+}
+main .diag_test .question_area .q2 .select_circle_wrap .select_circle .blur_bg {
+    width:100%; height:100%; filter: blur(22px);
+    position:absolute; transition:all 0.5s ease;
+}
+main .diag_test .question_area .q2 .select_circle_wrap .select_circle {
+    
+}
+main .diag_test .question_area .q2 .select_circle_wrap .select_circle:nth-child(3) {
+
+}
+/* circle hover 시 디자인 */
+main .diag_test .question_area .q2 .select_circle_wrap .select_circle:hover .blur_bg {
+    rotate:7deg; scale:1.1; filter: blur(30px);
+}
+
+/* ------ Q3 홍길동 님의 슬픔 정도를 알려주세요. ------ */
+main .diag_test .question_area .q3 .slider_wrap {
+    width:1200px; margin-top:100px; display:flex; flex-direction:column;
+    align-items:center;
+}
+main .diag_test .question_area .q3 .slider_wrap #slider {
+    width:100%; height:8px; background: linear-gradient(to right, #5CBFFF 30%, #F5F7FA 30%);
+    -webkit-appearance: none; border-radius:4px;
+}
+main .diag_test .question_area .q3 .slider_wrap #slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 28px;
+    height: 28px;
+    background: #5CBFFF;
+    border-radius:14px;
+}
+
+/* slider 수치 디자인 */
+main .diag_test .question_area .q3 .tick_container {
+    width:1200px; height:max-content;
+    display: flex;
+    justify-content: space-between; align-items:flex-start;
+    position: relative;
+    margin-top:30px;
+}
+main .diag_test .question_area .q3 .tick_container .tick {
+    height:max-content; position:relative; width:max-content;
+}
+main .diag_test .question_area .q3 .tick_container .tick_main {
+    display:flex; flex-direction:column; align-items:center; width:30px;
+}
+main .diag_test .question_area .q3 .tick_container .tick .line {
+    display:inline-block;
+    width:1px; height:10px; background-color: #89939E; margin-bottom:10px;
+}
+main .diag_test .question_area .q3 .tick_container .tick_main > .line {
+    width:2px; height:20px;
+}
+
+/* 다음 질문 btn */
+main .diag_test .question_area .q3 .next_btn_wrap {
+    display:flex; justify-content:space-between; align-items:center;
+    width:max-content;
+    padding:16px 30px; background-color:#F5F7FA;
+    border-radius:40px; margin-top:40px;
+    transition:all 0.5s ease;
+    pointer-events:auto; cursor:pointer;
+}
+main .diag_test .question_area .q3 .next_btn_wrap .next_btn {
+    font-size:1.25rem; font-weight:500; border:0;
+    letter-spacing:-0.03em; color:#ABBED1;
+    margin-right:10px; pointer-events:auto; cursor:pointer;
+}
+main .diag_test .question_area .q3 .next_btn_wrap:hover {
+    background-color:#EAEFF5;
+}
+
+/* ------ Q4 케어 방향을 선택해주세요. ------ */
+main .diag_test .question_area .q4 {}
+main .diag_test .question_area .q4 .select_direction_wrap {
+    margin-top:90px; display:flex; justify-content:center; align-items:center;
+}
+main .diag_test .question_area .q4 .select_direction_wrap .select_direction {
+    width:315px; height:340px; position:relative;
+    border-radius:10px; display:flex; justify-content:center; align-items:center;
+    overflow:hidden; margin-right:50px;
+    transition:all 0.5s ease; pointer-events:auto; cursor:pointer;
+}
+main .diag_test .question_area .q4 .select_direction_wrap .select_direction:last-child {
+    margin-right:0;
+}
+main .diag_test .question_area .q4 .select_direction_wrap .select_direction .gradient {
+    width:120%; height:120%; background:linear-gradient(-144deg, #BFD9FF 0%, #E5EEFF 26%, #EEF5FF 53%, #BED5FF 75%, #ACCEFF 100%);
+    transition:all 0.5s ease;
+}
+main .diag_test .question_area .q4 .select_direction_wrap .select_direction .front {
+    position:absolute; width:calc(100% - 6px); height:calc(100% - 6px);
+    background-color:#fff; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    border-radius:10px;
+    display:flex; flex-direction:column; justify-content:center; align-items:center;
+    transition:all 0.5s ease;
+}
+main .diag_test .question_area .q4 .select_direction_wrap .select_direction .front .wrap {
+    display:flex; align-items:center; justify-content:center;
+}
+main .diag_test .question_area .q4 .select_direction_wrap .select_direction .front .wrap > span {
+    font-size:1.25rem; letter-spacing:-0.003em; line-height:1.6; color:#4D4D4D;
+    font-weight:700; margin-right:10px;
+}
+main .diag_test .question_area .q4 .select_direction_wrap .select_direction .front .wrap img {
+    visibility: hidden; opacity:0;
+    transition:all 0.5s ease; margin-left:-40px;
+}
+/* hover */
+main .diag_test .question_area .q4 .select_direction_wrap .select_direction:hover .gradient {
+    background:linear-gradient(-144deg, #B0CAE3 13%, #C1B8CB 24%, #DBB2FF 36%, #FF9D2D 67%, #E8B053 87%, #D0A6B2 100%);
+}
+main .diag_test .question_area .q4 .select_direction_wrap .select_direction:hover .front {
+    width:calc(100% - 12px); height:calc(100% - 12px);
+}
+main .diag_test .question_area .q4 .select_direction_wrap .select_direction:hover .front .wrap img {visibility: visible; margin-left:-2px; opacity:1;}
+
+
+main .diag_test .question_area .q4 .select_direction_wrap .select_direction .front > p {
+    font-size:1.125rem; font-weight:500;
+    line-height:1.6; letter-spacing:-0.003em;
+    color:#4D4D4D; margin-top:7px;
+}

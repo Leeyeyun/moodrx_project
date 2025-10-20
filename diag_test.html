@@ -59,27 +59,130 @@
                             <img src="./images/emotion_01.png" alt="감정 이모티콘">
                         </li>
                         <li class="select_card">
-                            <span>마음이 좀<br>복잡했어요</span>
-                            <img src="./images/emotion_01.png" alt="감정 이모티콘">
+                            <span>짜증나는 일이<br>많았어요</span>
+                            <img src="./images/emotion_02.png" alt="감정 이모티콘">
                         </li>
                         <li class="select_card">
-                            <span>마음이 좀<br>복잡했어요</span>
-                            <img src="./images/emotion_01.png" alt="감정 이모티콘">
+                            <span>뭐가 뭔지<br>모르겠어요</span>
+                            <img src="./images/emotion_03.png" alt="감정 이모티콘">
                         </li>
                         <li class="select_card">
-                            <span>마음이 좀<br>복잡했어요</span>
-                            <img src="./images/emotion_01.png" alt="감정 이모티콘">
+                            <span>설레는 일이<br>있었어요</span>
+                            <img src="./images/emotion_04.png" alt="감정 이모티콘">
                         </li>
                         <li class="select_card">
-                            <span>마음이 좀<br>복잡했어요</span>
-                            <img src="./images/emotion_01.png" alt="감정 이모티콘">
+                            <span>답답하고<br>불안했어요</span>
+                            <img src="./images/emotion_05.png" alt="감정 이모티콘">
                         </li>
                     </ul>
                 </section>
-                <section class="q_section q2">...</section>
-                <section class="q_section q3">...</section>
-                <section class="qn_section q4">...</section>
+                <section class="q_section q2">
+                    <div class="q_txt">
+                        <h1>Step 2</h1>
+                        <h2>왜 그렇게 느꼈나요?</h2>
+                        <p>감정의 원인을 선택해주세요.</p>
+                    </div>
+                    <ul class="select_circle_wrap">
+                        <li class="select_circle">
+                            <div class="blur_bg"><img src="./images/circle_1.png" alt="bg이미지"></div>
+                            <p>자존감이<br>낮아졌어요</p>
+                        </li>
+                        <li class="select_circle">
+                            <div class="blur_bg"><img src="./images/circle_2.png" alt="bg이미지"></div>
+                            <p>울고<br>싶었어요</p>
+                        </li>
+                        <li class="select_circle">
+                            <div class="blur_bg"><img src="./images/circle_3.png" alt="bg이미지"></div>
+                            <p>기대한 일이<br>무산됐어요</p>
+                        </li>
+                        <li class="select_circle">
+                            <div class="blur_bg"><img src="./images/circle_2.png" alt="bg이미지"></div>
+                            <p>혼자 있는<br>느낌이 강했어요</p>
+                        </li>
+                    </ul>
+                </section>
+                <section class="q_section q3">
+                    <div class="q_txt">
+                        <h1>Step 3</h1>
+                        <h2>홍길동 님의 슬픔 정도를 알려주세요.</h2>
+                        <p>현재 감정의 강도를 아래 조절 바를 통해 선택해주세요.</p>
+                    </div>
+                    <div class="slider_wrap">
+                        <input type="range" id="slider" min="0" max="100" step="1" value="20">
+                    </div>
+                    <div class="tick_container">
+                        <!-- 0 ~ 100 까지 5단위로 21개 눈금 -->
+                        <!-- 숫자 라벨이 있는 곳만 <span> 추가 -->
+                        <div class="tick tick_main"><span class="line"></span><span>0</span></div>
+                        <div class="tick"><span class="line"></span></div>
+                        <div class="tick"><span class="line"></span></div>
+                        <div class="tick"><span class="line"></span></div>
+                        <div class="tick"><span class="line"></span></div>
+                        <div class="tick tick_main"><span class="line"></span><span>25</span></div>
+                        <div class="tick"><span class="line"></span></div>
+                        <div class="tick"><span class="line"></span></div>
+                        <div class="tick"><span class="line"></span></div>
+                        <div class="tick"><span class="line"></span></div>
+                        <div class="tick tick_main"><span class="line"></span><span>50</span></div>
+                        <div class="tick"><span class="line"></span></div>
+                        <div class="tick"><span class="line"></span></div>
+                        <div class="tick"><span class="line"></span></div>
+                        <div class="tick"><span class="line"></span></div>
+                        <div class="tick tick_main"><span class="line"></span><span>75</span></div>
+                        <div class="tick"><span class="line"></span></div>
+                        <div class="tick"><span class="line"></span></div>
+                        <div class="tick"><span class="line"></span></div>
+                        <div class="tick"><span class="line"></span></div>
+                        <div class="tick tick_main"><span class="line"></span><span>100</span></div>
+                    </div>
+                    <div class="next_btn_wrap">
+                        <button class="next_btn">다음 질문으로</button>
+                        <img src="./images/next_icn.svg" alt="다음 버튼 아이콘">
+                    </div>
+                </section>
+                <section class="q_section q4">
+                    <div class="q_txt">
+                        <h1>Step 4</h1>
+                        <h2>케어 방향을 선택해주세요.</h2>
+                        <p>홍길동 님의 감정과 가장 유사한 감정 카드를 선택해주세요.</p>
+                    </div>
+                    <ul class="select_direction_wrap">
+                        <li class="select_direction">
+                            <div class="gradient"></div>
+                            <div class="front">
+                                <div class="wrap">
+                                    <span>감정 증폭</span>
+                                    <img src="./images/direction_1.svg" alt="감정 방향 아이콘">
+                                </div>
+                                <p>지금 느끼는 감정을 더 깊고 풍부하게<br>경험할 수 있도록 도와드릴게요.</p>
+                            </div>
+                        </li>
+                        <li class="select_direction">
+                            <div class="gradient"></div>
+                            <div class="front">
+                                <div class="wrap">
+                                    <span>감정 완화</span>
+                                    <img src="./images/direction_2.svg" alt="감정 방향 아이콘">
+                                </div>
+                                <p>지나치게 강한 감정을 부드럽게 다듬어<br>편안하게 만들어드릴게요.</p>
+                            </div>
+                        </li>
+                        <li class="select_direction">
+                            <div class="gradient"></div>
+                            <div class="front">
+                                <div class="wrap">
+                                    <span>감정 전환</span>
+                                    <img src="./images/direction_3.svg" alt="감정 방향 아이콘">
+                                </div>
+                                <p>지금의 감정을 자연스럽게 전환해,<br>새로운 감정으로 안내해드릴게요.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
             </div>
+        </div>
+        <div class="result">
+            ....
         </div>
     </main>
 </body>
