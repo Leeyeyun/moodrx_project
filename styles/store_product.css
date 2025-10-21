@@ -1,0 +1,148 @@
+main {margin:0 auto; position:relative;}
+main > div {
+    overflow:hidden;
+    text-align:center; position:relative; z-index:1000;
+}
+/* header 디자인 */
+header {position:relative !important;}
+header .top_wrap {
+    background-color:#5CBFFF;
+}
+header .top_wrap > nav {
+    border-left:1px solid #F5F7FA;
+    border-right:1px solid #F5F7FA;
+}
+header .top_wrap h1 a img {
+    filter:brightness(100)
+}
+header .top_wrap > nav .gnb li a {color:#fff;}
+
+/* product_wrap */
+main .product_wrap {
+    display:flex; flex-direction:column;
+}
+main .product_wrap > .top {
+    display:flex; 
+    width:100%; height:100px;
+    border-bottom:1px solid #5CBFFF;
+}
+main .product_wrap > .top > h1 {
+    width:19.5%; text-align:center;
+    line-height:100px; border-right:1px solid #5CBFFF;
+    font-family: "PP Monument Narrow";
+    font-size:3rem; letter-spacing:-0.001em;
+    color:#5CBFFF;
+}
+main .product_wrap > .top > h2 {
+    line-height:100px; padding-left:60px;
+    font-size:1.25rem; 
+}
+main .product_wrap > .top > h2 span {
+    font-weight:600;
+}
+main .product_wrap .btm {
+    display:flex; justify-content:space-between;
+    overflow:hidden; opacity:1;
+    transition:all 0.6s ease;
+}
+
+
+
+/* 콘텐츠 슬라이드 */
+main .product_wrap .btm .product_area {
+    justify-content:center; align-items:center;
+    width:60%; position:relative; border-right:1px solid #5CBFFF;
+}
+main .product_wrap .btm .product_area .product-slide {height:100%;}
+main .product_wrap .btm .product_area .product-slide .swiper-slide {
+    display:flex; justify-content:center; align-items:center;
+}
+main .product_wrap .btm .product_area .pill_pagination {
+    width:calc(100% - 200px); height:100%; position:absolute;
+    left:100px; top:0;
+}
+main .prescription_wrap .btm .contents_wrap .swiper-pagination {
+    bottom:60px;
+}
+
+main .product_wrap .btm .product_info_wrap {
+    width:40%;
+}
+
+
+main .product_wrap .btm .product_info_wrap {
+    width:40%; display:flex; flex-direction:column;
+    align-items:center;
+}
+main .product_wrap .btm .product_info_wrap > * {
+    width:100%; flex:1;
+    border-bottom:1px solid #5CBFFF;
+    padding:40px 60px; text-align:left;
+}
+main .product_wrap .btm .product_info_wrap > *:last-child {
+    flex: 0.1; /* 다른 애들보다 절반 높이 */
+}
+main .product_wrap .btm .product_info_wrap > * > .title {
+    display:flex; align-items:center; margin-bottom:30px;
+}
+main .product_wrap .btm .product_info_wrap > * > .title h2 {
+    margin-right:30px; font-size:1.25rem;
+    line-height:1.6; letter-spacing:-0.003em;
+    color:#4D4D4D;
+}
+main .product_wrap .btm .product_info_wrap > .top > .title h2 {
+    font-size:2.5rem; font-family: "PP Monument Narrow";
+}
+main .product_wrap .btm .product_info_wrap > * > .title > p {
+    line-height:1.6; letter-spacing:-0.003em;
+    font-size:1.125rem; color:#4D4D4D;
+}
+main .product_wrap .btm .product_info_wrap > .top > p {
+    line-height:1.6; letter-spacing:-0.003em;
+    font-size:1.125rem; color:#4D4D4D;
+}
+main .product_wrap .btm .product_info_wrap > .top > p:nth-child(2) {
+    font-weight:700; margin-bottom:20px;
+}
+
+main .product_wrap .btm .product_info_wrap .center .percent_wrap .percent {
+    display:flex; align-items:center; margin-left:10px; margin-bottom:24px;
+}
+main .product_wrap .btm .product_info_wrap .center .percent_wrap .percent:last-child {
+    margin-bottom:0;
+}
+main .product_wrap .btm .product_info_wrap .center .percent_wrap .percent > p {
+    line-height:1.6; letter-spacing:-0.003em; color:#4D4D4D;
+    display:flex; align-items:center; margin-right:20px;
+}
+main .product_wrap .btm .product_info_wrap .center .percent_wrap .percent > p > span {
+    font-size:1.25rem; font-weight:700; margin-left:10px;
+}
+
+main .product_wrap .btm .product_info_wrap .bottom {}
+main .product_wrap .btm .product_info_wrap .bottom .checklist {}
+main .product_wrap .btm .product_info_wrap .bottom .checklist .check {
+    display:flex; align-items:center; margin-bottom:30px;
+}
+main .product_wrap .btm .product_info_wrap .bottom .checklist .check:last-child {
+    margin-bottom:0;
+}
+main .product_wrap .btm .product_info_wrap .bottom .checklist .check > span {
+    line-height:1.6; letter-spacing:-0.003em; font-size:1.125rem;
+    margin-left:10px;
+}
+main .product_wrap .btm .product_info_wrap .btn_wrap {
+    display:flex; justify-content:center; align-items:center;
+    padding:0;
+}
+main .product_wrap .btm .product_info_wrap .btn_wrap .take_btn {
+    display:inline-block; width:100%; height:100%;
+    text-align:center; color:#5CBFFF;
+    line-height:1.6; letter-spacing:-0.003em; font-size:1.25rem;
+    background-color:#DEF1FF; font-weight:700;
+    padding:40px 60px;
+    transition:all 0.5s ease;
+}
+main .product_wrap .btm .product_info_wrap .btn_wrap .take_btn:hover {
+    background-color:#5CBFFF; color:#fff;
+}

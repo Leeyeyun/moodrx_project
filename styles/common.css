@@ -1,6 +1,6 @@
 /* ------------------------ header ------------------------ */
 header {
-    position:fixed; left:0; top:0; z-index:100;
+    position:fixed; left:0; top:0; z-index:10000;
     overflow-x:clip;  
     margin:0 auto;
     background-color:#fff;
@@ -16,8 +16,10 @@ header .top_wrap {
 }
 header .top_wrap h1 {width:20%; text-align:left;}
 header .top_wrap nav {
-    width:60%; text-align:center; height:56px;
+    width:80%; text-align:center; height:56px;
     justify-content: center; align-items:center; display:flex;
+    border-left:1px solid #ABBED1;
+    border-right:1px solid #ABBED1;
 }
 header .top_wrap .diag {width:20%; text-align:right;}
 

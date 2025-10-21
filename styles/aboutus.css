@@ -1,22 +1,4 @@
-main {margin:0 auto;}
-main .about_product {
-    height:100vh;
-    padding:0 140px; padding-bottom:140px;
-    background-image:url(/images/product_bg.png);
-    background-size:cover; background-position:center;
-}
-main .about_product .title_wrap {
-    height:100%; display:flex; flex-direction:column;
-    justify-content:flex-end;
-}
-main .about_product .title_wrap h1 {
-    font-family: "PP Monument Narrow";
-    font-size:25rem; letter-spacing:-0.04em;
-}
-main .about_product .title_wrap p {
-    font-size:1.25rem; font-weight:500;
-    letter-spacing:-0.03em;
-}
+/* 토글 디자인 */
 main .select_toggle {
     display:flex; position:fixed;
     z-index:100; left:80px; top:100px;
@@ -32,4 +14,154 @@ main .select_toggle .toggle_btn {
 }
 main .select_toggle .toggle_btn:first-child {
     margin-right:30px;
+}
+
+/* main 시작 */
+main {margin:0 auto;}
+
+/* main - 인트로 */
+main .intro {
+    height:100vh;
+    padding:0 140px; padding-bottom:140px;
+    background-image:url(/images/product_bg.png);
+    background-size:cover; background-position:center;
+}
+main .intro .title_wrap {
+    height:100%; display:flex; flex-direction:column;
+    justify-content:flex-end;
+}
+main .intro .title_wrap h1 {
+    font-family: "PP Monument Narrow";
+    font-size:25rem; letter-spacing:-0.04em;
+}
+main .intro .title_wrap p {
+    font-size:1.25rem; font-weight:500;
+    letter-spacing:-0.03em;
+}
+
+/* main - process */
+main .process {
+    height:max-content; padding:0 140px;
+}
+main .process > * {padding:20px 120px;}
+
+main .process .process_title {
+    display:flex; padding-top:160px; padding-bottom:120px;
+    align-items:center;
+}
+main .process .process_title > h2 {
+    font-family: "PP Monument Narrow";
+    line-height:1.2; font-size:5rem; margin-right:180px;
+}
+main .process .process_title > p {
+    font-size:1.25rem; line-height:1.6; letter-spacing:-0.003em; font-weight:600;
+}
+
+/* 공통 적용 */
+main .process .step {
+    font-family: "PP Monument Narrow";
+    font-size:1.5rem; line-height:1.2;
+}
+main .process .step_title {
+    font-size:4rem; line-height:1.6; font-weight:700;
+}
+main .process .highlight {
+    font-size:1.25rem; line-height:1.6; letter-spacing:-0.003em; font-weight:600;
+    margin:50px 0 20px;
+}
+main .process .explain {
+    font-size:1.125rem; line-height:1.6; letter-spacing:-0.003em; font-weight:400;
+}
+
+/* process 1 */
+main .process .process_1, main .process .process_2 {
+    display:flex; justify-content:space-between;
+    height:100%; align-items:center; margin-bottom:220px;
+}
+main .process .process_1 .message_wrap {}
+main .process .process_1 .message_wrap .slide-container {}
+main .process .process_1 .message_wrap .slide-container .slide_list {}
+main .process .process_1 .message_wrap .slide-container .slide_list li {
+    display:flex; align-items:center;
+}
+main .process .process_1 .emotion_slider {
+    width:530px; height:180px;
+    display:flex; justify-content:center; align-items:center;
+}
+main .process .process_1 .emotion_slider .emotion-swiper {
+    height:380px;
+}
+main .process .process_1 .emotion_slider .emotion-swiper .swiper-slide {
+    display:flex; align-items:center; opacity:0.5;
+}
+main .process .process_1 .emotion_slider .emotion-swiper .swiper-slide.active {
+    opacity: 1;
+}
+main .process .process_1 .emotion_slider .emotion-swiper .swiper-slide > img {
+    width:60px;
+}
+main .process .process_1 .emotion_slider .emotion-swiper .swiper-slide > span {
+    font-size:2rem; font-weight:400; line-height:1.6;
+    margin:0 30px;
+    transition:all 0.3s ease;
+}
+main .process .process_1 .emotion_slider .emotion-swiper .swiper-slide-active > span {
+    font-weight:700;
+}
+main .process .process_1 .emotion_slider .emotion-swiper .swiper-slide-active {
+    opacity:1;
+}
+
+/* process 2 */
+main .process .process_2 {margin-top:80px; margin-bottom:0;}
+main .process .process_2 .flask > img {
+    margin-left:-120px;
+}
+main .process .process_2 > .right_txt {margin-right:100px;}
+
+/* process 3 */
+main .process .process_3 {margin-bottom:100px;}
+main .process .process_3 .left_txt {display:flex; align-items:center;}
+main .process .process_3 .left_txt .l {margin-right:70px;}
+main .process .process_3 .left_txt .r .highlight {
+    margin-top:0;
+}
+main .process .process_3 .contents_card {margin-top:160px;}
+main .process .process_3 .contents_card .card_wrap {
+    display:flex; justify-content:flex-end;
+}
+main .process .process_3 .contents_card .card_wrap li {
+    margin-left:30px; border-radius:27px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+main .process .process_3 .contents_card .card_wrap li:first-child {
+    margin-left:0;
+}
+main .process .process_3 .contents_card .card_wrap li img {
+    width:400px;
+}
+
+/* banner */
+main .go_banner {
+    height:500px;
+    background-image:url(/images/gradient_banner.jpg);
+    background-position:center; background-repeat:no-repeat;
+    background-size:cover; overflow:hidden;
+}
+main .go_banner .go_btn {
+    height:100%;
+    display:flex; flex-direction:column;
+    align-items:center; justify-content:center;
+    transition:all 0.5s ease;
+}
+main .go_banner .go_btn span {
+    font-size:2rem; color:#4d4d4d; margin-bottom:30px;
+    line-height:1.3; letter-spacing:-0.003em; font-weight:500;
+}
+main .go_banner .go_btn strong {
+    font-size:4rem; color:#4d4d4d;
+    line-height:1.3; letter-spacing:-0.003em; font-weight:500;
+}
+main .go_banner .go_btn:hover {
+    scale:1.1;
 }

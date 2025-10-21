@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOODRX | Your Mood, Our Rx.</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./images/moodrx_favicon.svg" type="image/x-icon">
+    <link rel="icon" href="./images/moodrx_favicon.svg" type="image/x-icon">
+    <!-- 웹폰트 연결 -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- CSS 연결 -->
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/presription.css">
+    <link rel="stylesheet" href="./styles/common.css">
+    <link rel="stylesheet" href="./styles/animation.css">
+    <!--플러그인 필수 css cdn 연결-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!--플러그인 필수 JS cdn 연결-->
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- JS 연결 -->
+    <script src="./script/prescription.js" defer></script>
+</head>
+<body>
+    <!--=============== header ===============-->
+    <header>
+        <div class="top_wrap">
+            <h1>
+                <a href="./index.html" onclick="location.href='./index.html'; return false;">
+                    <img src="/images/logo.svg" alt="logo">
+                </a>
+            </h1>
+            <nav>
+                <ul class="gnb">
+                    <li><a href="./aboutus.html">About us</a></li>
+                    <li><a href="./store.html">Store</a></li>
+                    <li><a href="./rx_archive.html">Rx Archive</a></li>
+                </ul>
+            </nav>
+            <div class="diag">
+                <a href="./diagnosis.html">Start Diagnosis</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="section prescription_wrap">
+            <div class="top">
+                <h1>Diagnose</h1>
+                <h2><span>홍길동</span>님의 감정 처방 결과</h2>
+            </div>
+            <div class="btm">
+                <!-- left -->
+                <ul class="list_wrap">
+                    <li class="list active">01 진단</li>
+                    <li class="list">02 처방</li>
+                    <li class="list">03 복용</li>
+                </ul>
+
+                <!-- 01 진단 콘텐츠 -->
+                <!-- center -->
+                <div class="rader_chart">
+                    <img src="./images/rader_chart_purple.png" alt="레이더차트">
+                </div>
+                <!-- right -->
+                <div class="rightDetail d_1">
+                    <div class="user_result">
+                        <ul class="top_wrap">
+                            <li>
+                                <h3 class="sub_title">User</h3>
+                                <h4 class="user_name">홍길동</h4>
+                            </li>
+                            <li>
+                                <h3 class="sub_title">Care</h3>
+                                <div class="txt_wrap">
+                                    <h4>증폭</h4>
+                                    <h4>Amplify</h4>
+                                </div>
+                            </li>
+                            <li>
+                                <h3 class="sub_title">Target</h3>
+                                <div class="txt_wrap">
+                                    <h4>슬픔</h4>
+                                    <h4>Sadness</h4>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="desc">
+                            <h3>Prescription</h3>
+                            <p>기쁨이라는 감정이 단순히 밝은 상태를 넘어서, 깊고 지속적인 감정으로 자리잡을 수 있도록 시각적으로 몰입을 유도합니다.</p>
+                        </div>
+                    </div>
+                    <div class="report">
+                        <h3>감정별 변화 리포트</h3>
+                        <ul class="value_wrap">
+                            <li class="value">
+                                <h3>+55%</h3>
+                                <p>기쁨</p>
+                                <div class="pill_wrap">
+                                    <img src="./images/pill_01.svg" alt="알약">
+                                    <img src="./images/pill_01.svg" alt="알약">
+                                </div>
+                            </li>
+                            <li class="value">
+                                <h3>+55%</h3>
+                                <p>기쁨</p>
+                                <div class="pill_wrap">
+                                    <img src="./images/pill_01.svg" alt="알약">
+                                    <img src="./images/pill_01.svg" alt="알약">
+                                </div>
+                            </li>
+                            <li class="value">
+                                <h3>+55%</h3>
+                                <p>기쁨</p>
+                                <div class="pill_wrap">
+                                    <img src="./images/pill_01.svg" alt="알약">
+                                    <img src="./images/pill_01.svg" alt="알약">
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 02 처방 콘텐츠 -->
+                <!-- center -->
+                <div class="contents_wrap">
+                    <!-- 작품 콘텐츠 main slider -->
+                    <div class="swiper work-slide">
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <div class="swiper-slide w_01">
+                                <div class="image">
+                                    <img src="./images/work_01.jpg" alt="작품1">
+                                    <span>
+                                        <strong>해당 콘텐츠<br>복용하기</strong>
+                                        <img src="./images/capsules.png" alt="복용 아이콘">
+                                    </span>
+                                </div>
+                                <div class="work_info">
+                                    <h3 class="contents_title">Untitled (Yellow and Blue)</h3>
+                                    <h4 class="name">Mark Rothko</h4>
+                                </div>
+                            </div>
+                            <div class="swiper-slide w_02">
+                                <div class="image">
+                                    <img src="./images/work_01.jpg" alt="작품1">
+                                    <span>
+                                        <strong>해당 콘텐츠<br>복용하기</strong>
+                                        <img src="./images/capsules.png" alt="복용 아이콘">
+                                    </span>
+                                </div>
+                                <div class="work_info">
+                                    <h3 class="contents_title">Untitled (Yellow and Blue)</h3>
+                                    <h4 class="name">Mark Rothko</h4>
+                                </div>
+                            </div>
+                            <div class="swiper-slide w_03">
+                                <div class="image">
+                                    <img src="./images/work_01.jpg" alt="작품1">
+                                    <span>
+                                        <strong>해당 콘텐츠<br>복용하기</strong>
+                                        <img src="./images/capsules.png" alt="복용 아이콘">
+                                    </span>
+                                </div>
+                                <div class="work_info">
+                                    <h3 class="contents_title">Untitled (Yellow and Blue)</h3>
+                                    <h4 class="name">Mark Rothko</h4>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="pill_pagination">
+                        <div class="prev_next">
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <!-- right -->
+                <div class="rightDetail d_2">
+                    <div class="contents_result">
+                        <ul class="top_wrap">
+                            <li>
+                                <h3 class="sub_title">Type</h3>
+                                <h4>Art</h4>
+                            </li>
+                            <li>
+                                <h3 class="sub_title">Prescription</h3>
+                                <p>기쁨이라는 감정이 단순히 밝은 상태를 넘어서, 깊고 지속적인<br>감정으로 자리잡을 수 있도록 시각적 몰입 유도</p>
+                            </li>
+                        </ul>
+                        <div class="desc">
+                            <p>홍길동님은 현재 일상 속에서 기쁨을 어느 정도 느끼고 있지만, 그 감정이 오래 유지되지 않고 빠르게 사라지는 경향을 보이고 있습니다. 기쁨은 40점으로 측정되었으며, 피로와 불안이 함께 작용해 긍정적인 감정의 확장이 어려운 상태입니다. 무감각 수치는 낮지만 자극에 민감하게 반응하지 못하는 모습도 관찰됩니다. 전반적으로 홍길동님은 기쁨의 감정을 더 크게, 더 오래 유지하고 싶어하는 상태로 해석됩니다.</p>
+                        </div>
+                    </div>
+                    <div class="plus_contents">
+                        <h3 class="sub_title">추가 콘텐츠 미리보기</h3>
+                        <div class="plus_wrap">
+                            <a href="#" class="plus">
+                                <p>사운드 캡슐</p>
+                            </a>
+                            <a href="#" class="plus">
+                                <p>사운드 캡슐</p>
+                            </a>
+                            <a href="#" class="plus">
+                                <p>사운드 캡슐</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+</body>
+</html>

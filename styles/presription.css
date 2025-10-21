@@ -1,0 +1,310 @@
+main {margin:0 auto; position:relative;}
+main > div {
+    overflow:hidden;
+    text-align:center; position:relative; z-index:1000;
+}
+/* header 디자인 */
+header {position:relative !important;}
+header .top_wrap {
+    background-color:#9747FF;
+}
+header .top_wrap > nav {
+    border-left:1px solid #F5F7FA !important;
+    border-right:1px solid #F5F7FA !important;
+}
+header .top_wrap h1 a img {
+    filter:brightness(100)
+}
+header .top_wrap > nav .gnb li a {color:#fff;}
+
+/* prescription_wrap */
+main .prescription_wrap {
+    display:flex; flex-direction:column;
+}
+main .prescription_wrap .top {
+    display:flex; 
+    width:100%; height:100px;
+    border-bottom:1px solid #9A66FF;
+}
+main .prescription_wrap .top > h1 {
+    width:19.5%; text-align:center;
+    line-height:100px; border-right:1px solid #9A66FF;
+    font-family: "PP Monument Narrow";
+    font-size:3rem; letter-spacing:-0.001em;
+    color:#9A66FF;
+}
+main .prescription_wrap .top > h2 {
+    line-height:100px; padding-left:60px;
+    font-size:1.25rem; 
+}
+main .prescription_wrap .top > h2 span {
+    font-weight:600;
+}
+main .prescription_wrap .btm {
+    display:flex; justify-content:space-between;
+    overflow:hidden; opacity:1;
+    transition:all 0.6s ease;
+}
+/* 왼쪽 list 디자인 */
+main .prescription_wrap .btm .list_wrap {
+    height:100%; border-right:1px solid #9747FF;
+    width:19.5%; padding:60px;
+    display:flex; flex-direction:column;
+    align-items:flex-end; justify-content:center;
+}
+main .prescription_wrap .btm .list_wrap li {
+    pointer-events:auto; cursor:pointer;
+    color:#717171; font-size:1.25rem;
+    letter-spacing:-0.003em; line-height:1.6;
+    text-align:right; margin-bottom:140px;
+    opacity:0.5; font-weight:500;
+    transition:all 0.5s ease;
+}
+main .prescription_wrap .btm .list_wrap .list.active {
+    font-size:1.5rem; opacity:1; font-weight:600;
+}
+main .prescription_wrap .btm .list_wrap li:hover {
+    opacity:0.3;
+}
+main .prescription_wrap .btm .list_wrap .list:last-child {margin-bottom:0;}
+
+/* 중앙 raderchart 디자인 */
+main .prescription_wrap .btm .rader_chart {
+    display:flex; justify-content:center; align-items:center;
+}
+main .prescription_wrap .btm .rader_chart img {
+    width:90%;
+}
+
+/* 오른쪽 rightDetail 디자인 */
+main .prescription_wrap .btm .rightDetail {
+    border-left:1px solid #9747FF; width:45%; height:100%;
+    overflow:hidden;
+}
+main .prescription_wrap .btm .rightDetail > * {
+    transition:all 0.6s ease;
+    visibility:visible;
+}
+
+/* 초기 상태를 위한 트랜지션 */
+main .prescription_wrap .btm .rader_chart,
+main .prescription_wrap .btm .rightDetail {
+    transition: opacity 0.5s ease, width 0.8s ease;
+}
+
+
+/* 중앙 차트 숨김 */
+main .prescription_wrap .btm .rader_chart.hidden {
+    opacity: 0;
+    display: none;
+}
+
+/* 오른쪽 디테일 숨김 */
+main .prescription_wrap .btm .rightDetail.hidden {
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+    display: none;
+}
+
+
+/* 오른쪽 디테일 공통 디자인 */
+main .prescription_wrap .btm .rightDetail > div {
+    width:100%; padding:45px 60px; display:flex; flex-direction:column;
+    align-items:center;
+}
+main .prescription_wrap .btm .rightDetail .top_wrap {
+    display:flex; justify-content:space-between; width:100%;
+}
+main .prescription_wrap .btm .d_1 .top_wrap li {
+    padding:18px 32px; border-right:1px solid #9747FF;
+    flex:1;
+}
+main .prescription_wrap .btm .rightDetail li:last-child {
+    border:0;
+}
+main .prescription_wrap .btm .rightDetail .sub_title {
+    font-size:1.25rem; text-align:left; color:#4D4D4D;
+    letter-spacing:-0.003em; line-height:1.6; font-weight:700;
+    margin-bottom:16px;
+}
+main .prescription_wrap .btm .rightDetail .top_wrap li h4 {
+    font-size:2rem; line-height:1.6; font-weight:400;
+    color:#4D4D4D; letter-spacing:-0.003em; text-align:left;
+}
+
+/* d_1 */
+main .prescription_wrap .btm .rightDetail .user_result .top_wrap li > .txt_wrap {
+    display:flex;
+}
+main .prescription_wrap .btm .rightDetail .user_result .top_wrap li > .txt_wrap h4:last-child {
+    font-family: "PP Monument Narrow"; color:#89939E;
+    margin-left:16px;
+}
+main .prescription_wrap .btm .rightDetail .user_result .desc {
+    width:100%; border-top:1px solid #9747FF; padding:32px;
+}
+main .prescription_wrap .btm .rightDetail .user_result .desc h3 {
+    font-size:1.25rem; text-align:left; color:#4D4D4D;
+    letter-spacing:-0.003em; line-height:1.6; font-weight:700;
+    margin-bottom:16px;
+}
+main .prescription_wrap .btm .rightDetail .desc > p {
+    font-size:1.125rem; text-align:left; line-height:1.6;
+    letter-spacing:-0.003em;
+}
+/* 하단 감정 레포트 */
+main .prescription_wrap .btm .rightDetail .report, main .prescription_wrap .btm .rightDetail .plus_contents {
+    width:100%; border-top:1px solid #9747FF;
+    padding:60px;
+}
+main .prescription_wrap .btm .rightDetail .report > h3 {
+    font-size:1.25rem; text-align:left; color:#4D4D4D;
+    letter-spacing:-0.003em; line-height:1.6; font-weight:700;
+    margin-bottom:16px;
+}
+main .prescription_wrap .btm .rightDetail .report .value_wrap {
+    display:flex; justify-content:space-between; width:100%;
+}
+main .prescription_wrap .btm .rightDetail .report .value_wrap .value {
+    padding:32px 22px; border:1px solid #ABBED1;
+    border-radius:15px; width:calc((100% - 20px) / 3);
+    height:340px; position:relative; overflow:hidden;
+    display:flex; flex-direction:column;
+    align-items:flex-start; justify-content:flex-start;
+}
+main .prescription_wrap .btm .rightDetail .report .value_wrap .value > h3 {
+    font-family: "PP Monument Narrow"; color:#4D4D4D;
+    font-size:3.5rem; font-weight:100; margin-bottom:16px;
+}
+main .prescription_wrap .btm .rightDetail .report .value_wrap .value .pill_wrap {
+    position:absolute; color:#717171; display:flex; flex-direction:column;
+    font-size:1.25rem; text-align:left; align-items:center;
+    letter-spacing:-0.003em; line-height:1.6; left:0; top:38%;
+}
+main .prescription_wrap .btm .rightDetail .report .value_wrap .value .pill_wrap img {
+    width:85%; position:relative; z-index:1;
+}
+main .prescription_wrap .btm .rightDetail .report .value_wrap .value .pill_wrap img:first-child {
+    margin-bottom:-100px; z-index:5;
+}
+main .prescription_wrap .btm .rightDetail .report .value_wrap .value .pill_wrap img:last-child {filter:blur(20px); width:120%;}
+
+
+
+/* d_2 - 중앙 콘텐츠 슬라이드 */
+main .prescription_wrap .btm .contents_wrap {
+    justify-content:center; align-items:center;
+    width:35.5%; position:relative;
+}
+main .prescription_wrap .btm .contents_wrap > .pill_pagination {
+    width:calc(100% - 40px); height:100%; position:absolute;
+}
+main .prescription_wrap .btm .contents_wrap .work-slide .swiper-slide .work_info {
+    margin-left:20%; margin-top:48px; padding-bottom:20px;
+}
+main .prescription_wrap .btm .contents_wrap .swiper-slide .image {
+    position:relative; pointer-events:auto; cursor:pointer;
+    transition:all 0.5s ease;
+}
+main .prescription_wrap .btm .contents_wrap .swiper-slide .image:hover > img {
+    filter:brightness(0.7);
+}
+main .prescription_wrap .btm .contents_wrap .swiper-slide .image:hover span {
+    opacity:1;
+}
+main .prescription_wrap .btm .contents_wrap .swiper-slide .image > img {
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.3);
+}
+main .prescription_wrap .btm .contents_wrap .swiper-slide .image span {
+    position:absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    display:flex; flex-direction:column;
+    transition:all 0.5s ease; opacity:0;
+}
+main .prescription_wrap .btm .contents_wrap .swiper-slide .image span > img {
+    width:80px; margin-top:20px; filter:invert(1);
+}
+main .prescription_wrap .btm .contents_wrap .swiper-slide .image span strong {
+    font-size:1.25rem; line-height:1.4; font-weight:500; color:#fff;
+}
+main .prescription_wrap .btm .contents_wrap .work-slide .swiper-slide .contents_title {
+    font-size:1.125rem; text-align:left; line-height:1.6;
+    letter-spacing:-0.003em; color:#4D4D4D; font-weight:600;
+
+}
+main .prescription_wrap .btm .contents_wrap .swiper-slide .name {
+    text-align:left;
+}
+main .prescription_wrap .btm .contents_wrap .swiper-pagination {
+    bottom:60px;
+}
+
+
+
+/* d_2 - 오른쪽 디테일 */
+main .prescription_wrap .btm .d_2 {flex-direction:column;}
+main .prescription_wrap .btm .d_2 .contents_result {
+    padding-bottom:85px;
+}
+main .prescription_wrap .btm .d_2 .contents_result .top_wrap li {
+    padding:18px 32px; border-right:1px solid #9747FF;
+    width:30%;
+}
+main .prescription_wrap .btm .d_2 .contents_result .top_wrap li h4 {
+    font-family: "PP Monument Narrow"; color:#4D4D4D;
+    font-size:4rem; line-height:1;
+}
+main .prescription_wrap .btm .d_2 .contents_result .top_wrap li p {
+    font-size:1.125rem; text-align:left; line-height:1.6;
+    letter-spacing:-0.003em;
+}
+main .prescription_wrap .btm .d_2 .contents_result .top_wrap li:last-child {
+    border:0; width:70%;
+}
+main .prescription_wrap .btm .d_2 .desc {
+    margin-top:40px;
+}
+main .prescription_wrap .btm .d_2 .desc p {
+    color:#717171;
+}
+main .prescription_wrap .btm .d_2 .plus_contents {
+    display:flex; width:100%;
+    align-items:flex-start;
+}
+main .prescription_wrap .btm .d_2 .plus_contents .plus_wrap {
+    display:flex; justify-content:space-between; width:100%;
+    align-items:flex-start;
+}
+main .prescription_wrap .btm .d_2 .plus_contents .plus {
+    display:inline-block;
+    padding:32px 22px; border:1px solid #ABBED1;
+    border-radius:15px; width:calc((100% - 20px) / 3);
+    height:300px; position:relative; overflow:hidden;
+    background-image:url(/images/c_01.jpg);
+    background-position:center; background-repeat:no-repeat; background-size:cover;
+}
+main .prescription_wrap .btm .d_2 .plus_contents .plus:nth-child(2) {
+    background-image:url(/images/c_02.jpg);
+}
+main .prescription_wrap .btm .d_2 .plus_contents .plus:nth-child(3) {
+    background-image:url(/images/c_03.jpg);
+}
+main .prescription_wrap .btm .d_2 .plus_contents .plus > p {
+    position:absolute; left:32px; bottom:32px;
+    font-size:1.25rem; color:#fff; font-weight:500; letter-spacing:-0.003em;
+}
+
+
+.contents_wrap,
+.d_2 {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.contents_wrap.active,
+.d_2.active {
+    display: flex;
+    opacity: 1;
+}

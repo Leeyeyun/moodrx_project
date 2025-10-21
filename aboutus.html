@@ -27,6 +27,8 @@
     <!-- CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- JS 연결 -->
+    <script src="./script/aboutus.js" defer></script>
 </head>
 <body>
     <!--=============== header ===============-->
@@ -55,12 +57,153 @@
             <a class="toggle_btn" href="./aboutus.html">Process</a>
             <a class="toggle_btn" href="./aboutus_bi.html">BI</a>
         </div>
-        <div class="section about_product">
+        <!-- section 시작 -->
+        <div class="section intro">
             <div class="title_wrap">
                 <h1>Process</h1>
                 <p>MoodRx의 감정 진단과 처방 과정을 지금 경험해보세요.</p>
             </div>
         </div>
+        <div class="section process">
+            <div class="process_title">
+                <h2>Process</h2>
+                <p>감정을 ‘진단-처방-복용’하는 과정을 통해,<br>감정을 선택하고 소비하는 새로운 방식을 제시합니다.</p>
+            </div>
+            <div class="process_1">
+                <div class="left_txt">
+                    <p class="step">Step 1</p>
+                    <h3 class="step_title">진단</h3>
+                    <p class="highlight">AI와의 대화를 통해 당신의 감정을 섬세하게 탐색하고 진단합니다.</p>
+                    <p class="explain">
+                        짧은 대화와 직관적인 선택만으로<br>
+                        현재 감정 상태를 분석하고,<br>
+                        증폭이 필요한 감정과 완화가 필요한 감정을 구분해<br>
+                        당신에게 맞는 감정 처방을 제안합니다.
+                    </p>
+                </div>
+                <div class="emotion_slider">
+                    <div class="swiper emotion-swiper">
+                        <div class="swiper-wrapper">
+                        <!-- 각각의 감정 문구 -->
+                            <div class="swiper-slide">
+                                <img src="./images/pill_02.svg" alt="감정알약">
+                                <span>“설레는 기분이 들어요!”</span>
+                                <img src="./images/pill_01.svg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./images/pill_02.svg" alt="감정알약">
+                                <span>“설레는 기분이 들어요!”</span>
+                                <img src="./images/pill_01.svg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./images/pill_02.svg" alt="감정알약">
+                                <span>“설레는 기분이 들어요!”</span>
+                                <img src="./images/pill_01.svg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./images/pill_02.svg" alt="감정알약">
+                                <span>“설레는 기분이 들어요!”</span>
+                                <img src="./images/pill_01.svg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./images/pill_02.svg" alt="감정알약">
+                                <span>“설레는 기분이 들어요!”</span>
+                                <img src="./images/pill_01.svg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./images/pill_02.svg" alt="감정알약">
+                                <span>“설레는 기분이 들어요!”</span>
+                                <img src="./images/pill_01.svg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./images/pill_02.svg" alt="감정알약">
+                                <span>“설레는 기분이 들어요!”</span>
+                                <img src="./images/pill_01.svg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./images/pill_02.svg" alt="감정알약">
+                                <span>“설레는 기분이 들어요!”</span>
+                                <img src="./images/pill_01.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="process_2">
+                <div class="flask"><img src="./images/flask.png" alt="플라스크"></div>
+                <div class="right_txt">
+                    <p class="step">Step 2</p>
+                    <h3 class="step_title">처방</h3>
+                    <p class="highlight">알약의 형태로 감정을 처방받아 보세요.</p>
+                    <p class="explain">
+                        감정 알약은 AI 진단과 맞춤형 콘텐츠를 통해 당신의 감정을<br>
+                        완화, 증폭, 혹은 전환할 수 있도록 돕습니다.<br>
+                        이는 단순한 위로가 아닌, 감정을 주도적으로<br>
+                        관리하고 탐구할 수 있는 새로운 솔루션입니다.
+                    </p>
+                </div>
+            </div>
+            <div class="process_3">
+                <div class="left_txt">
+                    <div class="l">
+                        <p class="step">Step 3</p>
+                        <h3 class="step_title">복용</h3>
+                    </div>
+                    <div class="r">
+                        <p class="highlight">세심하게 짜여진 다양한 콘텐츠를 복용하세요.</p>
+                        <p class="explain">
+                            AI 진단을 거쳐, 지금의 감정 상태에 가장 적합한 콘텐츠를 처방합니다.<br>다양한 감정 솔루션을 통해 감정을 더 깊이 이해하고, 조율하고, 나아갈 수 있도록 돕습니다.
+                        </p>
+                    </div>
+                </div>
+                <div class="contents_card">
+                    <div class="bg"></div>
+                    <ul class="card_wrap">
+                        <li class="card_1">
+                            <img src="./images/card_1.png" alt="카드">
+                        </li>
+                        <li class="card_2">
+                            <img src="./images/card_2.png" alt="카드">
+                        </li>
+                        <li class="card_3">
+                            <img src="./images/card_3.png" alt="카드">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_banner">
+            <a href="./diagnosis.html" class="go_btn">
+                <span>그럼 감정을 진단해볼까요?</span>
+                <strong>→</strong>
+            </a>
+        </div>
     </main>
+    <!--=============== footer ===============-->
+    <footer>
+        <div class="left_logo">
+            <a href="./index.html"><img src="./images/logo.svg" alt="로고"></a>
+            <p>Your Mood, Our Rx.<br>MoodRx.</p>
+        </div>
+        <div class="right_info">
+            <ul class="info_wrap">
+                <li class="info">
+                    <h3>Design</h3>
+                    <p>Jiyoung Kim<br>Yeyun Lee</p>
+                </li>
+                <li class="info">
+                    <h3>Programming</h3>
+                    <p>Yeyun Lee</p>
+                </li>
+                <li class="info">
+                    <h3>About us</h3>
+                    <div class="link_wrap">
+                        <a href="#"><img src="./images/sns_behance.png" alt="behance"></a>
+                        <a href="#"><img src="./images/sns_instagram.png" alt="instagram"></a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </footer>
 </body>
 </html>

@@ -303,7 +303,7 @@ main .result .blur_message .arrowBtn {
 }
 
 main .result .blur_message .arrowBtn .arrow_line {
-    width: 1400px;
+    width: calc(100% - 216px);
     height: 3px;
     background-color: black; /* or 원하는 색 */
     position: relative;
