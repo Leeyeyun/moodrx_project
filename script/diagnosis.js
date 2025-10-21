@@ -76,3 +76,152 @@ slider.addEventListener('input', () => updateSliderBackground(slider));
 
 // 초기 배경도 설정해줘야 함!
 updateSliderBackground(slider);
+
+
+// q4 질문 선택 후 로딩화면 넘어감
+const selectDirection = document.querySelectorAll('.q4 .select_direction');
+const diagTest = document.querySelector('.diag_test');
+const loading = document.querySelector('.loading');
+const result = document.querySelector('.result');
+const loadingTxt = document.querySelector('.loading_txt');
+
+function goToLoading() {
+    // diag_test 숨기고 loading 보이기
+    diagTest.style.display = 'none';
+    loading.classList.add('active');
+
+    // 숫자 카운트 시작
+    let count = 0;
+    let interval = 80;
+
+    function increaseCount() {
+        count++;
+        loadingTxt.textContent = count;
+
+        // 속도 점점 증가
+        if (interval > 5) interval -= 2;
+
+        if (count < 100) {
+            setTimeout(increaseCount, interval);
+            } else {
+            // 100 도달 후 5초 대기
+            setTimeout(() => {
+                loading.classList.remove('active');
+                loading.style.display = 'none';
+                result.classList.add('active');
+                result.style.display = 'block';
+
+                // result 화면 진입 시 알약 떨어뜨리기
+                dropRandomPills(); // <-- 여기에 위치시켜야 타이밍 맞음
+
+            }, 2000);
+        }
+    }
+
+    setTimeout(increaseCount, interval);
+}
+
+// .q4의 3가지 선택지 클릭 시 실행
+selectDirection.forEach(btn => {
+    btn.addEventListener('click', goToLoading);
+});
+
+
+// Matter.js 기본 설정
+const { Engine, Render, World, Bodies, Runner } = Matter;
+
+// 1. 엔진 생성
+const engine = Engine.create();
+const world = engine.world;
+
+// 2. 렌더링 설정
+const render = Render.create({
+    element: document.getElementById('pill-canvas'),
+    engine: engine,
+    options: {
+        width: window.innerWidth,
+        height: window.innerHeight,
+        wireframes: false,
+        background: '#fefefe'  // 필요시 배경색 변경
+    }
+});
+
+Render.run(render);
+const runner = Runner.create();
+Runner.run(runner, engine);
+
+// 3. 바닥과 벽 추가
+const ground = Bodies.rectangle(
+    window.innerWidth / 2,
+    window.innerHeight + 50,
+    window.innerWidth,
+    100,
+    {
+        isStatic: true,
+        render: { visible: false }
+    }
+);
+
+// 왼쪽 벽
+const wallLeft = Bodies.rectangle(
+    -50,
+    window.innerHeight / 2,
+    100,
+    window.innerHeight * 2,
+    {
+        isStatic: true,
+        render: { visible: false }
+    }
+);
+
+// 오른쪽 벽
+const wallRight = Bodies.rectangle(
+    window.innerWidth + 50,
+    window.innerHeight / 2,
+    100,
+    window.innerHeight * 2,
+    {
+        isStatic: true,
+        render: { visible: false }
+    }
+);
+
+World.add(world, [ground, wallLeft, wallRight]);
+
+const pillImages = [
+    './images/pill_03.svg',
+    './images/pill_05.svg',
+    './images/pill_06.svg',
+    './images/pill_08.svg'
+];
+
+// 4. 랜덤 원형 알약 생성 함수
+const sizeOptions = [100, 120, 180, 250];  // px 단위
+
+function dropRandomPills() {
+    const count = 15; // 고정 개수
+
+    for (let i = 0; i < count; i++) {
+        const radius = sizeOptions[Math.floor(Math.random() * sizeOptions.length)];
+        const diameter = radius * 2;
+
+        const x = Math.random() * (window.innerWidth - diameter) + radius;
+        const y = -Math.random() * 500;
+
+        const image = pillImages[Math.floor(Math.random() * pillImages.length)];
+
+        const pill = Bodies.circle(x, y, radius, {
+            restitution: 0,
+            friction: 0.5,
+            render: {
+                sprite: {
+                    texture: image,
+                    xScale: diameter / 150,  // 이미지 기준 크기 조정
+                    yScale: diameter / 150
+                }
+            }
+        });
+
+        World.add(world, pill);
+    }
+}
