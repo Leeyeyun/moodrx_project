@@ -114,6 +114,17 @@ function goToLoading() {
                 // result 화면 진입 시 알약 떨어뜨리기
                 dropRandomPills(); // <-- 여기에 위치시켜야 타이밍 맞음
 
+                // 5초 후에 blur_message 부드럽게 표시
+                setTimeout(() => {
+                    const blurMsg = document.querySelector('.blur_message');
+                    blurMsg.style.display = 'flex'; // 1단계: 보여주기
+
+                    // 2단계: 다음 프레임에서 opacity 전환 (트랜지션 적용됨)
+                    requestAnimationFrame(() => {
+                        blurMsg.classList.add('active');
+                    });
+                }, 4000);
+
             }, 2000);
         }
     }
@@ -132,6 +143,7 @@ const { Engine, Render, World, Bodies, Runner } = Matter;
 
 // 1. 엔진 생성
 const engine = Engine.create();
+engine.gravity.y = 2; // 중력 세기 조절
 const world = engine.world;
 
 // 2. 렌더링 설정
@@ -189,17 +201,16 @@ const wallRight = Bodies.rectangle(
 World.add(world, [ground, wallLeft, wallRight]);
 
 const pillImages = [
-    './images/pill_03.svg',
-    './images/pill_05.svg',
-    './images/pill_06.svg',
-    './images/pill_08.svg'
+    { src: './images/pill_03.svg', xScale: 1.0, yScale: 1.0 }, // 세로로 긴 알약
+    { src: './images/pill_05.svg', xScale: 1.0, yScale: 1.0 },
+    { src: './images/pill_06.svg', xScale: 1.0, yScale: 1.0 },
+    { src: './images/pill_08.svg', xScale: 1.0, yScale: 1.0 }
 ];
 
-// 4. 랜덤 원형 알약 생성 함수
-const sizeOptions = [100, 120, 180, 250];  // px 단위
+const sizeOptions = [100, 120, 180, 250];  // 반지름(px)
 
 function dropRandomPills() {
-    const count = 15; // 고정 개수
+    const count = 15;
 
     for (let i = 0; i < count; i++) {
         const radius = sizeOptions[Math.floor(Math.random() * sizeOptions.length)];
@@ -211,13 +222,16 @@ function dropRandomPills() {
         const image = pillImages[Math.floor(Math.random() * pillImages.length)];
 
         const pill = Bodies.circle(x, y, radius, {
-            restitution: 0,
+            restitution: 0.2,
             friction: 0.5,
+            frictionAir: 0.001,
+            angle: Math.random() * Math.PI * 2,
+            angularVelocity: (Math.random() - 0.5) * 0.2,
             render: {
                 sprite: {
-                    texture: image,
-                    xScale: diameter / 150,  // 이미지 기준 크기 조정
-                    yScale: diameter / 150
+                    texture: image.src,
+                    xScale: (diameter / 155) * image.xScale,
+                    yScale: (diameter / 155) * image.yScale
                 }
             }
         });

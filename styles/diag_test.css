@@ -6,12 +6,12 @@ main > div {
     display:flex; justify-content:center; align-items:center;
 }
 main .result {display:none;}
-main .loading, main .result {
+main .loading, main .result, main .result .blur_message {
     display: none;
     opacity: 0;
-    transition: opacity 0.6s ease;
+    transition: opacity 0.8s ease;
 }
-main .loading.active, main .result.active {
+main .loading.active, main .result.active, main .result .blur_message.active {
     display: flex;
     opacity: 1;
 }
@@ -127,6 +127,7 @@ main .diag_test .question_area .q2 .select_circle_wrap .select_circle > p {
     font-size:1.125rem; font-weight:500;
     line-height:1.6; letter-spacing:-0.003em;
     color:#2b2b2b; position:relative; z-index:10;
+    transition:all 0.5s ease;
 }
 main .diag_test .question_area .q2 .select_circle_wrap .select_circle .blur_bg {
     width:100%; height:100%; filter: blur(22px);
@@ -141,6 +142,9 @@ main .diag_test .question_area .q2 .select_circle_wrap .select_circle:nth-child(
 /* circle hover 시 디자인 */
 main .diag_test .question_area .q2 .select_circle_wrap .select_circle:hover .blur_bg {
     rotate:7deg; scale:1.1; filter: blur(30px);
+}
+main .diag_test .question_area .q2 .select_circle_wrap .select_circle:hover > p {
+    font-size:1.2rem;
 }
 
 /* ------ Q3 홍길동 님의 슬픔 정도를 알려주세요. ------ */
@@ -255,11 +259,11 @@ main .diag_test .question_area .q4 .select_direction_wrap .select_direction .fro
 
 /* ------------------ Loading ------------------ */
 main .loading {
-    background-color:gray;
-    position:relative; display:flex; justify-content:center; align-items:center;
+    position:relative;
     background-image:url(/images/diag_bg.jpg);
     background-position:center; background-repeat:no-repeat;
     background-size: cover;
+    justify-content:center; align-items:center;
 }
 main .loading h1 {
     font-size:6rem; font-weight:700; line-height:1.4;
@@ -270,14 +274,52 @@ main .loading .loading_txt {
     position:absolute; right:140px; bottom:60px;
     font-size:11.25rem; font-weight:700; color:#fff;
 }
-main .result {
-    
-}
 
 /* ------------------ Result ------------------ */
 #pill-canvas {
     width:100%; height:100%;
-    border:1px solid red;
     position: absolute; left:0; top:0;
     overflow: hidden;
 }
+main .result .blur_message {
+    width:100%; height:100%;
+    position: absolute; left:0; top:0;
+    padding:0 140px; flex-direction:column;
+    justify-content:center; align-items:flex-start;
+    backdrop-filter:blur;
+    backdrop-filter: blur(80px);
+    transition:all 0.5s ease;
+}
+main .result .blur_message .message {
+    width:100%; text-align:left;
+    font-size:4rem; font-weight:700;
+    line-height:1.6; color:#2b2b2b;
+    margin-bottom:130px;
+}
+main .result .blur_message .arrowBtn {
+    display: flex; width:100%;
+    align-items: center;
+    gap: 40px; /* 텍스트랑 라인 사이 간격 */
+}
+
+main .result .blur_message .arrowBtn .arrow_line {
+    width: 1400px;
+    height: 3px;
+    background-color: black; /* or 원하는 색 */
+    position: relative;
+    animation: arrowBounce 2s ease-in-out infinite;
+}
+
+main .result .blur_message .arrowBtn .arrow_line::after {
+    content: '';
+    position: absolute;
+    right:5px;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    width: 30px;
+    height: 30px;
+    border-right: 4px solid black;
+    border-top: 4px solid black;
+}
+main .result .blur_message .arrowBtn a {font-size:3rem; transition:all 0.5s ease;}
+main .result .blur_message .arrowBtn a:hover {color:#5CBFFF;}

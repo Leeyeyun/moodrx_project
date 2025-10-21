@@ -58,3 +58,12 @@
         transform: translateY(0); /* 전체의 절반 이동 → 복제된 부분으로 자연스럽게 연결 */
     }
 }
+
+
+/* 진단 결과 - 화살표 반복 움직임 */
+@keyframes arrowBounce {
+    0%   { transform: translateX(0); }
+    40%  { transform: translateX(12px); }
+    60%  { transform: translateX(12px); }
+    100% { transform: translateX(0); }
+}
