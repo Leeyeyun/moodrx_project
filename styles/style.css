@@ -75,7 +75,7 @@ main .intro .slogan img:nth-of-type(2) {
 main .intro .txt_wrap {
     z-index:1;
     list-style:none;
-    margin:300px auto 0;
+    margin:20% auto 0;
     max-width:100%;
     display:flex;
     justify-content:space-between;
@@ -96,7 +96,7 @@ main .intro .txt_wrap .txt span {
     opacity:0;
     transform:translateY(-20px);
     text-align:left; font-weight:500; line-height:1.6;
-    font-size:1.125rem;
+    font-size:1.25rem;
 }
 .txt_1 > span {
     animation:fadeInUp 1s ease 2.5s forwards;
@@ -159,10 +159,10 @@ main .whatis #app_bg .eclipse > img {width:100%;}
     transition: all 0.5s ease;
 }
 .pill-slide .swiper-slide img {
-    width: 175px;
-    height: 175px;
+    width: 200px;
+    height: 200px;
     opacity: 0.7;
-    transform: translateY(30px);
+    transform: translateY(70spx);
     transition: all 0.5s ease;
 }
 .pill-slide .swiper-slide-active img {
@@ -563,18 +563,18 @@ main .more .more_link > span {
     font-size:4rem; font-weight:600;
 }
 main .more .more_link:first-child {
-    left:-73%; top:40%;
+    left:-59%; top:28%;
     transition:top 0.5s ease-out;
 }
 main .more .more_link:last-child {
-    left:51%; top:-140%;
+    left:46%; top:-125%;
     transition:top 0.5s ease-out;
 }
 main .more .more_link:first-child:hover {
-    top:35%;
+    top:25%;
 }
 main .more .more_link:last-child:hover {
-    top:-135%;
+    top:-122%;
 }
 main .more .more_link:first-child > span {
     left:72%; top:14%;

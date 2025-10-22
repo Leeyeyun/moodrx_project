@@ -1,5 +1,6 @@
+main {padding:0 140px;}
 /* main */
-main .store {max-width:1640px; margin:0 auto; position:relative;}
+main .store {margin:0 auto; position:relative;}
 main .store .title {
     font-family: "PP Monument Narrow";
     font-size:4rem; letter-spacing:0.1px; padding-top:150px; color:#5CBFFF;

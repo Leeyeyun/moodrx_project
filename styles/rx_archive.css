@@ -1,0 +1,18 @@
+main {margin:0 auto; padding:0 140px;}
+main .rx {margin:0 auto; position:relative;}
+main .rx .title {
+    font-family: "PP Monument Narrow";
+    font-size:4rem; letter-spacing:0.1px; padding-top:150px; color:#5CBFFF;
+    text-transform:uppercase;
+}
+main .rx > p {font-size:1.25rem; font-weight:500; padding:25px 0; border-bottom:1px solid #e0e0e0; color:#5F5F5F;}
+
+main .rx_name {
+    font-size:2.25rem; line-height:1.6; text-align:center;
+    padding:60px; width:100%; border-bottom:1px solid #FF7D2D;
+}
+main .rx_name span {font-weight:600;}
+
+main .user_rx {
+    display:flex; align-items:center;
+}

@@ -17,6 +17,8 @@
     <!-- CSS 연결 -->
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/common.css">
+    <link rel="stylesheet" href="./styles/rx_archive.css">
+    <link rel="stylesheet" href="./styles/animation.css">
     <!--플러그인 필수 css cdn 연결-->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
@@ -48,8 +50,105 @@
             </div>
         </div>
     </header>
+    <!--===== main =====-->
     <main>
-        <div class="section ab_product"><p class="temporary">Collection</p></div>
+        <div class="rx">
+            <h1 class="title">Rx Archive</h1>
+            <p>처방전 아카이브를 통해 과거의 감정처방전과 개인화된 제공 콘텐츠를 한눈에 확인하세요.</p>
+        </div>
+        <h1 class="rx_name">
+            <span>25.10.11</span> 홍길동님의 감정분포도
+        </h1>
+        <div class="user_rx">
+            <!-- left -->
+            <div class="rx_result">
+                <img src="./images/rader_chart_orange.png" alt="">
+            </div>
+            <!-- right -->
+            <div class="rx_info">
+                <div class="user_result">
+                    <ul class="top_wrap">
+                        <li>
+                            <h3 class="sub_title">User</h3>
+                            <h4 class="user_name">홍길동</h4>
+                        </li>
+                        <li>
+                            <h3 class="sub_title">Care</h3>
+                            <div class="txt_wrap">
+                                <h4>증폭</h4>
+                                <h4>Amplify</h4>
+                            </div>
+                        </li>
+                        <li>
+                            <h3 class="sub_title">Target</h3>
+                            <div class="txt_wrap">
+                                <h4>슬픔</h4>
+                                <h4>Sadness</h4>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="desc">
+                        <h3>Prescription</h3>
+                        <p>기쁨이라는 감정이 단순히 밝은 상태를 넘어서, 깊고 지속적인 감정으로 자리잡을 수 있도록 시각적으로 몰입을 유도합니다.</p>
+                    </div>
+                </div>
+                <div class="report">
+                    <h3>감정별 변화 리포트</h3>
+                    <ul class="value_wrap">
+                        <li class="value">
+                            <h3>+55%</h3>
+                            <p>기쁨</p>
+                            <div class="pill_wrap">
+                                <img src="./images/pill_01.svg" alt="알약">
+                                <img src="./images/pill_01.svg" alt="알약">
+                            </div>
+                        </li>
+                        <li class="value">
+                            <h3>+55%</h3>
+                            <p>기쁨</p>
+                            <div class="pill_wrap">
+                                <img src="./images/pill_01.svg" alt="알약">
+                                <img src="./images/pill_01.svg" alt="알약">
+                            </div>
+                        </li>
+                        <li class="value">
+                            <h3>+55%</h3>
+                            <p>기쁨</p>
+                            <div class="pill_wrap">
+                                <img src="./images/pill_01.svg" alt="알약">
+                                <img src="./images/pill_01.svg" alt="알약">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </main>
+    <!--=============== footer ===============-->
+    <footer>
+        <div class="left_logo">
+            <a href="./index.html"><img src="./images/logo.svg" alt="로고"></a>
+            <p>Your Mood, Our Rx.<br>MoodRx.</p>
+        </div>
+        <div class="right_info">
+            <ul class="info_wrap">
+                <li class="info">
+                    <h3>Design</h3>
+                    <p>Jiyoung Kim<br>Yeyun Lee</p>
+                </li>
+                <li class="info">
+                    <h3>Programming</h3>
+                    <p>Yeyun Lee</p>
+                </li>
+                <li class="info">
+                    <h3>About us</h3>
+                    <div class="link_wrap">
+                        <a href="#"><img src="./images/sns_behance.png" alt="behance"></a>
+                        <a href="#"><img src="./images/sns_instagram.png" alt="instagram"></a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </footer>
 </body>
 </html>
