@@ -64,40 +64,53 @@ swiper1.on('slideChange', function () {
 });
 
 
-/* gsap.registerPlugin(ScrollTrigger);
+// 카드 애니메이션
+const mainCardSection = document.querySelector('.main_card');
+const cardImages = document.querySelectorAll('.card_img');
 
-ScrollTrigger.create({
-    trigger: ".main_ct",
-    start: "top bottom",
-    end: "+=1600",
-    scrub: true,
-    pin: true,
-}); */
-
-/* gsap.registerPlugin(ScrollTrigger); */
-
-// pin 메인 섹션
-/* ScrollTrigger.create({
-    trigger: ".main_ct",
-    start: "top top",
-    end: "+=800",
-    scrub: true,
-    pin: true,
-});
- */
-// 카드2: 스크롤 0 ~ 800px → 위로 올라옴 (카드1 위치에서 멈춤)
-/* gsap.to(".card-img:nth-child(2)", {
-    x: -300,
-    y: -800,
-    ease: "none",
-    scrollTrigger: {
-        trigger: ".main_ct",
-        start: "top top",
-        end: "+=800",
-        scrub: true,
-    },
+window.addEventListener('scroll', () => {
+    const triggerY = mainCardSection.offsetTop;
+    const scrollY = window.scrollY;
+    const windowHeight = window.innerHeight;
+    
+    // main_card 섹션이 화면에 절반 들어왔을 때
+    if (scrollY + windowHeight * 0.5 >= triggerY) {
+        // 카드를 순서대로 활성화
+        cardImages.forEach((card, index) => {
+            setTimeout(() => {
+                card.classList.add('active');
+            }, index * 300); // 0ms, 300ms, 600ms
+        });
+    } else {
+        // 스크롤 올라가면 역순으로 active 제거
+        cardImages.forEach((card, index) => {
+            setTimeout(() => {
+                card.classList.remove('active');
+            }, (cardImages.length - 1 - index) * 300); // 600ms, 300ms, 0ms
+        });
+    }
 });
 
-window.addEventListener('pageshow', () => {
-    ScrollTrigger.refresh(true);
-}); */
+
+// 레이더 차트 hover 인터랙션
+const situationCards = document.querySelectorAll('.situation_card');
+const radarImages = document.querySelectorAll('.rader_wrap > img');
+
+situationCards.forEach((card, index) => {
+    card.addEventListener('mouseenter', () => {
+        // 모든 레이더 차트 숨기기
+        radarImages.forEach(img => {
+            img.style.opacity = '0';
+            radarImages[index].style.opacity = '1';
+        });
+    });
+});
+
+// 마우스가 모든 카드를 벗어났을 때 첫 번째 차트로 복귀
+const situationList = document.querySelector('.situation_list');
+situationList.addEventListener('mouseleave', () => {
+    radarImages.forEach(img => {
+        img.style.opacity = '0';
+        radarImages[0].style.opacity = '1';
+    });
+});

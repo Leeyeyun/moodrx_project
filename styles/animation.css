@@ -5,6 +5,22 @@
     80% {transform: translateY(6px); opacity: 1;}
 }
 
+/* intro - 알약 hover 시 회전 애니메이션 */
+@keyframes shakeRotate {
+    0%   { transform: rotate(0deg); }
+    25%  { transform: rotate(-5deg); }
+    50%  { transform: rotate(5deg); }
+    75%  { transform: rotate(-3deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes bounceRotate {
+    0%   { transform: rotate(-60deg); }
+    50%  { transform: rotate(60deg); }
+    100% { transform: rotate(-60deg); }
+}
+
+
 @keyframes expandWidth {
     from {width:0; padding:20px 0;}
     to {width:calc((100% - 80px) / 3); padding:20px 12px;}

@@ -63,12 +63,19 @@ main .intro .slogan img {
     transition: transform 0.3s ease;
     cursor:pointer;
 }
+main .intro .slogan img:nth-child(2):hover {
+    animation: shakeRotate 0.6s infinite;
+}
+main .intro .slogan img:last-child:hover {
+    animation: bounceRotate 1.5s infinite;
+}
 main .intro .slogan img:nth-of-type(1) {
     left:65%;
 }
 main .intro .slogan img:nth-of-type(2) {
     top:50%;
     left:15%;
+    transform: rotate(-60deg);
 }
 
 /* txt */
@@ -162,7 +169,7 @@ main .whatis #app_bg .eclipse > img {width:100%;}
     width: 200px;
     height: 200px;
     opacity: 0.7;
-    transform: translateY(70spx);
+    transform: translateY(70px);
     transition: all 0.5s ease;
 }
 .pill-slide .swiper-slide-active img {
@@ -252,11 +259,16 @@ main .about .txtbtn .aboutBtn {
     padding:16px 24px; background-color:#CEECFF;
     border-radius:30px; width:max-content;
     margin-top:40px;
+    transition:all 0.3s ease;
 }
 main .about .txtbtn .aboutBtn > span {
     font-family: "PP Monument Narrow";
     font-size:1.5rem; margin-right:12px;
     color:#5CBFFF;
+    transition:all 0.3s ease;
+}
+main .about .txtbtn .aboutBtn:hover > span {
+    margin-right:17px;
 }
 
 /* -------- 4. main-emotion package -------- */
@@ -304,44 +316,41 @@ main .package .right .package_area:last-child .package_wrap {
 main .package .right .package_area .package_wrap .package_card {
     margin-bottom:20px;
 }
-main .package .right .package_area .package_wrap .package_card:nth-last-child {
+main .package .right .package_area .package_wrap .package_card:last-child {
     margin-bottom:0;
 }
 
 /* 패키지 카드 디자인 */
 .package_card {
     width:400px; height:550px;
-    border-radius:50px; border:5px solid rgba(255, 209, 96, 0.3); overflow:hidden;
+    border-radius:50px; border:3px solid rgba(255, 209, 96, 0.3); overflow:hidden;
     padding:42px 50px; position:relative;
 }
+.package_card:nth-child(2) {border-color:#FFC3CF;}
+.package_card:nth-child(3) {border-color:#B8D3FF;}
+.package_card:nth-child(4) {border-color:#FEC6EB;}
+.package_card:nth-child(5) {border-color:#CDC4E7;}
+.package_card:nth-child(6) {border-color:#CCDFAF;}
+.package_card:nth-child(7) {border-color:#C7B6F2;}
+.package_card:nth-child(8) {border-color:#B0C3CA;}
+.package_card:nth-child(9) {border-color:rgba(255, 209, 96, 0.3);}
+.package_card:nth-child(10) {border-color:#FFC3CF;}
+.package_card:nth-child(11) {border-color:#B8D3FF;}
+.package_card:nth-child(12) {border-color:#FEC6EB;}
+.package_card:nth-child(13) {border-color:#CDC4E7;}
+.package_card:nth-child(14) {border-color:#CCDFAF;}
+.package_card:nth-child(15) {border-color:#C7B6F2;}
+.package_card:nth-child(16) {border-color:#B0C3CA;}
 .package_card .pill_wrap {
     position:absolute; left:0; top:0;
     width:100%; height:100%; border-radius:50px;
 }
 .package_card .pill_wrap > img {
-    
-    /* opacity:1; position:absolute;
-    transform:translateY(0px); */
 }
-/* 패키지카드 내 감정알약이미지 크기 */
-/* .package_card .pill_wrap > img:nth-child(1) {
-    scale:2.0; filter:blur(12px);
-    right:0; top:30%;
-}
-.package_card .pill_wrap > img:nth-child(2) {
-    scale:2.4;
-    right:5%; bottom:10%;
-}
-.package_card .pill_wrap > img:nth-child(3) {
-    scale:1.2; filter:blur(5px);
-    left:-5%; bottom:-2%;
-}
-.package_card .pill_wrap > img:nth-child(4) {
-    left:10%; bottom:0;
-} */
+
 
 .package_card .txt_wrap {
-    text-align:left;
+    text-align:left; position:relative; z-index:5;
 }
 .package_card .txt_wrap h3 {
     font-family: "PP Monument Narrow";
@@ -371,10 +380,10 @@ main .contentsSlogan .slogan_area .contents_wrap {}
 main .contentsSlogan .slogan_area .contents_wrap > img {
     position:absolute; left:0; top:0;
 }
-main .contentsSlogan .slogan_area .contents_wrap > img:first-child {left:25%; rotate:-6deg;}
-main .contentsSlogan .slogan_area .contents_wrap > img:nth-child(2) {left:42%; top:21%; rotate:3deg;}
-main .contentsSlogan .slogan_area .contents_wrap > img:nth-child(3) {left:6%; top:38%; rotate:0deg;}
-main .contentsSlogan .slogan_area .contents_wrap > img:nth-child(4) {left:15%; top:58%; rotate:-10deg;}
+main .contentsSlogan .slogan_area .contents_wrap > img:first-child {left:28%; rotate:-6deg;}
+main .contentsSlogan .slogan_area .contents_wrap > img:nth-child(2) {left:43%; top:21%; rotate:3deg;}
+main .contentsSlogan .slogan_area .contents_wrap > img:nth-child(3) {left:10%; top:38%; rotate:0deg;}
+main .contentsSlogan .slogan_area .contents_wrap > img:nth-child(4) {left:20%; top:58%; rotate:-10deg;}
 main .contentsSlogan .slogan_desc > p {
     text-align:center; font-size:1.125rem;
     line-height:1.6; letter-spacing:-0.003em;
@@ -382,60 +391,55 @@ main .contentsSlogan .slogan_desc > p {
 }
 
 /* -------- 6. main-card contents -------- */
-/* main .main_ct {
-    overflow:hidden;
-    display:flex; align-items:center; flex-direction:column;
-}
-main .main_ct > p {margin-bottom:160px;}
-main .main_ct .card {
-    width: 100%;
-    flex-direction:column;
-    display:flex; align-items:center; justify-content:center;
-}
-main .main_ct .card img {height:600px;} */
-/* main .main_ct .card img:nth-child(2) {
-    transform:translateY(-800px);
-} */
-main .main_ct {
+main .main_card {
     background: #F5F7FA;
     overflow: hidden;
-    height:max-content;
+    height:1260px;
     position:relative;
 }
 
-main .main_ct > p {
+main .main_card > p {
     text-align:center; line-height:0.8;
     font-family: "PP Monument Narrow";
     font-size:25rem; letter-spacing:-0.05em;
-    margin-top:100px; margin-bottom:400px;
     text-transform: uppercase;
-}
-
-.card {
     position:absolute;
-    width: 100%;
-    height: 800px;
-    left:0; top:20%;
+    left:50%; top:20%;
+    transform:translate(-50%, -20%);
+    z-index:1;
 }
 
-.card-img {
-    position:absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: auto;
-    height: 800px;
-    object-fit: contain;
+main .main_card .card_wrap {
+    position:relative; z-index:5;
+    display:flex; justify-content:center;
+    margin-top:300px;
 }
 
-.card-img:nth-child(1) {
+main .main_card .card_wrap .card_img {
     filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.15));
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.5s ease;
+}
+main .main_card .card_wrap .card_img:nth-child(1) {
+    transform:translateX(90px) translateY(1000px);
+}
+main .main_card .card_wrap .card_img:nth-child(2) {
+    position:relative; z-index:10;
+    transform:translateY(1000px);
+}
+main .main_card .card_wrap .card_img:nth-child(3) {
+    transform:translateX(-90px) translateY(1000px);
+}
+/* active 활성화 */
+main .main_card .card_wrap .card_img.active:nth-child(1) {
+    transform:translateX(90px) translateY(100px);
+}
+main .main_card .card_wrap .card_img.active:nth-child(2) {
+    transform:translateY(0);
+}
+main .main_card .card_wrap .card_img.active:nth-child(3) {
+    transform:translateX(-90px) translateY(100px);
 }
 
-/* 초기 Y 위치만 별도로 지정 */
-/* .card-img:nth-child(2) {
-    transform: translateX(-300px) !important;
-} */
 
 /* -------- 7. main-rx archive -------- */
 main .rx_archive {
@@ -475,9 +479,10 @@ main .rx_archive .archive_table .rader_pick .rader_wrap {
 main .rx_archive .archive_table .rader_pick .rader_wrap > img {
     position:absolute; left:50%; top:50%;
     width:90%; transform:translate(-50%, -50%);
-    display:none;
+    opacity: 0; /* display:none 대신 opacity 사용 */
+    transition: opacity 0.6s ease; /* 부드러운 전환 효과 */
 }
-main .rx_archive .archive_table .rader_pick .rader_wrap > img:first-child {display:block;}
+main .rx_archive .archive_table .rader_pick .rader_wrap > img:first-child {opacity: 1;}
 main .rx_archive .archive_table .rader_pick .situation_list {
     width:65%; height:100%; border:1px solid #2B2B2B;
 }
@@ -523,7 +528,7 @@ main .rx_archive .archive_table .rader_pick .situation_list .situation_card:hove
 
 /* -------- 8. main-diag_bn -------- */
 main .diag_banner {
-    height:max-content;
+    height:100%;
     padding:150px 140px; display:flex; flex-direction:column;
     justify-content:center; align-items:center;
 }
@@ -547,8 +552,11 @@ main .diag_banner .diag_btn {
 main .diag_banner .diag_btn > span {
     font-size:1.5rem; font-weight:400;
     color:#5CBFFF; margin-right:12px;
+    transition:all 0.3s ease;
 }
-main .diag_banner .diag_btn > img {}
+main .diag_banner .diag_btn:hover > span {
+    margin-right:17px;
+}
 
 /* -------- 8. main-diag_bn -------- */
 main .more {
@@ -557,17 +565,24 @@ main .more {
 }
 main .more .more_link {position:absolute; width:max-content; display:block; left:0; top:0;}
 main .more .more_link > img {z-index:1;}
-main .more .more_link > span {
-    position:absolute; width:auto;
-    z-index:5; line-height:1.6;
+main .more .more_link > .span_wrap {
+    position:absolute; display:flex; flex-direction:column;
+    align-items:flex-start;
+}
+main .more .more_link > .span_wrap span {
+    width:auto;
+    z-index:5; line-height:1.4;
     font-size:4rem; font-weight:600;
 }
+main .more .more_link .span_wrap span:last-child {
+    font-size:1.15rem; font-weight:400;
+}
 main .more .more_link:first-child {
-    left:-59%; top:28%;
+    left:-57%; top:28%;
     transition:top 0.5s ease-out;
 }
 main .more .more_link:last-child {
-    left:46%; top:-125%;
+    left:53%; top:-125%;
     transition:top 0.5s ease-out;
 }
 main .more .more_link:first-child:hover {
@@ -576,9 +591,9 @@ main .more .more_link:first-child:hover {
 main .more .more_link:last-child:hover {
     top:-122%;
 }
-main .more .more_link:first-child > span {
-    left:72%; top:14%;
+main .more .more_link:first-child > .span_wrap {
+    left:72%; top:16%;
 }
-main .more .more_link:last-child > span {
+main .more .more_link:last-child > .span_wrap {
     left:13%; top:78%;
 }
