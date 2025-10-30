@@ -27,7 +27,7 @@ main .prescription_wrap .top {
     border-bottom:1px solid #9A66FF;
 }
 main .prescription_wrap .top > h1 {
-    width:19.5%; text-align:center;
+    width:19%; text-align:center;
     line-height:100px; border-right:1px solid #9A66FF;
     font-family: "PP Monument Narrow";
     font-size:3rem; letter-spacing:-0.001em;
@@ -48,7 +48,7 @@ main .prescription_wrap .btm {
 /* 왼쪽 list 디자인 */
 main .prescription_wrap .btm .list_wrap {
     height:100%; border-right:1px solid #9747FF;
-    width:19.5%; padding:60px;
+    width:19.7%; padding:60px;
     display:flex; flex-direction:column;
     align-items:flex-end; justify-content:center;
 }
@@ -75,6 +75,38 @@ main .prescription_wrap .btm .rader_chart {
 main .prescription_wrap .btm .rader_chart img {
     width:90%;
 }
+/* 레이더 차트 스타일 */
+.rader_chart {
+    position: relative;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chart-container {
+    position: relative;
+    width: 700px;
+    height: 700px;
+}
+
+#radarChart, #worldCanvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#radarChart {
+    z-index: 1;
+}
+
+#worldCanvas {
+    z-index: 2;
+    pointer-events: none;
+}
+
 
 /* 오른쪽 rightDetail 디자인 */
 main .prescription_wrap .btm .rightDetail {
@@ -117,15 +149,15 @@ main .prescription_wrap .btm .rightDetail .top_wrap {
     display:flex; justify-content:space-between; width:100%;
 }
 main .prescription_wrap .btm .d_1 .top_wrap li {
-    padding:18px 32px; border-right:1px solid #9747FF;
+    padding:24px 32px; border-right:1px solid #9747FF;
     flex:1;
 }
 main .prescription_wrap .btm .rightDetail li:last-child {
     border:0;
 }
 main .prescription_wrap .btm .rightDetail .sub_title {
-    font-size:1.25rem; text-align:left; color:#4D4D4D;
-    letter-spacing:-0.003em; line-height:1.6; font-weight:700;
+    font-size:1.5rem; text-align:left; color:#4D4D4D;
+    letter-spacing:-0.003em; line-height:1.6; font-weight:600;
     margin-bottom:16px;
 }
 main .prescription_wrap .btm .rightDetail .top_wrap li h4 {
@@ -145,12 +177,12 @@ main .prescription_wrap .btm .rightDetail .user_result .desc {
     width:100%; border-top:1px solid #9747FF; padding:32px;
 }
 main .prescription_wrap .btm .rightDetail .user_result .desc h3 {
-    font-size:1.25rem; text-align:left; color:#4D4D4D;
-    letter-spacing:-0.003em; line-height:1.6; font-weight:700;
+    font-size:1.5rem; text-align:left; color:#4D4D4D;
+    letter-spacing:-0.003em; line-height:1.6; font-weight:600;
     margin-bottom:16px;
 }
 main .prescription_wrap .btm .rightDetail .desc > p {
-    font-size:1.125rem; text-align:left; line-height:1.6;
+    font-size:1.25rem; text-align:left; line-height:1.6;
     letter-spacing:-0.003em;
 }
 /* 하단 감정 레포트 */
@@ -161,7 +193,7 @@ main .prescription_wrap .btm .rightDetail .report, main .prescription_wrap .btm 
 main .prescription_wrap .btm .rightDetail .report > h3 {
     font-size:1.25rem; text-align:left; color:#4D4D4D;
     letter-spacing:-0.003em; line-height:1.6; font-weight:700;
-    margin-bottom:16px;
+    margin-bottom:50px;
 }
 main .prescription_wrap .btm .rightDetail .report .value_wrap {
     display:flex; justify-content:space-between; width:100%;
@@ -169,7 +201,7 @@ main .prescription_wrap .btm .rightDetail .report .value_wrap {
 main .prescription_wrap .btm .rightDetail .report .value_wrap .value {
     padding:32px 22px; border:1px solid #ABBED1;
     border-radius:15px; width:calc((100% - 20px) / 3);
-    height:340px; position:relative; overflow:hidden;
+    height:400px; position:relative; overflow:hidden;
     display:flex; flex-direction:column;
     align-items:flex-start; justify-content:flex-start;
 }

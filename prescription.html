@@ -27,6 +27,9 @@
     <!-- CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Chart.js and Matter.js for radar chart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/matter-js@0.19.0/build/matter.min.js"></script>
     <!-- JS 연결 -->
     <script src="./script/prescription.js" defer></script>
 </head>
@@ -55,7 +58,7 @@
         <div class="section prescription_wrap">
             <div class="top">
                 <h1>Diagnose</h1>
-                <h2><span>홍길동</span>님의 감정 처방 결과</h2>
+                <h2><span class="user_name">홍길동</span>님의 감정 처방 결과</h2>
             </div>
             <div class="btm">
                 <!-- left -->
@@ -68,7 +71,10 @@
                 <!-- 01 진단 콘텐츠 -->
                 <!-- center -->
                 <div class="rader_chart">
-                    <img src="./images/rader_chart_purple.png" alt="레이더차트">
+                    <div class="chart-container">
+                        <canvas id="radarChart" width="600" height="600"></canvas>
+                        <canvas id="worldCanvas" width="600" height="600"></canvas>
+                    </div>
                 </div>
                 <!-- right -->
                 <div class="rightDetail d_1">
@@ -110,19 +116,19 @@
                                 </div>
                             </li>
                             <li class="value">
-                                <h3>+55%</h3>
-                                <p>기쁨</p>
+                                <h3>-13%</h3>
+                                <p>설렘</p>
                                 <div class="pill_wrap">
-                                    <img src="./images/pill_01.svg" alt="알약">
-                                    <img src="./images/pill_01.svg" alt="알약">
+                                    <img src="./images/pill_02.svg" alt="알약">
+                                    <img src="./images/pill_02.svg" alt="알약">
                                 </div>
                             </li>
                             <li class="value">
-                                <h3>+55%</h3>
-                                <p>기쁨</p>
+                                <h3>+2%</h3>
+                                <p>무감각</p>
                                 <div class="pill_wrap">
-                                    <img src="./images/pill_01.svg" alt="알약">
-                                    <img src="./images/pill_01.svg" alt="알약">
+                                    <img src="./images/pill_08.svg" alt="알약">
+                                    <img src="./images/pill_08.svg" alt="알약">
                                 </div>
                             </li>
                         </ul>

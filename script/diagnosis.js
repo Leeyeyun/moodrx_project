@@ -30,26 +30,43 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 
+// Progress bar 업데이트 함수
+const nums = document.querySelectorAll('.procedure .num');
+
+function setStep(currentIndex) {
+    nums.forEach((num, index) => {
+        num.classList.remove('current', 'completed');
+        
+        if (index < currentIndex) {
+            num.classList.add('completed'); // 이전 단계
+        } else if (index === currentIndex) {
+            num.classList.add('current'); // 현재 단계
+        }
+    });
+}
+
 // q1에서 card 선택했을 때 다음 질문 넘어감
 document.addEventListener('DOMContentLoaded', () => {
     const selectCards = document.querySelectorAll('.select_card');
 
     selectCards.forEach(card => {
         card.addEventListener('click', () => {
-        const questionArea = document.querySelector('.question_area');
-        questionArea.style.top = '-100vh'; // 위로 이동
+            const questionArea = document.querySelector('.question_area');
+            questionArea.style.top = '-100vh'; // 위로 이동
+            setStep(1); // Step 2로 이동
         });
     });
 });
 
 // q2에서 card 선택했을 때 다음 질문 넘어감
 document.addEventListener('DOMContentLoaded', () => {
-    const selectCards = document.querySelectorAll('.select_circle');
+    const selectCircles = document.querySelectorAll('.select_circle');
 
-    selectCards.forEach(card => {
+    selectCircles.forEach(card => {
         card.addEventListener('click', () => {
-        const questionArea = document.querySelector('.question_area');
-        questionArea.style.top = '-200vh'; // 위로 이동
+            const questionArea = document.querySelector('.question_area');
+            questionArea.style.top = '-200vh'; // 위로 이동
+            setStep(2); // Step 3으로 이동
         });
     });
 });
@@ -61,6 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
     nextBtn.addEventListener('click', () => {
         const questionArea = document.querySelector('.question_area');
         questionArea.style.top = '-300vh'; // 위로 이동
+        setStep(3); // Step 4로 이동 (마지막)
     });
 });
 
