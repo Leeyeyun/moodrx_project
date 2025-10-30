@@ -1,0 +1,67 @@
+/* PP Monument Narrow Font Family */
+
+@font-face {
+    font-family: 'PP Monument Narrow';
+    src: url('./fonts/PPMonumentNarrow-Black.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Monument Narrow';
+    src: url('./fonts/PPMonumentNarrow-BlackItalic.otf') format('opentype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Monument Narrow';
+    src: url('./fonts/PPMonumentNarrow-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Monument Narrow';
+    src: url('./fonts/PPMonumentNarrow-LightItalic.otf') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Monument Narrow';
+    src: url('./fonts/PPMonumentNarrow-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Monument Narrow';
+    src: url('./fonts/PPMonumentNarrow-RegularItalic.otf') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* 사용 예시:
+body {
+    font-family: 'PP Monument Narrow', sans-serif;
+}
+
+.light-text {
+    font-weight: 300;
+}
+
+.regular-text {
+    font-weight: 400;
+}
+
+.black-text {
+    font-weight: 900;
+}
+*/
