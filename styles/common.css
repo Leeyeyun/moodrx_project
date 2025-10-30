@@ -26,14 +26,14 @@ header .top_wrap .diag {width:20%; text-align:right;}
 /* header-nav */
 header .top_wrap > nav .gnb {display:flex;}
 header .top_wrap > nav .gnb a {
-    font-family: "PP Monument Narrow";
+    font-family: 'PP Monument Narrow', sans-serif;
     font-weight:200; font-size:1.75rem;
     color:#717171;
 }
 header .top_wrap > nav .gnb a:hover {color:#5CBFFF; transition:color 0.5s;}
 header .top_wrap > nav .gnb li:nth-child(2) a {margin:0 150px}
 header .top_wrap .diag a {
-    font-family: "PP Monument Narrow";
+    font-family: 'PP Monument Narrow', sans-serif;
     font-weight:500; font-size:1.25rem;
     color:#ABBED1; padding:16px 30px; border-radius:30px;
     background-color:#DEF1FF;
