@@ -7,7 +7,7 @@ main .section {
 }
 main .section .txt h1 {
     margin:100px 0 24px;
-    font-family: "PP Monument Narrow";
+    font-family: 'PPMonumentNarrow', sans-serif;
     font-weight:200; font-size:5rem;
     letter-spacing:-0.01em; line-height:1.2;
     color:#2B2B2B;
