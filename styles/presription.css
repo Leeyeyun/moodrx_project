@@ -29,7 +29,7 @@ main .prescription_wrap .top {
 main .prescription_wrap .top > h1 {
     width:19%; text-align:center;
     line-height:100px; border-right:1px solid #9A66FF;
-    font-family: "PP Monument Narrow";
+    font-family: 'PP Monument Narrow', sans-serif;
     font-size:3rem; letter-spacing:-0.001em;
     color:#9A66FF;
 }
@@ -48,7 +48,7 @@ main .prescription_wrap .btm {
 /* 왼쪽 list 디자인 */
 main .prescription_wrap .btm .list_wrap {
     height:100%; border-right:1px solid #9747FF;
-    width:19.7%; padding:60px;
+    width:19%; padding:60px;
     display:flex; flex-direction:column;
     align-items:flex-end; justify-content:center;
 }
@@ -78,7 +78,7 @@ main .prescription_wrap .btm .rader_chart img {
 /* 레이더 차트 스타일 */
 .rader_chart {
     position: relative;
-    width: 40%;
+    width: 35%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -110,7 +110,7 @@ main .prescription_wrap .btm .rader_chart img {
 
 /* 오른쪽 rightDetail 디자인 */
 main .prescription_wrap .btm .rightDetail {
-    border-left:1px solid #9747FF; width:45%; height:100%;
+    border-left:1px solid #9747FF; width:46%; height:100%;
     overflow:hidden;
 }
 main .prescription_wrap .btm .rightDetail > * {
@@ -158,7 +158,7 @@ main .prescription_wrap .btm .rightDetail li:last-child {
 main .prescription_wrap .btm .rightDetail .sub_title {
     font-size:1.5rem; text-align:left; color:#4D4D4D;
     letter-spacing:-0.003em; line-height:1.6; font-weight:600;
-    margin-bottom:16px;
+    margin-bottom:40px;
 }
 main .prescription_wrap .btm .rightDetail .top_wrap li h4 {
     font-size:2rem; line-height:1.6; font-weight:400;
@@ -170,7 +170,7 @@ main .prescription_wrap .btm .rightDetail .user_result .top_wrap li > .txt_wrap 
     display:flex;
 }
 main .prescription_wrap .btm .rightDetail .user_result .top_wrap li > .txt_wrap h4:last-child {
-    font-family: "PP Monument Narrow"; color:#89939E;
+    font-family: 'PP Monument Narrow', sans-serif; color:#89939E;
     margin-left:16px;
 }
 main .prescription_wrap .btm .rightDetail .user_result .desc {
@@ -206,8 +206,8 @@ main .prescription_wrap .btm .rightDetail .report .value_wrap .value {
     align-items:flex-start; justify-content:flex-start;
 }
 main .prescription_wrap .btm .rightDetail .report .value_wrap .value > h3 {
-    font-family: "PP Monument Narrow"; color:#4D4D4D;
-    font-size:3.5rem; font-weight:100; margin-bottom:16px;
+    font-family: 'PP Monument Narrow', sans-serif; color:#4D4D4D;
+    font-size:3.5rem; font-weight:400; margin-bottom:16px;
 }
 main .prescription_wrap .btm .rightDetail .report .value_wrap .value .pill_wrap {
     position:absolute; color:#717171; display:flex; flex-direction:column;
@@ -227,7 +227,7 @@ main .prescription_wrap .btm .rightDetail .report .value_wrap .value .pill_wrap 
 /* d_2 - 중앙 콘텐츠 슬라이드 */
 main .prescription_wrap .btm .contents_wrap {
     justify-content:center; align-items:center;
-    width:35.5%; position:relative;
+    width:33%; position:relative;
 }
 main .prescription_wrap .btm .contents_wrap > .pill_pagination {
     width:calc(100% - 40px); height:100%; position:absolute;
@@ -284,7 +284,7 @@ main .prescription_wrap .btm .d_2 .contents_result .top_wrap li {
     width:30%;
 }
 main .prescription_wrap .btm .d_2 .contents_result .top_wrap li h4 {
-    font-family: "PP Monument Narrow"; color:#4D4D4D;
+    font-family: 'PP Monument Narrow', sans-serif; color:#4D4D4D;
     font-size:4rem; line-height:1;
 }
 main .prescription_wrap .btm .d_2 .contents_result .top_wrap li p {
@@ -312,7 +312,7 @@ main .prescription_wrap .btm .d_2 .plus_contents .plus {
     display:inline-block;
     padding:32px 22px; border:1px solid #ABBED1;
     border-radius:15px; width:calc((100% - 20px) / 3);
-    height:300px; position:relative; overflow:hidden;
+    height:400px; position:relative; overflow:hidden;
     background-image:url(/images/c_01.jpg);
     background-position:center; background-repeat:no-repeat; background-size:cover;
 }

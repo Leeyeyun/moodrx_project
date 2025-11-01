@@ -47,7 +47,7 @@ main .intro .slogan {
     top:20%;
 }
 main .intro .slogan .slogan_txt {
-    font-family: "PP Monument Narrow";
+    font-family: 'PP Monument Narrow', sans-serif;
     font-size: 11rem;
     font-weight:800;
     text-align:center;
@@ -185,7 +185,7 @@ main .whatis .pill_txt {
     margin-top:30px;
 }
 main .whatis .pill_txt .pillName {
-    font-family: "PP Monument Narrow";
+    font-family: 'PP Monument Narrow', sans-serif;
     font-size:3rem; font-weight:700;
 }
 main .whatis .pill_txt .pillNameKor {
@@ -228,7 +228,7 @@ main .about {
     padding-top:100px; padding-bottom:160px;
 }
 main .about h1 {
-    font-family: "PP Monument Narrow";
+    font-family: 'PP Monument Narrow', sans-serif;
     text-align:left; font-size:2.5rem;
     padding:10px 0;
 }
@@ -245,7 +245,7 @@ main .about .txtbtn h2 {
 }
 main .about .txtbtn h2 > img {height:50px;}
 main .about .txtbtn > span {
-    font-family: "PP Monument Narrow";
+    font-family: 'PP Monument Narrow', sans-serif;
     font-size:2.25rem; line-height:1.6;
     color:#5CBFFF; padding:20px 0 60px;
 }
@@ -262,7 +262,7 @@ main .about .txtbtn .aboutBtn {
     transition:all 0.3s ease;
 }
 main .about .txtbtn .aboutBtn > span {
-    font-family: "PP Monument Narrow";
+    font-family: 'PP Monument Narrow', sans-serif;
     font-size:1.5rem; margin-right:12px;
     color:#5CBFFF;
     transition:all 0.3s ease;
@@ -353,7 +353,7 @@ main .package .right .package_area .package_wrap .package_card:last-child {
     text-align:left; position:relative; z-index:5;
 }
 .package_card .txt_wrap h3 {
-    font-family: "PP Monument Narrow";
+    font-family: 'PP Monument Narrow', sans-serif;
     font-size:3rem; color:#2b2b2b;
 }
 .package_card .txt_wrap p {
@@ -371,7 +371,7 @@ main .contentsSlogan {
 }
 main .contentsSlogan .slogan_area {text-align:center;}
 main .contentsSlogan .slogan_area > p {
-    font-family: "PP Monument Narrow";
+    font-family: 'PP Monument Narrow', sans-serif;
     font-size:6.25rem; line-height:1.4;
     letter-spacing:-0.03em; width:100%;
 }
@@ -400,7 +400,7 @@ main .main_card {
 
 main .main_card > p {
     text-align:center; line-height:0.8;
-    font-family: "PP Monument Narrow";
+    font-family: 'PP Monument Narrow', sans-serif;
     font-size:25rem; letter-spacing:-0.05em;
     text-transform: uppercase;
     position:absolute;
@@ -454,7 +454,7 @@ main .rx_archive .archive_table .text_wrap {
     height:120px;
 }
 main .rx_archive .archive_table .text_wrap > h2 {
-    font-family: "PP Monument Narrow";
+    font-family: 'PP Monument Narrow', sans-serif;
     font-size:5rem; line-height:120px;
     letter-spacing:-0.01em;
     color:#fff; background-color:#4D4D4D;
@@ -534,7 +534,7 @@ main .diag_banner {
 }
 main .diag_banner > .text_wrap {text-align:center;}
 main .diag_banner > .text_wrap h2 {
-    font-family: "PP Monument Narrow";
+    font-family: 'PP Monument Narrow', sans-serif;
     font-size:5rem; line-height:120px;
     letter-spacing:-0.01em;
 }

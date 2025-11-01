@@ -2,7 +2,7 @@ main {margin:0 auto; padding:0 140px;}
 main .rx {margin:0 auto; position:relative;}
 main .rx .title {
     font-family: "PP Monument Narrow";
-    font-size:4rem; letter-spacing:0.1px; padding-top:150px; color:#5CBFFF;
+    font-size:4rem; letter-spacing:0.1px; padding-top:150px; color:#FF7D2D;
     text-transform:uppercase;
 }
 main .rx > p {
@@ -23,8 +23,34 @@ main .user_rx {
 
 main .user_rx .rx_result {
     flex:1; display:flex; justify-content:center; align-items:center;
-    height:100%;
+    height:100%; position:relative;
 }
+
+/* 레이더 차트 컨테이너 */
+main .user_rx .rx_result .chart-container {
+    position: relative;
+    width: 700px;
+    height: 700px;
+    margin-top: 150px;
+}
+
+main .user_rx .rx_result #radarChart,
+main .user_rx .rx_result #worldCanvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+main .user_rx .rx_result #radarChart {
+    z-index: 1;
+}
+
+main .user_rx .rx_result #worldCanvas {
+    z-index: 2;
+    pointer-events: none;
+}
+
 main .user_rx .rx_result img {
     width:50%; padding-top:150px;
 }
@@ -126,4 +152,100 @@ main .user_rx .rx_info .report .value_wrap .value .pill_wrap img:first-child {
 main .user_rx .rx_info .report .value_wrap .value .pill_wrap img:last-child {
     filter:blur(20px); width:120%;
 }
-.other_rx {display:none;}
+
+
+/* other_rx - 다른 처방전들 */
+main .other_rx {
+    margin-top: 100px; margin-bottom:140px;
+    padding: 80px 0;
+    border-top: 1px solid #e0e0e0;
+}
+
+main .other_rx .other_top {
+    margin-bottom: 60px;
+}
+
+main .other_rx .other_top h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #4D4D4D;
+    text-align: left;
+}
+
+/* rx_list - 카드 리스트 */
+main .other_rx .rx_list {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+/* rx_card - 각 카드 */
+main .other_rx .rx_card {
+    flex: 1;
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    padding: 40px 30px 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #fff;
+}
+
+main .other_rx .rx_card:hover {
+    border-color: #FF7D2D;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+/* card_chart - 작은 레이더 차트 */
+main .other_rx .rx_card .card_chart {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+main .other_rx .rx_card .card_chart canvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+main .other_rx .rx_card .card_chart .mini-radar {
+    z-index: 1;
+}
+
+main .other_rx .rx_card .card_chart .mini-world {
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* card_info - 카드 정보 */
+main .other_rx .rx_card .card_info {
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 20px;
+}
+
+main .other_rx .rx_card .card_info h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #4D4D4D;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+main .other_rx .rx_card .card_info .date {
+    font-size: 1rem;
+    color: #89939E;
+    font-weight: 500;
+}
+
+/* 활성화된 카드 스타일 (선택 시) */
+main .other_rx .rx_card.active {
+    border-color: #FF7D2D;
+    background-color: #FFF9F5;
+}

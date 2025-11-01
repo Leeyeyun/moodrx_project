@@ -8,7 +8,7 @@ main .select_toggle {
 }
 main .select_toggle .toggle_btn {
     display:inline-block;
-    font-family: "PP Monument Narrow";
+    font-family: 'PP Monument Narrow', sans-serif;
     line-height:1.8; font-weight:300;
     font-size:1.25rem; border-bottom:1px solid #2b2b2b;
 }
@@ -31,7 +31,7 @@ main .intro .title_wrap {
     justify-content:flex-end;
 }
 main .intro .title_wrap h1 {
-    font-family: "PP Monument Narrow";
+    font-family: 'PP Monument Narrow', sans-serif;
     font-size:25rem; letter-spacing:-0.04em;
 }
 main .intro .title_wrap p {
@@ -50,7 +50,7 @@ main .process .process_title {
     align-items:center;
 }
 main .process .process_title > h2 {
-    font-family: "PP Monument Narrow";
+    font-family: 'PP Monument Narrow', sans-serif;
     line-height:1.2; font-size:5rem; margin-right:180px;
 }
 main .process .process_title > p {
@@ -59,7 +59,7 @@ main .process .process_title > p {
 
 /* 공통 적용 */
 main .process .step {
-    font-family: "PP Monument Narrow";
+    font-family: 'PP Monument Narrow', sans-serif;
     font-size:1.5rem; line-height:1.2;
 }
 main .process .step_title {

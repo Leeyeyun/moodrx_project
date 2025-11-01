@@ -1,9 +1,86 @@
-window.addEventListener('DOMContentLoaded', () => {
+// ==================== 전역 변수 ====================
+const userData = {
+    name: '',
+    birthYear: '',
+    birthMonth: '',
+    birthDay: '',
+    emotion: '',
+    reason: '',
+    intensity: 20,
+    direction: '',
+    transform: ''
+};
+
+let currentStep = 0; // 0: start, 1: info, 2: test, 3: loading, 4: result
+let currentQuestionIndex = 0; // 질문 인덱스 (0~3)
+
+// ==================== DOM 로드 후 초기화 ====================
+document.addEventListener('DOMContentLoaded', function() {
+    initializePage();
+    setupEventListeners();
+    populateBirthSelects();
+    initializeSlider();
+});
+
+// ==================== 페이지 초기화 ====================
+function initializePage() {
+    // 모든 섹션 숨김
+    hideAllSections();
+    
+    // 시작 페이지만 표시
+    showSection('diagnosis-start');
+    
+    // 헤더는 시작 페이지에서만 표시
+    document.getElementById('main-header').style.display = 'flex';
+}
+
+// ==================== 섹션 제어 ====================
+function hideAllSections() {
+    const sections = [
+        'diagnosis-start',
+        'diagnosis-info',
+        'diagnosis-test',
+        'diagnosis-loading',
+        'diagnosis-result'
+    ];
+    
+    sections.forEach(id => {
+        const section = document.getElementById(id);
+        if (section) {
+            section.style.display = 'none';
+            section.classList.remove('active');
+        }
+    });
+}
+
+function showSection(sectionId) {
+    hideAllSections();
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.style.display = 'flex';
+        setTimeout(() => {
+            section.classList.add('active');
+        }, 50);
+        
+        // 헤더 표시/숨김 제어
+        const header = document.getElementById('main-header');
+        if (sectionId === 'diagnosis-start') {
+            header.style.display = 'flex';
+        } else {
+            header.style.display = 'none';
+        }
+    }
+}
+
+// ==================== 생년월일 select 채우기 ====================
+function populateBirthSelects() {
     const yearSelect = document.getElementById('birth_year');
     const monthSelect = document.getElementById('birth_month');
     const daySelect = document.getElementById('birth_day');
-
-    // 년도: 현재년도부터 과거 100년
+    
+    if (!yearSelect || !monthSelect || !daySelect) return;
+    
+    // 년도 (현재 ~ 80년 전)
     const currentYear = new Date().getFullYear();
     for (let y = currentYear; y >= currentYear - 80; y--) {
         const option = document.createElement('option');
@@ -11,160 +88,309 @@ window.addEventListener('DOMContentLoaded', () => {
         option.textContent = y;
         yearSelect.appendChild(option);
     }
-
-    // 월: 01 ~ 12
+    
+    // 월 (01~12)
     for (let m = 1; m <= 12; m++) {
         const option = document.createElement('option');
         option.value = m;
         option.textContent = String(m).padStart(2, '0');
         monthSelect.appendChild(option);
     }
-
-    // 일: 01 ~ 31
+    
+    // 일 (01~31)
     for (let d = 1; d <= 31; d++) {
         const option = document.createElement('option');
         option.value = d;
         option.textContent = String(d).padStart(2, '0');
         daySelect.appendChild(option);
     }
-});
+}
 
+// ==================== 이벤트 리스너 설정 ====================
+function setupEventListeners() {
+    // 1. 시작 페이지 -> 정보 입력
+    const startBtn = document.getElementById('start-diagnosis-btn');
+    if (startBtn) {
+        startBtn.addEventListener('click', () => {
+            showSection('diagnosis-info');
+            currentStep = 1;
+        });
+    }
+    
+    // 2. 정보 입력 페이지 뒤로가기
+    const infoBackBtn = document.getElementById('info-back-btn');
+    if (infoBackBtn) {
+        infoBackBtn.addEventListener('click', () => {
+            showSection('diagnosis-start');
+            currentStep = 0;
+        });
+    }
+    
+    // 3. 정보 입력 -> 테스트 시작
+    const startTestBtn = document.getElementById('start-test-btn');
+    if (startTestBtn) {
+        startTestBtn.addEventListener('click', () => {
+            if (validateUserInfo()) {
+                saveUserInfo();
+                showSection('diagnosis-test');
+                updateUserNameInTest();
+                currentStep = 2;
+                currentQuestionIndex = 0;
+                updateProcedure();
+            } else {
+                alert('이름과 생년월일을 모두 입력해주세요.');
+            }
+        });
+    }
+    
+    // 4. 테스트 페이지 뒤로가기
+    const testBackBtn = document.getElementById('test-back-btn');
+    if (testBackBtn) {
+        testBackBtn.addEventListener('click', () => {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                moveQuestionArea();
+                updateProcedure();
+            } else {
+                showSection('diagnosis-info');
+                currentStep = 1;
+            }
+        });
+    }
+    
+    // 5. Q1 - 감정 카드 선택
+    const emotionCards = document.querySelectorAll('.q1 .select_card');
+    emotionCards.forEach(card => {
+        card.addEventListener('click', function() {
+            userData.emotion = this.dataset.value;
+            currentQuestionIndex = 1;
+            moveQuestionArea();
+            updateProcedure();
+        });
+    });
+    
+    // 6. Q2 - 감정 원인 선택
+    const reasonCircles = document.querySelectorAll('.q2 .select_circle');
+    reasonCircles.forEach(circle => {
+        circle.addEventListener('click', function() {
+            userData.reason = this.dataset.value;
+            currentQuestionIndex = 2;
+            moveQuestionArea();
+            updateProcedure();
+            updateEmotionNameInQ3();
+        });
+    });
+    
+    // 7. Q3 - 다음 버튼
+    const q3NextBtn = document.getElementById('q3-next-btn');
+    if (q3NextBtn) {
+        q3NextBtn.addEventListener('click', () => {
+            currentQuestionIndex = 3;
+            moveQuestionArea();
+            updateProcedure();
+        });
+    }
+    
+    // 8. Q4 - 케어 방향 선택
+    const directionCards = document.querySelectorAll('.q4 .select_direction');
+    directionCards.forEach(card => {
+        card.addEventListener('click', function() {
+            userData.direction = this.dataset.value;
+            
+            if (userData.direction === '전환') {
+                // 감정 전환 선택 시 추가 질문 표시
+                currentQuestionIndex = 4; // q4_1 표시
+                moveQuestionArea();
+            } else {
+                // 바로 로딩 화면으로
+                goToLoading();
+            }
+        });
+    });
+    
+    // 9. Q4-1 - 감정 전환 옵션 선택
+    const transformOptions = document.querySelectorAll('.q4_1 .select_transform');
+    transformOptions.forEach(option => {
+        option.addEventListener('click', function() {
+            transformOptions.forEach(o => o.classList.remove('selected'));
+            this.classList.add('selected');
+            userData.transform = this.dataset.value;
+            
+            setTimeout(() => {
+                goToLoading();
+            }, 300);
+        });
+    });
+    
+    // 10. 처방으로 이동
+    const goPrescriptionBtn = document.getElementById('go-prescription');
+    if (goPrescriptionBtn) {
+        goPrescriptionBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            localStorage.setItem('moodrx_user_data', JSON.stringify(userData));
+            window.location.href = 'prescription.html';
+        });
+    }
+}
 
-// Progress bar 업데이트 함수
-const nums = document.querySelectorAll('.procedure .num');
+// ==================== 질문 영역 이동 ====================
+function moveQuestionArea() {
+    const questionArea = document.querySelector('.question_area');
+    if (questionArea) {
+        const moveAmount = -100 * currentQuestionIndex;
+        questionArea.style.top = moveAmount + 'vh';
+    }
+}
 
-function setStep(currentIndex) {
+// ==================== 진행 표시 업데이트 ====================
+function updateProcedure() {
+    const nums = document.querySelectorAll('.procedure .num');
+    
     nums.forEach((num, index) => {
         num.classList.remove('current', 'completed');
         
-        if (index < currentIndex) {
-            num.classList.add('completed'); // 이전 단계
-        } else if (index === currentIndex) {
-            num.classList.add('current'); // 현재 단계
+        if (index < currentQuestionIndex) {
+            num.classList.add('completed');
+        } else if (index === currentQuestionIndex) {
+            num.classList.add('current');
         }
     });
 }
 
-// q1에서 card 선택했을 때 다음 질문 넘어감
-document.addEventListener('DOMContentLoaded', () => {
-    const selectCards = document.querySelectorAll('.select_card');
-
-    selectCards.forEach(card => {
-        card.addEventListener('click', () => {
-            const questionArea = document.querySelector('.question_area');
-            questionArea.style.top = '-100vh'; // 위로 이동
-            setStep(1); // Step 2로 이동
-        });
+// ==================== 슬라이더 초기화 ====================
+function initializeSlider() {
+    const slider = document.querySelector('#slider');
+    if (!slider) return;
+    
+    function updateSliderBackground(slider) {
+        const val = (slider.value - slider.min) / (slider.max - slider.min) * 100;
+        slider.style.background = `linear-gradient(to right, #5CBFFF ${val}%, #F5F7FA ${val}%)`;
+    }
+    
+    slider.addEventListener('input', function() {
+        userData.intensity = this.value;
+        updateSliderBackground(this);
     });
-});
-
-// q2에서 card 선택했을 때 다음 질문 넘어감
-document.addEventListener('DOMContentLoaded', () => {
-    const selectCircles = document.querySelectorAll('.select_circle');
-
-    selectCircles.forEach(card => {
-        card.addEventListener('click', () => {
-            const questionArea = document.querySelector('.question_area');
-            questionArea.style.top = '-200vh'; // 위로 이동
-            setStep(2); // Step 3으로 이동
-        });
-    });
-});
-
-// q3에서 card 선택했을 때 다음 질문 넘어감
-document.addEventListener('DOMContentLoaded', () => {
-    const nextBtn = document.querySelector('.next_btn_wrap');
-
-    nextBtn.addEventListener('click', () => {
-        const questionArea = document.querySelector('.question_area');
-        questionArea.style.top = '-300vh'; // 위로 이동
-        setStep(3); // Step 4로 이동 (마지막)
-    });
-});
-
-// slider 막대기 활성화
-const slider = document.querySelector('#slider');
-
-function updateSliderBackground(slider) {
-    const val = (slider.value - slider.min) / (slider.max - slider.min) * 100;
-    slider.style.background = `linear-gradient(to right, #5CBFFF ${val}%, #F5F7FA ${val}%)`;
+    
+    // 초기 배경 설정
+    updateSliderBackground(slider);
 }
 
-slider.addEventListener('input', () => updateSliderBackground(slider));
+// ==================== 사용자 정보 검증 ====================
+function validateUserInfo() {
+    const name = document.getElementById('user').value.trim();
+    const year = document.getElementById('birth_year').value;
+    const month = document.getElementById('birth_month').value;
+    const day = document.getElementById('birth_day').value;
+    
+    return name && year && month && day;
+}
 
-// 초기 배경도 설정해줘야 함!
-updateSliderBackground(slider);
+// ==================== 사용자 정보 저장 ====================
+function saveUserInfo() {
+    userData.name = document.getElementById('user').value.trim();
+    userData.birthYear = document.getElementById('birth_year').value;
+    userData.birthMonth = document.getElementById('birth_month').value;
+    userData.birthDay = document.getElementById('birth_day').value;
+}
 
+// ==================== 테스트 내 사용자 이름 업데이트 ====================
+function updateUserNameInTest() {
+    const userNameSpans = document.querySelectorAll('.user-name');
+    userNameSpans.forEach(span => {
+        span.textContent = userData.name;
+    });
+}
 
-// q4 질문 선택 후 로딩화면 넘어감
-const selectDirection = document.querySelectorAll('.q4 .select_direction');
-const diagTest = document.querySelector('.diag_test');
-const loading = document.querySelector('.loading');
-const result = document.querySelector('.result');
-const loadingTxt = document.querySelector('.loading_txt');
+// ==================== Q3에서 감정 이름 업데이트 ====================
+function updateEmotionNameInQ3() {
+    const emotionNameSpan = document.querySelector('.q3 .emotion-name');
+    if (emotionNameSpan && userData.emotion) {
+        emotionNameSpan.textContent = userData.emotion;
+    }
+}
 
+// ==================== 로딩 시작 ====================
 function goToLoading() {
-    // diag_test 숨기고 loading 보이기
-    diagTest.style.display = 'none';
-    loading.classList.add('active');
-
-    // 숫자 카운트 시작
+    showSection('diagnosis-loading');
+    currentStep = 3;
+    
+    const loadingTxt = document.querySelector('.loading_txt');
     let count = 0;
     let interval = 80;
-
+    
     function increaseCount() {
         count++;
-        loadingTxt.textContent = count;
-
+        if (loadingTxt) {
+            loadingTxt.textContent = count;
+        }
+        
         // 속도 점점 증가
         if (interval > 5) interval -= 2;
-
+        
         if (count < 100) {
             setTimeout(increaseCount, interval);
-            } else {
-            // 100 도달 후 5초 대기
+        } else {
+            // 100 도달 후 대기
             setTimeout(() => {
-                loading.classList.remove('active');
-                loading.style.display = 'none';
-                result.classList.add('active');
-                result.style.display = 'block';
-
-                // result 화면 진입 시 알약 떨어뜨리기
-                dropRandomPills(); // <-- 여기에 위치시켜야 타이밍 맞음
-
-                // 5초 후에 blur_message 부드럽게 표시
-                setTimeout(() => {
-                    const blurMsg = document.querySelector('.blur_message');
-                    blurMsg.style.display = 'flex'; // 1단계: 보여주기
-
-                    // 2단계: 다음 프레임에서 opacity 전환 (트랜지션 적용됨)
-                    requestAnimationFrame(() => {
-                        blurMsg.classList.add('active');
-                    });
-                }, 4000);
-
+                showResult();
             }, 2000);
         }
     }
-
+    
     setTimeout(increaseCount, interval);
 }
 
-// .q4의 3가지 선택지 클릭 시 실행
-selectDirection.forEach(btn => {
-    btn.addEventListener('click', goToLoading);
-});
+// ==================== 결과 표시 ====================
+function showResult() {
+    showSection('diagnosis-result');
+    currentStep = 4;
+    
+    // Matter.js로 알약 애니메이션 시작
+    dropRandomPills();
+    
+    // 결과 메시지 업데이트
+    updateResultMessage();
+    
+    // 5초 후에 blur_message 부드럽게 표시
+    setTimeout(() => {
+        const blurMsg = document.querySelector('.blur_message');
+        if (blurMsg) {
+            blurMsg.style.display = 'flex';
+            requestAnimationFrame(() => {
+                blurMsg.classList.add('active');
+            });
+        }
+    }, 4000);
+}
 
+// ==================== 결과 메시지 업데이트 ====================
+function updateResultMessage() {
+    const messageElement = document.querySelector('.result .message');
+    if (!messageElement) return;
+    
+    const messages = {
+        '복잡함': '지금 느끼는 그 복잡한 감정,<br>차근차근 풀어나가도 괜찮아요.',
+        '짜증남': '지금 느끼는 그 짜증,<br>충분히 이해할 수 있어요.',
+        '혼란스러움': '혼란스러운 마음,<br>천천히 정리해나가도 괜찮아요.',
+        '설렘': '지금 느끼는 그 설렘,<br>마음껏 즐기세요.',
+        '불안함': '지금 느끼는 그 불안함,<br>그 감정을 억누르지 않아도 괜찮아요.'
+    };
+    
+    if (userData.emotion && messages[userData.emotion]) {
+        messageElement.innerHTML = messages[userData.emotion];
+    }
+}
 
-// Matter.js 기본 설정
+// ==================== Matter.js 설정 ====================
 const { Engine, Render, World, Bodies, Runner } = Matter;
 
-// 1. 엔진 생성
+// 엔진 생성
 const engine = Engine.create();
-engine.gravity.y = 2; // 중력 세기 조절
+engine.gravity.y = 2;
 const world = engine.world;
 
-// 2. 렌더링 설정
+// 렌더링 설정
 const render = Render.create({
     element: document.getElementById('pill-canvas'),
     engine: engine,
@@ -172,7 +398,7 @@ const render = Render.create({
         width: window.innerWidth,
         height: window.innerHeight,
         wireframes: false,
-        background: '#fefefe'  // 필요시 배경색 변경
+        background: '#fefefe'
     }
 });
 
@@ -180,65 +406,55 @@ Render.run(render);
 const runner = Runner.create();
 Runner.run(runner, engine);
 
-// 3. 바닥과 벽 추가
+// 바닥과 벽 추가
 const ground = Bodies.rectangle(
     window.innerWidth / 2,
     window.innerHeight + 50,
     window.innerWidth,
     100,
-    {
-        isStatic: true,
-        render: { visible: false }
-    }
+    { isStatic: true, render: { visible: false } }
 );
 
-// 왼쪽 벽
 const wallLeft = Bodies.rectangle(
     -50,
     window.innerHeight / 2,
     100,
     window.innerHeight * 2,
-    {
-        isStatic: true,
-        render: { visible: false }
-    }
+    { isStatic: true, render: { visible: false } }
 );
 
-// 오른쪽 벽
 const wallRight = Bodies.rectangle(
     window.innerWidth + 50,
     window.innerHeight / 2,
     100,
     window.innerHeight * 2,
-    {
-        isStatic: true,
-        render: { visible: false }
-    }
+    { isStatic: true, render: { visible: false } }
 );
 
 World.add(world, [ground, wallLeft, wallRight]);
 
+// 알약 이미지 설정
 const pillImages = [
-    { src: './images/pill_03.svg', xScale: 1.0, yScale: 1.0 }, // 세로로 긴 알약
+    { src: './images/pill_03.svg', xScale: 1.0, yScale: 1.0 },
     { src: './images/pill_05.svg', xScale: 1.0, yScale: 1.0 },
     { src: './images/pill_06.svg', xScale: 1.0, yScale: 1.0 },
     { src: './images/pill_08.svg', xScale: 1.0, yScale: 1.0 }
 ];
 
-const sizeOptions = [100, 120, 180, 250];  // 반지름(px)
+const sizeOptions = [100, 120, 180, 250];
 
 function dropRandomPills() {
     const count = 15;
-
+    
     for (let i = 0; i < count; i++) {
         const radius = sizeOptions[Math.floor(Math.random() * sizeOptions.length)];
         const diameter = radius * 2;
-
+        
         const x = Math.random() * (window.innerWidth - diameter) + radius;
         const y = -Math.random() * 500;
-
+        
         const image = pillImages[Math.floor(Math.random() * pillImages.length)];
-
+        
         const pill = Bodies.circle(x, y, radius, {
             restitution: 0.2,
             friction: 0.5,
@@ -253,7 +469,10 @@ function dropRandomPills() {
                 }
             }
         });
-
+        
         World.add(world, pill);
     }
 }
+
+// ==================== 디버깅용 로그 ====================
+console.log('MOODRX Diagnosis Unified Page Loaded');

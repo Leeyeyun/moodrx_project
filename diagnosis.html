@@ -17,8 +17,10 @@
     <!-- CSS 연결 -->
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/common.css">
-    <link rel="stylesheet" href="./styles/diagnosis.css">
+    <link rel="stylesheet" href="./styles/font.css">
     <link rel="stylesheet" href="./styles/animation.css">
+    <!-- 통합 진단 CSS -->
+    <link rel="stylesheet" href="./styles/diagnosis.css">
     <!--플러그인 필수 css cdn 연결-->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
@@ -28,15 +30,17 @@
     <!-- CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Matter.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
     <!-- JS 연결 -->
     <script src="./script/diagnosis.js" defer></script>
 </head>
 <body>
     <!--=============== header ===============-->
-    <header>
+    <header id="main-header">
         <div class="top_wrap">
             <h1>
-                <a href="./index.html" onclick="location.href='./index.html'; return false;">
+                <a href="./index.html">
                     <img src="/images/logo.svg" alt="logo">
                 </a>
             </h1>
@@ -52,16 +56,263 @@
             </div>
         </div>
     </header>
+
     <main>
-        <div class="diagnosis">
+        <!-- ==================== SECTION 1: 시작 페이지 ==================== -->
+        <section id="diagnosis-start" class="diagnosis active">
             <div class="title_wrap">
                 <h1>Diagnosis</h1>
-                <p>오늘의 감정, 어떤 케어가 필요하신가요?<br>MoodRx는 당신의  감정 상태에 맞는 패키지를 처방해드립니다.<br>지금 바로 감정 진단을 시작해보세요.</p>
-                <a href="./diagnosis_info.html" class="next_btn">
+                <p>오늘의 감정, 어떤 케어가 필요하신가요?<br>MoodRx는 당신의 감정 상태에 맞는 패키지를 처방해드립니다.<br>지금 바로 감정 진단을 시작해보세요.</p>
+                <button class="next_btn" id="start-diagnosis-btn">
                     진단 하러 가기
-                </a>
+                </button>
             </div>
-        </div>
+        </section>
+
+        <!-- ==================== SECTION 2: 사용자 정보 입력 ==================== -->
+        <section id="diagnosis-info" class="diag_info">
+            <div class="top_bar">
+                <button class="back_btn" id="info-back-btn">
+                    <img src="./images/back_btn.svg" alt="뒤로가기"><span>BACK</span>
+                </button>
+            </div>
+            <div class="user_info">
+                <h1><img src="./images/logo.svg" alt="로고"></h1>
+                <h2>
+                    감정 처방을 시작하기 전에, 간단한 정보를 입력해주세요.<br>입력하신 정보는 더 정교한 감정 진단을 위해 사용됩니다.
+                </h2>
+                <!-- form - 사용자 이름 -->
+                <form action="#" method="post" id="user_form" autocomplete="off">
+                    <fieldset>
+                        <legend class="skip">사용자 이름 입력 폼</legend>
+                        <!-- USER 1 -->
+                        <dl class="user_name">
+                            <dt>이름</dt>
+                            <dd class="input_wrap">
+                                <input type="text" id="user" name="user" maxlength="20" placeholder="이름을 작성해주세요" required>
+                            </dd>
+                        </dl>
+                    </fieldset>
+                </form>
+                <!-- form - 사용자 생년월일 -->
+                <form id="birth_form" autocomplete="off">
+                    <fieldset>
+                        <legend class="skip">생년월일 선택 폼</legend>
+                        <dl class="user_birth">
+                            <dt>생년월일</dt>
+                            <dd class="select_wrap">
+                                <!-- 년 선택 -->
+                                <select id="birth_year" name="birth_year" required>
+                                    <option value="" disabled selected hidden>YYYY</option>
+                                </select>
+                                <!-- 월 선택 -->
+                                <select id="birth_month" name="birth_month" required>
+                                    <option value="" disabled selected hidden>MM</option>
+                                </select>
+                                <!-- 일 선택 -->
+                                <select id="birth_day" name="birth_day" required>
+                                    <option value="" disabled selected hidden>DD</option>
+                                </select>
+                            </dd>
+                        </dl>
+                    </fieldset>
+                </form>
+                <!-- 진단 시작 버튼 -->
+                <button class="start_btn" id="start-test-btn">진단 하러 가기</button>
+            </div>
+        </section>
+
+        <!-- ==================== SECTION 3: 진단 테스트 ==================== -->
+        <section id="diagnosis-test" class="diag_test">
+            <div class="top_bar">
+                <button class="back_btn" id="test-back-btn">
+                    <img src="./images/back_btn.svg" alt="뒤로가기"><span>BACK</span>
+                </button>
+                <a href="./index.html" class="logo"><img src="./images/logo.svg" alt="로고"></a>
+            </div>
+            <div class="procedure">
+                <span class="num current">01</span>
+                <span class="line"></span>
+                <span class="num">02</span>
+                <span class="line"></span>
+                <span class="num">03</span>
+                <span class="line"></span>
+                <span class="num">04</span>
+            </div>
+            <div class="question_area">
+                <!-- Q1 -->
+                <div class="q_section q1 active">
+                    <div class="q_txt">
+                        <h1>Step 1</h1>
+                        <h2>오늘 하루는 어땠나요?</h2>
+                        <p><span class="user-name">홍길동</span> 님의 감정과 가장 유사한 감정 카드를 선택해주세요.</p>
+                    </div>
+                    <ul class="select_card_wrap">
+                        <li class="select_card" data-value="복잡함">
+                            <span>마음이 좀<br>복잡했어요</span>
+                            <img src="./images/emotion_01.png" alt="감정 이모티콘">
+                        </li>
+                        <li class="select_card" data-value="짜증남">
+                            <span>짜증나는 일이<br>많았어요</span>
+                            <img src="./images/emotion_02.png" alt="감정 이모티콘">
+                        </li>
+                        <li class="select_card" data-value="혼란스러움">
+                            <span>뭐가 뭔지<br>모르겠어요</span>
+                            <img src="./images/emotion_03.png" alt="감정 이모티콘">
+                        </li>
+                        <li class="select_card" data-value="설렘">
+                            <span>설레는 일이<br>있었어요</span>
+                            <img src="./images/emotion_04.png" alt="감정 이모티콘">
+                        </li>
+                        <li class="select_card" data-value="불안함">
+                            <span>답답하고<br>불안했어요</span>
+                            <img src="./images/emotion_05.png" alt="감정 이모티콘">
+                        </li>
+                    </ul>
+                </div>
+                <!-- Q2 -->
+                <div class="q_section q2">
+                    <div class="q_txt">
+                        <h1>Step 2</h1>
+                        <h2>왜 그렇게 느꼈나요?</h2>
+                        <p>감정의 원인을 선택해주세요.</p>
+                    </div>
+                    <ul class="select_circle_wrap">
+                        <li class="select_circle" data-value="자존감">
+                            <div class="blur_bg"><img src="./images/circle_1.png" alt="bg이미지"></div>
+                            <p>자존감이<br>낮아졌어요</p>
+                        </li>
+                        <li class="select_circle" data-value="슬픔">
+                            <div class="blur_bg"><img src="./images/circle_2.png" alt="bg이미지"></div>
+                            <p>울고<br>싶었어요</p>
+                        </li>
+                        <li class="select_circle" data-value="실망">
+                            <div class="blur_bg"><img src="./images/circle_3.png" alt="bg이미지"></div>
+                            <p>기대한 일이<br>무산됐어요</p>
+                        </li>
+                        <li class="select_circle" data-value="외로움">
+                            <div class="blur_bg"><img src="./images/circle_2.png" alt="bg이미지"></div>
+                            <p>혼자 있는<br>느낌이 강했어요</p>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Q3 -->
+                <div class="q_section q3">
+                    <div class="q_txt">
+                        <h1>Step 3</h1>
+                        <h2><span class="user-name">홍길동</span> 님의 <span class="emotion-name">슬픔</span> 정도를 알려주세요.</h2>
+                        <p>현재 감정의 강도를 아래 조절 바를 통해 선택해주세요.</p>
+                    </div>
+                    <div class="slider_wrap">
+                        <input type="range" id="slider" min="0" max="100" step="1" value="20">
+                    </div>
+                    <div class="tick_container">
+                        <div class="tick tick_main"><span class="line"></span><span>0</span></div>
+                        <div class="tick"><span class="line"></span></div>
+                        <div class="tick"><span class="line"></span></div>
+                        <div class="tick"><span class="line"></span></div>
+                        <div class="tick"><span class="line"></span></div>
+                        <div class="tick tick_main"><span class="line"></span><span>25</span></div>
+                        <div class="tick"><span class="line"></span></div>
+                        <div class="tick"><span class="line"></span></div>
+                        <div class="tick"><span class="line"></span></div>
+                        <div class="tick"><span class="line"></span></div>
+                        <div class="tick tick_main"><span class="line"></span><span>50</span></div>
+                        <div class="tick"><span class="line"></span></div>
+                        <div class="tick"><span class="line"></span></div>
+                        <div class="tick"><span class="line"></span></div>
+                        <div class="tick"><span class="line"></span></div>
+                        <div class="tick tick_main"><span class="line"></span><span>75</span></div>
+                        <div class="tick"><span class="line"></span></div>
+                        <div class="tick"><span class="line"></span></div>
+                        <div class="tick"><span class="line"></span></div>
+                        <div class="tick"><span class="line"></span></div>
+                        <div class="tick tick_main"><span class="line"></span><span>100</span></div>
+                    </div>
+                    <div class="next_btn_wrap">
+                        <button class="next_btn" id="q3-next-btn">다음 질문으로</button>
+                        <img src="./images/next_icn.svg" alt="다음 버튼 아이콘">
+                    </div>
+                </div>
+                <!-- Q4 -->
+                <div class="q_section q4">
+                    <div class="q_txt">
+                        <h1>Step 4</h1>
+                        <h2>케어 방향을 선택해주세요.</h2>
+                        <p><span class="user-name">홍길동</span> 님의 감정과 가장 유사한 감정 카드를 선택해주세요.</p>
+                    </div>
+                    <ul class="select_direction_wrap">
+                        <li class="select_direction" data-value="증폭">
+                            <div class="gradient"></div>
+                            <div class="front">
+                                <div class="wrap">
+                                    <span>감정 증폭</span>
+                                    <img src="./images/direction_1.svg" alt="감정 방향 아이콘">
+                                </div>
+                                <p>지금 느끼는 감정을 더 깊고 풍부하게<br>경험할 수 있도록 도와드릴게요.</p>
+                            </div>
+                        </li>
+                        <li class="select_direction" data-value="완화">
+                            <div class="gradient"></div>
+                            <div class="front">
+                                <div class="wrap">
+                                    <span>감정 완화</span>
+                                    <img src="./images/direction_2.svg" alt="감정 방향 아이콘">
+                                </div>
+                                <p>지나치게 강한 감정을 부드럽게 다듬어<br>편안하게 만들어드릴게요.</p>
+                            </div>
+                        </li>
+                        <li class="select_direction" data-value="전환">
+                            <div class="gradient"></div>
+                            <div class="front">
+                                <div class="wrap">
+                                    <span>감정 전환</span>
+                                    <img src="./images/direction_3.svg" alt="감정 방향 아이콘">
+                                </div>
+                                <p>지금의 감정을 자연스럽게 전환해,<br>새로운 감정으로 안내해드릴게요.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Q4-1: 감정 전환 추가 질문 (hidden) -->
+                <div class="q_section q4_1">
+                    <div class="q_txt">
+                        <h1>Step 4-1</h1>
+                        <h2>어떤 감정으로 전환하고 싶으신가요?</h2>
+                        <p>원하시는 감정 방향을 선택해주세요.</p>
+                    </div>
+                    <ul class="select_transform_wrap">
+                        <li class="select_transform" data-value="평온함">
+                            <span>평온함</span>
+                        </li>
+                        <li class="select_transform" data-value="기쁨">
+                            <span>기쁨</span>
+                        </li>
+                        <li class="select_transform" data-value="활력">
+                            <span>활력</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SECTION 4: 로딩 ==================== -->
+        <section id="diagnosis-loading" class="loading">
+            <h1>MoodRx가 열심히 처방 중입니다.</h1>
+            <div class="loading_txt">1</div>
+        </section>
+
+        <!-- ==================== SECTION 5: 결과 ==================== -->
+        <section id="diagnosis-result" class="result">
+            <div id="pill-canvas"></div>
+            <div class="blur_message">
+                <p class="message">지금 느끼는 그 우울함,<br>그 감정을 억누르지 않아도 괜찮아요.</p>
+                <div class="arrowBtn">
+                    <span class="arrow_line"></span>
+                    <a href="prescription.html" id="go-prescription">처방으로</a>
+                </div>
+            </div>
+        </section>
     </main>
 </body>
 </html>
