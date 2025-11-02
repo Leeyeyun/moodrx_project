@@ -1,4 +1,103 @@
+// ==================== 사용자 데이터 로드 ====================
+let userData = null;
+
+// localStorage에서 사용자 데이터 불러오기
+function loadUserData() {
+    const storedData = localStorage.getItem('moodrx_user_data');
+    if (storedData) {
+        userData = JSON.parse(storedData);
+        console.log('Loaded user data:', userData);
+        updateUserInfo();
+    } else {
+        console.warn('No user data found in localStorage');
+        // 데이터가 없으면 기본값 설정
+        userData = {
+            name: '홍길동',
+            finalEmotion: '슬픔-증폭',
+            step1EmotionName: '슬픔',
+            direction: '증폭'
+        };
+        updateUserInfo();
+    }
+}
+
+// 사용자 정보를 화면에 표시
+function updateUserInfo() {
+    // 이름 업데이트
+    const userNameElements = document.querySelectorAll('.user_name');
+    userNameElements.forEach(el => {
+        el.textContent = userData.name;
+    });
+    
+    // Care (케어 방향) 업데이트
+    const careElements = document.querySelectorAll('.top_wrap li:nth-child(2) .txt_wrap h4');
+    if (careElements.length >= 2) {
+        const directionKR = userData.direction; // 증폭, 완화, 전환
+        let directionEN = 'Amplify';
+        
+        if (directionKR === '증폭') directionEN = 'Amplify';
+        else if (directionKR === '완화') directionEN = 'Soothe';
+        else if (directionKR === '전환') directionEN = 'Transform';
+        
+        careElements[0].textContent = directionKR;
+        careElements[1].textContent = directionEN;
+    }
+    
+    // Target (타겟 감정) 업데이트
+    const targetElements = document.querySelectorAll('.top_wrap li:nth-child(3) .txt_wrap h4');
+    if (targetElements.length >= 2) {
+        const emotionKR = userData.step1EmotionName; // 슬픔, 분노, 무감각, 설렘, 불안
+        let emotionEN = 'Sadness';
+        
+        if (emotionKR === '슬픔') emotionEN = 'Sadness';
+        else if (emotionKR === '분노') emotionEN = 'Anger';
+        else if (emotionKR === '무감각') emotionEN = 'Numbness';
+        else if (emotionKR === '설렘') emotionEN = 'Excitement';
+        else if (emotionKR === '불안') emotionEN = 'Anxiety';
+        
+        targetElements[0].textContent = emotionKR;
+        targetElements[1].textContent = emotionEN;
+    }
+    
+    // Prescription 설명 업데이트
+    updatePrescriptionText();
+}
+
+// 감정에 따른 처방 설명 업데이트
+function updatePrescriptionText() {
+    const descElement = document.querySelector('.user_result .desc p');
+    if (!descElement) return;
+    
+    const prescriptionTexts = {
+        '슬픔-증폭': '슬픔이라는 감정을 더욱 깊이 있게 경험하며, 그 감정 속에서 자신을 이해하고 수용할 수 있도록 시각적 몰입을 유도합니다.',
+        '슬픔-완화': '슬픔의 무게를 덜어내고 마음의 평안을 찾을 수 있도록, 부드럽고 따뜻한 시각적 경험을 제공합니다.',
+        '분노-증폭': '분노라는 감정을 억누르지 않고 충분히 표현하며, 그 에너지를 건강하게 전환할 수 있도록 강렬한 시각적 자극을 제공합니다.',
+        '분노-완화': '분노의 열기를 식히고 차분함을 되찾을 수 있도록, 안정적이고 고요한 시각적 경험을 제공합니다.',
+        '무감각-증폭': '무감각 상태를 있는 그대로 받아들이며, 그 속에서 자신을 관찰할 수 있도록 정적이고 명상적인 시각적 경험을 제공합니다.',
+        '무감각-완화': '무뎌진 감각을 깨우고 다시 감정을 느낄 수 있도록, 자극적이고 생동감 있는 시각적 경험을 제공합니다.',
+        '설렘-증폭': '설렘이라는 감정을 극대화하여 삶의 활력과 기대감을 높일 수 있도록, 역동적이고 화려한 시각적 경험을 제공합니다.',
+        '설렘-완화': '과도한 설렘을 안정적인 기쁨으로 전환하며, 차분하면서도 따뜻한 시각적 경험을 제공합니다.',
+        '불안-증폭': '불안을 회피하지 않고 직면하며, 그 속에서 경계심과 주의력을 높일 수 있도록 긴장감 있는 시각적 경험을 제공합니다.',
+        '불안-완화': '불안한 마음을 진정시키고 안정을 찾을 수 있도록, 평온하고 규칙적인 시각적 경험을 제공합니다.',
+        '혼란': '혼란스러운 마음을 정리하고 명료함을 찾을 수 있도록, 구조적이고 균형 잡힌 시각적 경험을 제공합니다.',
+        '무감각': '무감각 상태에서 벗어나 다시 감정을 느낄 수 있도록, 자극적이고 생동감 있는 시각적 경험을 제공합니다.',
+        '슬픔': '슬픔을 있는 그대로 느끼고 표현하며, 그 과정에서 치유를 경험할 수 있도록 깊이 있는 시각적 경험을 제공합니다.',
+        '피로': '지친 마음과 몸을 회복할 수 있도록, 편안하고 부드러운 시각적 휴식을 제공합니다.',
+        '기쁨': '기쁨이라는 감정을 온전히 누리고 확장할 수 있도록, 밝고 따뜻한 시각적 경험을 제공합니다.',
+        '불안': '불안을 인정하고 다스릴 수 있도록, 안정감 있고 규칙적인 시각적 경험을 제공합니다.',
+        '설렘': '설렘을 즐기고 그 에너지를 긍정적으로 활용할 수 있도록, 생동감 넘치는 시각적 경험을 제공합니다.'
+    };
+    
+    const emotionKey = userData.finalEmotion;
+    const prescriptionText = prescriptionTexts[emotionKey] || '당신의 감정을 케어하기 위한 맞춤형 시각적 경험을 제공합니다.';
+    
+    descElement.textContent = prescriptionText;
+}
+
+// ==================== 기존 코드 ====================
 window.addEventListener('DOMContentLoaded', () => {
+    loadUserData(); // 사용자 데이터 먼저 로드
+    
     const header = document.querySelector('header');
     const top = document.querySelector('.top');
     const btm = document.querySelector('.btm');
@@ -406,6 +505,6 @@ function initPills() {
 }
 
 // 페이지 로드 시 차트 초기화
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
     createChart(true);
 });
