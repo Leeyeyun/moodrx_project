@@ -15,15 +15,16 @@ const userData = {
 
 // 감정 매핑 데이터
 // 알약 순서: pill_01(기쁨) / pill_02(설렘) / pill_03(슬픔) / pill_04(분노) / pill_05(불안) / pill_06(혼란) / pill_07(피로) / pill_08(무감각)
+// circle 이미지: circle_1(기쁨) / circle_2(설렘) / circle_3(슬픔) / circle_4(분노) / circle_5(불안) / circle_6(혼란) / circle_7(피로) / circle_8(무감각)
 const emotionData = {
     '복잡함': {
         mainEmotion: '슬픔',
         code: 'sadness',
         step2Options: [
-            { value: 'disappointed', text: '기대했던 일이<br>무산되거나 잘 되지 않았어요.' },
-            { value: 'self-blame', text: '스스로를<br>자책하게 됐어요.' },
-            { value: 'distance', text: '관계에서<br>거리감이 느껴졌어요.' },
-            { value: 'alone', text: '감정이 너무 깊어져서<br>혼자 있고 싶었어요.' }
+            { value: 'disappointed', text: '기대했던 일이<br>무산되거나 잘 되지 않았어요.', image: 'circle_3.png' },
+            { value: 'self-blame', text: '스스로를<br>자책하게 됐어요.', image: 'circle_5.png' },
+            { value: 'distance', text: '관계에서<br>거리감이 느껴졌어요.', image: 'circle_3.png' },
+            { value: 'alone', text: '감정이 너무 깊어져서<br>혼자 있고 싶었어요.', image: 'circle_8.png' }
         ],
         transform: [
             { value: '혼란', text: '혼란: 감정의 깊이를 다른 형태로 살펴 보세요.' },
@@ -36,10 +37,10 @@ const emotionData = {
         mainEmotion: '분노',
         code: 'anger',
         step2Options: [
-            { value: 'unfair', text: '누군가의 말이나 행동이<br>부당하게 느껴졌어요.' },
-            { value: 'no-result', text: '노력한 만큼의<br>결과가 나오지 않았어요.' },
-            { value: 'repeat', text: '반복되는 상황이<br>답답했어요.' },
-            { value: 'no-express', text: '내 감정을 제대로<br>표현할 수 없었어요.' }
+            { value: 'unfair', text: '누군가의 말이나 행동이<br>부당하게 느껴졌어요.', image: 'circle_4.png' },
+            { value: 'no-result', text: '노력한 만큼의<br>결과가 나오지 않았어요.', image: 'circle_7.png' },
+            { value: 'repeat', text: '반복되는 상황이<br>답답했어요.', image: 'circle_5.png' },
+            { value: 'no-express', text: '내 감정을 제대로<br>표현할 수 없었어요.', image: 'circle_4.png' }
         ],
         transform: [
             { value: '슬픔', text: '슬픔: 분노 속 상처를 들여다보신 적 있나요?' },
@@ -52,10 +53,10 @@ const emotionData = {
         mainEmotion: '무감각',
         code: 'numb',
         step2Options: [
-            { value: 'too-much', text: '감정이 너무 많아서<br>아무것도 느껴지지 않았어요.' },
-            { value: 'routine', text: '반복되는 일상에 익숙해져서<br>무뎌졌어요.' },
-            { value: 'unclear', text: '스스로의 감정이<br>잘 구분되지 않았어요.' },
-            { value: 'exhausted', text: '몸도 마음도<br>다 지쳐버린 느낌이에요.' }
+            { value: 'too-much', text: '감정이 너무 많아서<br>아무것도 느껴지지 않았어요.', image: 'circle_6.png' },
+            { value: 'routine', text: '반복되는 일상에 익숙해져서<br>무뎌졌어요.', image: 'circle_8.png' },
+            { value: 'unclear', text: '스스로의 감정이<br>잘 구분되지 않았어요.', image: 'circle_6.png' },
+            { value: 'exhausted', text: '몸도 마음도<br>다 지쳐버린 느낌이에요.', image: 'circle_7.png' }
         ],
         transform: [
             { value: '슬픔', text: '슬픔: 감정의 회복은 때때로 눈물을 동반하죠.' },
@@ -68,10 +69,10 @@ const emotionData = {
         mainEmotion: '설렘',
         code: 'excitement',
         step2Options: [
-            { value: 'new-person', text: '새로운 사람이나 일을 만나서<br>기분이 새로웠어요.' },
-            { value: 'long-time', text: '오랜만에 나를 설레게 하는<br>일이 있었어요.' },
-            { value: 'different', text: '평소와 다른 분위기나 공간이<br>자극이 되었어요.' },
-            { value: 'special', text: '작지만 특별한 순간이<br>기억에 남았어요.' }
+            { value: 'new-person', text: '새로운 사람이나 일을 만나서<br>기분이 새로웠어요.', image: 'circle_2.png' },
+            { value: 'long-time', text: '오랜만에 나를 설레게 하는<br>일이 있었어요.', image: 'circle_1.png' },
+            { value: 'different', text: '평소와 다른 분위기나 공간이<br>자극이 되었어요.', image: 'circle_2.png' },
+            { value: 'special', text: '작지만 특별한 순간이<br>기억에 남았어요.', image: 'circle_1.png' }
         ],
         transform: [
             { value: '기쁨', text: '기쁨: 설렘의 파동을 따뜻한 기쁨의 안정으로 바꿔 봐요.' },
@@ -84,10 +85,10 @@ const emotionData = {
         mainEmotion: '불안',
         code: 'anxiety',
         step2Options: [
-            { value: 'uncertain', text: '내 생각이나 행동이<br>맞는지 확신이 없었어요.' },
-            { value: 'unpredictable', text: '상황이 예측되지 않아서<br>마음이 불안했어요.' },
-            { value: 'others', text: '다른 사람의 반응이나 시선이<br>신경 쓰였어요.' },
-            { value: 'thoughts', text: '해야 할 일들이<br>머릿속을 계속 맴돌았어요.' }
+            { value: 'uncertain', text: '내 생각이나 행동이<br>맞는지 확신이 없었어요.', image: 'circle_5.png' },
+            { value: 'unpredictable', text: '상황이 예측되지 않아서<br>마음이 불안했어요.', image: 'circle_5.png' },
+            { value: 'others', text: '다른 사람의 반응이나 시선이<br>신경 쓰였어요.', image: 'circle_6.png' },
+            { value: 'thoughts', text: '해야 할 일들이<br>머릿속을 계속 맴돌았어요.', image: 'circle_7.png' }
         ],
         transform: [
             { value: '혼란', text: '혼란: 모든 걸 통제하지 않아도 괜찮아요.' },
@@ -478,7 +479,7 @@ function updateStep2Options(options) {
         li.className = 'select_circle';
         li.dataset.value = option.value;
         li.innerHTML = `
-            <div class="blur_bg"><img src="./images/circle_1.png" alt="bg이미지"></div>
+            <div class="blur_bg"><img src="./images/${option.image}" alt="bg이미지"></div>
             <p>${option.text}</p>
         `;
         
@@ -648,7 +649,7 @@ World.add(world, [ground, wallLeft, wallRight]);
 const sizeOptions = [100, 120, 180, 250];
 
 function dropRandomPills() {
-    const count = 15;
+    const count = 20;
     
     // 최종 감정에 따른 알약 이미지 선택
     const emotionKey = userData.finalEmotion;
