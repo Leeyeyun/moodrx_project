@@ -10,7 +10,7 @@ main .store > h2 {font-size:1.125rem; font-weight:700; letter-spacing:0.2px; mar
 
 /* 추천 패키지 */
 main .store .package_recommend {
-    display:flex; justify-content:space-between;
+    display:flex; justify-content:space-between; margin-bottom:120px;
 }
 main .store .package_recommend .package_wrap {
     width:calc((100% - 32px) / 2);
@@ -48,6 +48,10 @@ main .store .product_container .store_contents {
     width:calc((100% - 60px) / 3); margin-bottom:60px;
     border:1px solid #C3CEDF; height:400px; overflow:hidden; border-radius:15px;
     position:relative;
+    transition:all 0.3s ease;
+}
+main .store .product_container .store_contents:hover {
+    background-color:#FAFAFA;
 }
 main .store .product_container .store_contents:hover .right_pill {
     scale:1.1;
@@ -78,7 +82,7 @@ main .store .product_container .store_contents .txt_wrap .btm_txt .effect_txt:fi
 
 /* 오른쪽 알약 그래픽 이미지 */
 main .store .product_container .store_contents .right_pill {
-    position:absolute; left:40%; top:15%;
+    position:absolute; left:46%; top:15%;
     height:100%; width:100%;
     transition:all 0.3s ease;
 }
@@ -86,6 +90,10 @@ main .store .product_container .store_contents .right_pill > img {width:294px;}
 main .store .product_container .store_contents .right_pill > img:first-child {position:relative; z-index:10;}
 main .store .product_container .store_contents .right_pill > img:first-child {position:relative; z-index:10;}
 main .store .product_container .store_contents .right_pill > img:last-child {
-    position:relative; z-index:5;
-    top:-30%; filter:blur(20px); opacity:0.3;
+    position: relative;
+    z-index: 5;
+    right: 300px;
+    top: 150px;
+    filter: blur(30px);
+    opacity: 0.5;
 }

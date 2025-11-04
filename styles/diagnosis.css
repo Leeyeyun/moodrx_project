@@ -508,9 +508,10 @@ main .diag_test .question_area .q2 .select_circle_wrap .select_circle > p {
 main .diag_test .question_area .q2 .select_circle_wrap .select_circle .blur_bg {
     width: 100%;
     height: 100%;
-    filter: blur(22px);
+    filter: blur(20px);
     position: absolute;
     transition: all 0.5s ease;
+    scale:1.5; transform:translateY(10px);
 }
 
 /* circle hover 시 디자인 */

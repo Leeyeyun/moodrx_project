@@ -111,14 +111,15 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 const listItems = document.querySelectorAll('.list');
+const listWrap = document.querySelector('.list_wrap');
 const raderChart = document.querySelector('.rader_chart');
 const rightDetail = document.querySelector('.rightDetail');
 const contentsWrap = document.querySelector('.contents_wrap');
 const d2 = document.querySelector('.d_2');
-const rightDetailChildren = rightDetail.children;
+const takingContent = document.querySelector('.taking_content');
+const rightDetailChildren = rightDetail ? rightDetail.children : [];
 
 let currentSection = 0; // 0: 진단, 1: 처방, 2: 복용
-
 
 listItems.forEach((item, index) => {
     item.addEventListener('click', () => {
@@ -127,112 +128,251 @@ listItems.forEach((item, index) => {
         item.classList.add('active');
 
         // 모든 섹션 공통 초기화
-        raderChart.style.transition = 'opacity 0.6s ease';
-        rightDetail.style.transition = 'opacity 0.6s ease, width 0.6s ease';
-        contentsWrap.style.transition = 'opacity 0.6s ease';
-        d2.style.transition = 'opacity 0.6s ease, width 0.6s ease';
+        if (raderChart) raderChart.style.transition = 'opacity 0.6s ease';
+        if (rightDetail) rightDetail.style.transition = 'opacity 0.6s ease, width 0.6s ease';
+        if (contentsWrap) contentsWrap.style.transition = 'opacity 0.6s ease';
+        if (d2) d2.style.transition = 'opacity 0.6s ease, width 0.6s ease';
+        if (takingContent) takingContent.style.transition = 'opacity 0.6s ease';
+        if (listWrap) listWrap.style.transition = 'all 0.6s ease';
 
         // 진단 > 처방
         if (currentSection === 0 && index === 1) {
-        raderChart.style.opacity = 0;
-        setTimeout(() => {
-            for (let child of rightDetailChildren) {
-            child.style.opacity = 0;
-            child.style.visibility = 'hidden';
-            }
-        }, 200);
-        setTimeout(() => {
-            rightDetail.style.opacity = '0';
-            rightDetail.style.width = '0';
-        }, 700);
-        setTimeout(() => {
-            raderChart.style.display = 'none';
-            rightDetail.classList.add('hidden');
-        }, 900);
-        setTimeout(() => {
-            contentsWrap.style.display = 'flex';
-            d2.style.display = 'flex';
-            d2.style.width = '45%';
-            requestAnimationFrame(() => {
-            contentsWrap.style.opacity = 1;
-            d2.style.opacity = 1;
-            });
-        }, 1500);
+            raderChart.style.opacity = 0;
+            
+            // d_1 내용만 페이드아웃
+            setTimeout(() => {
+                for (let child of rightDetailChildren) {
+                    if (child.classList.contains('d_1')) {
+                        child.style.opacity = 0;
+                    }
+                }
+            }, 200);
+            
+            setTimeout(() => {
+                raderChart.style.display = 'none';
+                
+                // d_1 숨기기
+                const d1 = document.querySelector('.d_1');
+                if (d1) d1.style.display = 'none';
+                
+                // 중앙에 콘텐츠 표시
+                contentsWrap.style.display = 'flex';
+                d2.style.display = 'flex';
+                
+                // rightDetail은 계속 보이도록 유지
+                rightDetail.style.opacity = 1;
+                rightDetail.style.width = '46%';
+                
+                requestAnimationFrame(() => {
+                    contentsWrap.style.opacity = 1;
+                    d2.style.opacity = 1;
+                });
+            }, 700);
         }
 
         // 처방 > 복용
         else if (currentSection === 1 && index === 2) {
-        d2.style.width = '0';
-        d2.style.opacity = '0';
+            // 왼쪽 리스트 숨기기
+            if (listWrap) {
+                listWrap.style.width = '0';
+                listWrap.style.padding = '0';
+                listWrap.style.opacity = '0';
+            }
+            
+            // d_2 페이드아웃
+            if (d2) d2.style.opacity = 0;
+            
+            setTimeout(() => {
+                if (listWrap) listWrap.classList.add('hidden');
+                
+                // d_2 숨기고 taking_content 표시
+                if (d2) d2.style.display = 'none';
+                if (takingContent) {
+                    takingContent.classList.add('active');
+                    takingContent.style.display = 'flex';
+                    takingContent.style.width = '46%';
+                    
+                    requestAnimationFrame(() => {
+                        takingContent.style.opacity = 1;
+                    });
+                }
+            }, 600);
         }
 
         // 복용 > 처방
         else if (currentSection === 2 && index === 1) {
-        d2.style.display = 'flex';
-        setTimeout(() => {
-            d2.style.width = '45%';
-            d2.style.opacity = '1';
-        }, 10);
+            if (takingContent) takingContent.style.opacity = 0;
+            
+            setTimeout(() => {
+                if (takingContent) {
+                    takingContent.style.display = 'none';
+                    takingContent.classList.remove('active');
+                }
+                if (listWrap) {
+                    listWrap.classList.remove('hidden');
+                    listWrap.style.width = '19%';
+                    listWrap.style.padding = '60px';
+                    listWrap.style.opacity = '1';
+                }
+                
+                // d2 다시 표시
+                if (d2) {
+                    d2.style.display = 'flex';
+                    d2.style.opacity = 0;
+                }
+                
+                requestAnimationFrame(() => {
+                    if (d2) d2.style.opacity = 1;
+                });
+            }, 600);
         }
 
         // 처방 > 진단
         else if (currentSection === 1 && index === 0) {
-        contentsWrap.style.opacity = 0;
-        d2.style.opacity = 0;
-        setTimeout(() => {
-            contentsWrap.style.display = 'none';
-            d2.style.display = 'none';
-            raderChart.style.display = 'flex';
-            rightDetail.classList.remove('hidden');
-            rightDetail.style.width = '45%';
+            contentsWrap.style.opacity = 0;
+            d2.style.opacity = 0;
+            
             setTimeout(() => {
-            raderChart.style.opacity = 1;
-            rightDetail.style.opacity = 1;
-            for (let child of rightDetailChildren) {
-                child.style.opacity = 1;
-                child.style.visibility = 'visible';
-            }
-            }, 10);
-        }, 500);
+                contentsWrap.style.display = 'none';
+                d2.style.display = 'none';
+                
+                // d_1 다시 표시
+                const d1 = document.querySelector('.d_1');
+                if (d1) d1.style.display = 'flex';
+                
+                raderChart.style.display = 'flex';
+                
+                // rightDetail은 계속 보이도록 유지
+                rightDetail.style.opacity = 1;
+                rightDetail.style.width = '46%';
+                
+                setTimeout(() => {
+                    raderChart.style.opacity = 1;
+                    
+                    // d_1 내용 페이드인
+                    for (let child of rightDetailChildren) {
+                        if (child.classList.contains('d_1')) {
+                            child.style.opacity = 1;
+                            child.style.visibility = 'visible';
+                        }
+                    }
+                }, 10);
+            }, 500);
         }
 
         // 진단 > 복용
         else if (currentSection === 0 && index === 2) {
-        raderChart.style.opacity = 0;
-        setTimeout(() => {
-            for (let child of rightDetailChildren) {
-            child.style.opacity = 0;
-            child.style.visibility = 'hidden';
+            if (raderChart) raderChart.style.opacity = 0;
+            if (listWrap) {
+                listWrap.style.width = '0';
+                listWrap.style.padding = '0';
+                listWrap.style.opacity = '0';
             }
-        }, 200);
-        setTimeout(() => {
-            rightDetail.style.opacity = '0';
-            rightDetail.style.width = '0';
-        }, 700);
-        setTimeout(() => {
-            raderChart.style.display = 'none';
-            rightDetail.classList.add('hidden');
-        }, 900);
+            
+            // d_1 페이드아웃
+            setTimeout(() => {
+                for (let child of rightDetailChildren) {
+                    if (child.classList.contains('d_1')) {
+                        child.style.opacity = 0;
+                    }
+                }
+            }, 200);
+            
+            setTimeout(() => {
+                if (raderChart) raderChart.style.display = 'none';
+                if (listWrap) listWrap.classList.add('hidden');
+                
+                // d_1 숨기기
+                const d1 = document.querySelector('.d_1');
+                if (d1) d1.style.display = 'none';
+                
+                // contents_wrap 표시
+                if (contentsWrap) {
+                    contentsWrap.style.display = 'flex';
+                    contentsWrap.style.opacity = 0;
+                }
+                
+                // taking_content 표시
+                if (takingContent) {
+                    takingContent.classList.add('active');
+                    takingContent.style.display = 'flex';
+                    takingContent.style.width = '46%';
+                    takingContent.style.opacity = 0;
+                }
+                
+                requestAnimationFrame(() => {
+                    if (contentsWrap) contentsWrap.style.opacity = 1;
+                    if (takingContent) takingContent.style.opacity = 1;
+                });
+            }, 700);
         }
 
         // 복용 > 진단
         else if (currentSection === 2 && index === 0) {
-        raderChart.style.display = 'flex';
-        rightDetail.classList.remove('hidden');
-        rightDetail.style.width = '45%';
-        setTimeout(() => {
-            raderChart.style.opacity = 1;
-            rightDetail.style.opacity = 1;
-            for (let child of rightDetailChildren) {
-            child.style.opacity = 1;
-            child.style.visibility = 'visible';
-            }
-        }, 10);
+            if (takingContent) takingContent.style.opacity = 0;
+            if (contentsWrap) contentsWrap.style.opacity = 0;
+            
+            setTimeout(() => {
+                if (takingContent) {
+                    takingContent.style.display = 'none';
+                    takingContent.classList.remove('active');
+                }
+                if (contentsWrap) contentsWrap.style.display = 'none';
+                
+                if (listWrap) {
+                    listWrap.classList.remove('hidden');
+                    listWrap.style.width = '19%';
+                    listWrap.style.padding = '60px';
+                    listWrap.style.opacity = '1';
+                }
+                
+                // d_1 다시 표시
+                const d1 = document.querySelector('.d_1');
+                if (d1) d1.style.display = 'flex';
+                
+                if (raderChart) raderChart.style.display = 'flex';
+                
+                // rightDetail은 계속 보이도록 유지
+                rightDetail.style.opacity = 1;
+                rightDetail.style.width = '46%';
+                
+                setTimeout(() => {
+                    if (raderChart) raderChart.style.opacity = 1;
+                    
+                    // d_1 내용 페이드인
+                    for (let child of rightDetailChildren) {
+                        if (child.classList.contains('d_1')) {
+                            child.style.opacity = 1;
+                            child.style.visibility = 'visible';
+                        }
+                    }
+                }, 10);
+            }, 600);
         }
 
         currentSection = index;
     });
 });
+
+// 화살표 버튼 클릭 시 → 처방(02)으로 전환
+const nextBtn = document.querySelector('.rader_chart .next_btn button');
+if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+        if (currentSection === 0) {
+            listItems[1].click(); // 처방으로 전환
+        }
+    });
+}
+
+// 복용 페이지 이전 버튼 클릭 시 → 처방(02)으로 전환
+const backBtn = document.querySelector('.taking_content .back_arrow button');
+if (backBtn) {
+    backBtn.addEventListener('click', () => {
+        if (currentSection === 2) {
+            listItems[1].click(); // 처방으로 전환
+        }
+    });
+}
 
 // 콘텐츠 이미지 클릭 시 → 복용(03)으로 전환
 const imageSlides = document.querySelectorAll('.swiper-slide .image');
@@ -240,26 +380,21 @@ const imageSlides = document.querySelectorAll('.swiper-slide .image');
 imageSlides.forEach(image => {
     image.addEventListener('click', () => {
         if (currentSection !== 2) {
-        listItems[2].click(); // 복용으로 전환
+            listItems[2].click(); // 복용으로 전환
         }
     });
 });
-
-
 
 // 02 처방 - 작품 슬라이드
 const workSwiper = new Swiper('.work-slide', {
     loop: true,
     slidesPerView: 1,
     spaceBetween:20,
-
     speed: 1000,
-
     autoplay: {
         delay: 3000,
         disableOnInteraction: false
     },
-    
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev'
@@ -269,7 +404,6 @@ const workSwiper = new Swiper('.work-slide', {
         clickable: true
     }
 });
-
 
 // ============================================
 // 여기에 이미지 경로들을 입력하세요!
@@ -306,9 +440,9 @@ function createChart(animated = true) {
                 backgroundColor: 'rgba(153, 102, 255, 0.2)',
                 borderColor: 'rgba(153, 102, 255, 1)',
                 pointBackgroundColor: 'rgba(153, 102, 255, 1)',
-                pointRadius: 6,  // 5 → 6
-                pointHoverRadius: 8,  // 7 → 8
-                borderWidth: 3  // 2 → 3
+                pointRadius: 6,
+                pointHoverRadius: 8,
+                borderWidth: 3
             }]
         },
         options: {
@@ -325,12 +459,12 @@ function createChart(animated = true) {
                         stepSize: 25,
                         backdropColor: 'transparent',
                         font: {
-                            size: 13  // 11 → 13
+                            size: 13
                         }
                     },
                     pointLabels: {
                         font: {
-                            size: 15,  // 13 → 15
+                            size: 15,
                             weight: 'bold'
                         }
                     },
@@ -353,7 +487,7 @@ function createChart(animated = true) {
         setTimeout(() => {
             updateWalls();
             initPills();
-        }, 1600); // 애니메이션 1500ms + 여유 100ms
+        }, 1600);
     } else {
         updateWalls();
         initPills();
@@ -369,8 +503,8 @@ const render = Render.create({
     canvas: worldCanvas,
     engine: engine,
     options: {
-        width: 700,  // 600 → 700
-        height: 700,  // 600 → 700
+        width: 700,
+        height: 700,
         background: "transparent",
         wireframes: false
     }
@@ -378,8 +512,8 @@ const render = Render.create({
 Render.run(render);
 Runner.run(Runner.create(), engine);
 
-const centerX = 350, centerY = 350;  // 300 → 350
-const maxRadius = 240;  // 200 → 240
+const centerX = 350, centerY = 350;
+const maxRadius = 240;
 let containerWalls = [];
 let pills = [];
 
@@ -425,24 +559,22 @@ function initPills() {
     pills = [];
 
     const useImages = PILL_IMAGES && PILL_IMAGES.length > 0;
-    const positions = []; // 이미 생성된 위치 저장
+    const positions = [];
 
-    // 겹치지 않는 위치 찾기 함수
     function findNonOverlappingPosition(size) {
         let attempts = 0;
         let x, y, angle, radius;
         
-        while (attempts < 50) { // 최대 50번 시도
+        while (attempts < 50) {
             angle = Math.random() * Math.PI * 2;
             radius = Math.random() * maxRadius * 0.4;
             x = centerX + radius * Math.cos(angle);
             y = centerY + radius * Math.sin(angle);
             
-            // 다른 알약들과 거리 체크
             let isOverlapping = false;
             for (let pos of positions) {
                 const distance = Math.sqrt((x - pos.x) ** 2 + (y - pos.y) ** 2);
-                if (distance < size + pos.size + 10) { // 10px 여유 공간
+                if (distance < size + pos.size + 10) {
                     isOverlapping = true;
                     break;
                 }
@@ -455,30 +587,21 @@ function initPills() {
             attempts++;
         }
         
-        // 50번 시도해도 안되면 그냥 랜덤 위치 반환
         return { x, y };
     }
 
     for (let i = 0; i < 9; i++) {
-        // 랜덤 크기 생성 (30~50 사이로 더 크게)
         const randomSize = 10 + Math.random() * 20;
-        
-        // 겹치지 않는 위치 찾기
         const position = findNonOverlappingPosition(randomSize);
         const x = position.x;
         const y = position.y;
         
-        // 위치 저장
         positions.push({ x, y, size: randomSize });
         
-        // 각 알약마다 랜덤하게 이미지 선택
         let renderOptions;
         if (useImages) {
             const randomImage = PILL_IMAGES[Math.floor(Math.random() * PILL_IMAGES.length)];
-            // 물리 바디 크기에 정확히 맞추기
-            // SVG 원본 크기가 대략 100px라고 가정하고 계산
-            // scale = (물리 바디 지름 * 2) / 원본 이미지 크기
-            const scale = (randomSize * 2) / 100;  // 물리 바디에 맞춤
+            const scale = (randomSize * 2) / 100;
             renderOptions = {
                 sprite: {
                     texture: randomImage,
