@@ -127,7 +127,7 @@ main .user_rx .rx_info .report .value_wrap .value {
 
 main .user_rx .rx_info .report .value_wrap .value > h3 {
     font-family: "PP Monument Narrow"; color:#4D4D4D;
-    font-size:3.5rem; font-weight:100; margin-bottom:16px;
+    font-size:3.5rem; font-weight:400; margin-bottom:16px;
 }
 
 main .user_rx .rx_info .report .value_wrap .value > p {

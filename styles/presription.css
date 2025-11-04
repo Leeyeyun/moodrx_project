@@ -153,7 +153,7 @@ main .prescription_wrap .btm .rader_chart .next_btn button > img {
 /* 오른쪽 rightDetail 디자인 */
 main .prescription_wrap .btm .rightDetail {
     border-left:1px solid #9747FF; width:46%; height:100%;
-    overflow:hidden;
+    overflow:hidden; flex-direction:column;
 }
 main .prescription_wrap .btm .rightDetail > * {
     transition:all 0.6s ease;
@@ -303,12 +303,12 @@ main .prescription_wrap .btm .contents_wrap .swiper-slide .image span strong {
     font-size:1.25rem; line-height:1.4; font-weight:500; color:#fff;
 }
 main .prescription_wrap .btm .contents_wrap .work-slide .swiper-slide .contents_title {
-    font-size:1.125rem; text-align:left; line-height:1.6;
+    font-size:1.25rem; text-align:left; line-height:1.6;
     letter-spacing:-0.003em; color:#4D4D4D; font-weight:600;
 
 }
 main .prescription_wrap .btm .contents_wrap .swiper-slide .name {
-    text-align:left;
+    text-align:left; margin-top:5px; line-height:1.4;
 }
 main .prescription_wrap .btm .contents_wrap .swiper-pagination {
     bottom:60px;
@@ -317,7 +317,7 @@ main .prescription_wrap .btm .contents_wrap .swiper-pagination {
 /* 페이지네이션 화살표 버튼 스타일 */
 main .prescription_wrap .btm .contents_wrap .swiper-button-prev,
 main .prescription_wrap .btm .contents_wrap .swiper-button-next {
-    color: #9747FF;
+    color: #9747FF; top:44%;
 }
 
 main .prescription_wrap .btm .contents_wrap .swiper-button-prev:after,
@@ -372,22 +372,23 @@ main .prescription_wrap .btm .d_2 .plus_contents .plus_wrap {
     align-items:flex-start;
 }
 main .prescription_wrap .btm .d_2 .plus_contents .plus {
-    display:inline-block;
+    display:inline-block; pointer-events:none;
     padding:32px 22px; border:1px solid #ABBED1;
     border-radius:15px; width:calc((100% - 20px) / 3);
     height:400px; position:relative; overflow:hidden;
-    background-image:url(/images/contents/joycontents_01.jpg);
+    background-image: linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0)), url(/images/contents/joycontents_01.jpg);
     background-position:center; background-repeat:no-repeat; background-size:cover;
 }
 main .prescription_wrap .btm .d_2 .plus_contents .plus:nth-child(2) {
-    background-image:url(/images/contents/joycontents_02.jpg);
+    background-image: linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0)), url(/images/contents/joycontents_02.jpg);
 }
 main .prescription_wrap .btm .d_2 .plus_contents .plus:nth-child(3) {
-    background-image:url(/images/contents/joycontents_03.jpg);
+    background-image: linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0)), url(/images/contents/joycontents_03.jpg);
 }
 main .prescription_wrap .btm .d_2 .plus_contents .plus > p {
     position:absolute; left:32px; bottom:32px;
-    font-size:1.25rem; color:#fff; font-weight:500; letter-spacing:-0.003em;
+    font-family: 'PP Monument Narrow', sans-serif;
+    font-size:2.25rem; color:#fff; font-weight:400; letter-spacing:-0.003em;
 }
 
 
@@ -476,7 +477,7 @@ main .prescription_wrap .btm .d_2 .plus_contents .plus > p {
 
 /* btm_wrap 스타일 (작품 정보) */
 .rightDetail.taking_content .contents_result .btm_wrap {
-    width: 100%;
+    width: 100%; padding:20px 40px;
 }
 
 .rightDetail.taking_content .contents_result .btm_wrap .contents_info {
@@ -503,7 +504,7 @@ main .prescription_wrap .btm .d_2 .plus_contents .plus > p {
 /* caption 스타일 */
 .rightDetail.taking_content .contents_result .btm_wrap .caption {
     border-top: 1px solid #9747FF;
-    padding-top: 32px;
+    padding-top: 60px;
 }
 
 .rightDetail.taking_content .contents_result .btm_wrap .caption h3 {
@@ -537,8 +538,10 @@ main .prescription_wrap .btm .d_2 .plus_contents .plus > p {
 
 .back_arrow {
     width:auto;
-    position:absolute; right:-32%; bottom:5%;
+    position:absolute; right:-34%; bottom:5%;
+    transition:all 0.5s ease;
 }
+.back_arrow:hover {right:-35%; opacity:0.5;}
 .back_arrow > button {
     border:none; outline:none; background:none;
     display:flex; align-items:center; gap:20px;
@@ -548,3 +551,4 @@ main .prescription_wrap .btm .d_2 .plus_contents .plus > p {
 }
 main .prescription_wrap .btm .contents_result .top_wrap li:nth-child(2) {border-right:0;}
 .rightDetail.taking_content .contents_result .btm_wrap .contents_info {margin-top:20px;}
+.rightDetail.taking_content .contents_result .btm_wrap .contents_info h3 {font-size:2rem;}
