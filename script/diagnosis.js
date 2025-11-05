@@ -350,7 +350,7 @@ function setupEventListeners() {
     });
     
     // 7. Q3 - 다음 버튼
-    const q3NextBtn = document.getElementById('q3-next-btn');
+    const q3NextBtn = document.querySelector('.next_btn_wrap');
     if (q3NextBtn) {
         q3NextBtn.addEventListener('click', () => {
             currentQuestionIndex = 3;
@@ -506,7 +506,15 @@ function updateStep4TransformOptions(transformOptions) {
         const li = document.createElement('li');
         li.className = 'select_transform';
         li.dataset.value = option.value;
-        li.innerHTML = `<span>${option.text}</span>`;
+        
+        const parts = option.text.split(':');
+        const emotionName = parts[0].trim();
+        const emotionDesc = parts.length > 1 ? parts[1].trim() : '';
+
+        li.innerHTML = `
+            <div class="transform-emotion-title">${emotionName}</div>
+            <div class="transform-emotion-desc">${emotionDesc}</div>
+        `;
         
         li.addEventListener('click', function() {
             const allOptions = document.querySelectorAll('.q4_1 .select_transform');

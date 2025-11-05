@@ -85,7 +85,7 @@ main .process .process_1 .message_wrap .slide-container .slide_list li {
     display:flex; align-items:center;
 }
 main .process .process_1 .emotion_slider {
-    width:530px; height:180px;
+    width:max-content; height:180px;
     display:flex; justify-content:center; align-items:center;
 }
 main .process .process_1 .emotion_slider .emotion-swiper {
@@ -93,6 +93,7 @@ main .process .process_1 .emotion_slider .emotion-swiper {
 }
 main .process .process_1 .emotion_slider .emotion-swiper .swiper-slide {
     display:flex; align-items:center; opacity:0.5;
+    width:max-content; margin:0 auto;
 }
 main .process .process_1 .emotion_slider .emotion-swiper .swiper-slide.active {
     opacity: 1;

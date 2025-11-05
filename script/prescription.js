@@ -503,9 +503,10 @@ if (backBtn) {
 function updateContentInteraction() {
     const contentImages = document.querySelectorAll('.swiper-slide .image');
     const hoverSpans = document.querySelectorAll('.swiper-slide .image span');
+    // ⭐ 버튼 관련 코드 제거 - 버튼은 항상 보이도록!
     
     if (currentSection === 2) {
-        // 복용 페이지: 클릭 및 호버 비활성화
+        // 복용 페이지: 클릭 및 호버만 비활성화 (버튼은 유지)
         contentImages.forEach(img => {
             img.style.pointerEvents = 'none';
             img.style.cursor = 'default';
@@ -524,6 +525,7 @@ function updateContentInteraction() {
         });
     }
 }
+
 
 // 02 처방 - 작품 슬라이드
 const workSwiper = new Swiper('.work-slide', {

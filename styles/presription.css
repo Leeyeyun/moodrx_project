@@ -318,6 +318,10 @@ main .prescription_wrap .btm .contents_wrap .swiper-pagination {
 main .prescription_wrap .btm .contents_wrap .swiper-button-prev,
 main .prescription_wrap .btm .contents_wrap .swiper-button-next {
     color: #9747FF; top:44%;
+    /* ⭐ 항상 보이도록 */
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: flex !important;
 }
 
 main .prescription_wrap .btm .contents_wrap .swiper-button-prev:after,

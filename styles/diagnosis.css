@@ -740,6 +740,23 @@ main .diag_test .question_area .q4_1 .select_transform {
     color: #4D4D4D;
     transition: all 0.5s ease;
     cursor: pointer;
+    padding: 45px; /* 카드 내부 여백 */
+    flex-direction: column; /* 세로 정렬 */
+    text-align: center; /* 가운데 정렬 */
+}
+.transform-emotion-title {
+    font-size: 1.125rem; /* 24px */
+    font-weight: 500; /* Semi-Bold */
+    margin-bottom: 20px; /* 설명과 간격 */
+    text-align: center;
+    margin-bottom:10px;
+}
+.emotion-description {
+    font-size: 1rem; /* 16px */
+    font-weight: 400; /* Regular */
+    line-height: 1.6;
+    text-align: center;
+    word-break: keep-all; /* 단어 단위로 줄바꿈 */
 }
 
 main .diag_test .question_area .q4_1 .select_transform:hover {
