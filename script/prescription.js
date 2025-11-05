@@ -91,6 +91,32 @@ function updatePrescriptionText() {
         '설렘-완화': '과도한 설렘을 안정적인 기쁨으로 전환하며, 차분하면서도 따뜻한 시각적 경험을 제공합니다.',
         '불안-증폭': '불안을 회피하지 않고 직면하며, 그 속에서 경계심과 주의력을 높일 수 있도록 긴장감 있는 시각적 경험을 제공합니다.',
         '불안-완화': '불안한 마음을 진정시키고 안정을 찾을 수 있도록, 평온하고 규칙적인 시각적 경험을 제공합니다.',
+        
+        // 전환 감정별 처방 텍스트 (더 간결하고 명확하게)
+        '슬픔-전환-혼란': '슬픔에서 벗어나 혼란을 통해 새로운 시각을 발견할 수 있도록, 다층적이고 재해석적인 경험을 제공합니다.',
+        '슬픔-전환-무감각': '슬픔을 잠시 내려놓고 무감각 속에서 휴식하며, 내면의 침묵과 잠재력을 발견할 수 있도록 정제된 미학을 제공합니다.',
+        '슬픔-전환-피로': '슬픔의 무게를 피로로 전환하여 휴식의 필요성을 인정하고, 회복의 시간을 가질 수 있도록 성찰적 몰입을 유도합니다.',
+        '슬픔-전환-기쁨': '슬픔을 딛고 기쁨으로 나아가며, 깊고 지속적인 긍정적 감정을 경험할 수 있도록 밝고 따뜻한 시각적 몰입을 제공합니다.',
+        
+        '분노-전환-혼란': '분노를 혼란으로 전환하여 새로운 이해와 질서를 찾을 수 있도록, 재해석적 경험을 제공합니다.',
+        '분노-전환-무감각': '분노를 내려놓고 무감각 속에서 마음을 비우며, 내면의 평온을 되찾을 수 있도록 정제된 미학을 제공합니다.',
+        '분노-전환-피로': '분노의 에너지를 피로로 전환하여 휴식이 필요함을 인식하고, 회복의 시간을 가질 수 있도록 성찰적 경험을 제공합니다.',
+        '분노-전환-기쁨': '분노를 극복하고 기쁨으로 전환하며, 긍정적 에너지를 확장할 수 있도록 밝고 따뜻한 시각적 경험을 제공합니다.',
+        
+        '무감각-전환-혼란': '무감각에서 벗어나 혼란을 통해 감각을 깨우고, 새로운 이해의 출발점을 만들 수 있도록 재해석적 경험을 제공합니다.',
+        '무감각-전환-피로': '무감각을 피로로 인식하여 적극적인 휴식을 취하고, 회복의 과정을 시작할 수 있도록 성찰적 몰입을 유도합니다.',
+        '무감각-전환-기쁨': '무감각에서 벗어나 기쁨을 발견하며, 다시 감정을 느끼고 삶의 활력을 되찾을 수 있도록 밝은 시각적 경험을 제공합니다.',
+        
+        '설렘-전환-혼란': '설렘을 혼란으로 전환하여 감정을 정리하고, 명료함을 찾을 수 있도록 구조적이고 균형잡힌 경험을 제공합니다.',
+        '설렘-전환-불안': '과도한 설렘을 불안으로 인식하여 감정을 조절하고, 안정을 되찾을 수 있도록 평온한 시각적 경험을 제공합니다.',
+        '설렘-전환-기쁨': '설렘을 지속 가능한 기쁨으로 전환하며, 안정적이고 깊은 긍정적 감정을 경험할 수 있도록 따뜻한 시각적 몰입을 제공합니다.',
+        
+        '불안-전환-혼란': '불안을 혼란으로 전환하여 감정을 재해석하고, 새로운 관점을 발견할 수 있도록 다층적 경험을 제공합니다.',
+        '불안-전환-무감각': '불안을 내려놓고 무감각 속에서 잠시 쉬며, 마음의 평정을 되찾을 수 있도록 정제된 미학을 제공합니다.',
+        '불안-전환-피로': '불안을 피로로 인식하여 휴식의 필요성을 받아들이고, 회복의 시간을 가질 수 있도록 성찰적 경험을 제공합니다.',
+        '불안-전환-기쁨': '불안을 극복하고 기쁨을 발견하며, 긍정적 감정으로 전환할 수 있도록 밝고 따뜻한 시각적 경험을 제공합니다.',
+        
+        // 단일 감정 (케어 방향 없이)
         '혼란': '혼란스러운 마음을 정리하고 명료함을 찾을 수 있도록, 구조적이고 균형 잡힌 시각적 경험을 제공합니다.',
         '무감각': '무감각 상태에서 벗어나 다시 감정을 느낄 수 있도록, 자극적이고 생동감 있는 시각적 경험을 제공합니다.',
         '슬픔': '슬픔을 있는 그대로 느끼고 표현하며, 그 과정에서 치유를 경험할 수 있도록 깊이 있는 시각적 경험을 제공합니다.',
@@ -100,7 +126,12 @@ function updatePrescriptionText() {
         '설렘': '설렘을 즐기고 그 에너지를 긍정적으로 활용할 수 있도록, 생동감 넘치는 시각적 경험을 제공합니다.'
     };
     
-    const emotionKey = userData.finalEmotion;
+    // 전환 감정인 경우 키 생성
+    let emotionKey = userData.finalEmotion;
+    if (userData.direction === '전환' && userData.transformEmotion) {
+        emotionKey = `${userData.step1EmotionName}-전환-${userData.transformEmotion}`;
+    }
+    
     const prescriptionText = prescriptionTexts[emotionKey] || '당신의 감정을 케어하기 위한 맞춤형 시각적 경험을 제공합니다.';
     
     descElement.textContent = prescriptionText;
@@ -468,17 +499,6 @@ if (backBtn) {
     });
 }
 
-// 콘텐츠 이미지 클릭 시 → 복용(03)으로 전환
-const imageSlides = document.querySelectorAll('.swiper-slide .image');
-
-imageSlides.forEach(image => {
-    image.addEventListener('click', () => {
-        if (currentSection !== 2) {
-            listItems[2].click(); // 복용으로 전환
-        }
-    });
-});
-
 // 복용 페이지 상태에 따라 콘텐츠 클릭 비활성화
 function updateContentInteraction() {
     const contentImages = document.querySelectorAll('.swiper-slide .image');
@@ -533,6 +553,59 @@ const workSwiper = new Swiper('.work-slide', {
     }
 });
 
+// 슬라이드 콘텐츠 동적 생성
+function generateSlideContents() {
+    const swiperWrapper = document.querySelector('.work-slide .swiper-wrapper');
+    if (!swiperWrapper || !contentDatabase || contentDatabase.length === 0) return;
+    
+    // 기존 슬라이드 제거
+    swiperWrapper.innerHTML = '';
+    
+    // 콘텐츠 데이터로 슬라이드 생성
+    contentDatabase.forEach((content, index) => {
+        const slide = document.createElement('div');
+        slide.className = `swiper-slide w_0${index + 1}`;
+        
+        slide.innerHTML = `
+            <div class="image">
+                <img src="${content.image}" alt="${content.title}">
+                <span>
+                    <strong>해당 콘텐츠<br>복용하기</strong>
+                    <img src="./images/capsules.png" alt="복용 아이콘">
+                </span>
+            </div>
+            <div class="work_info">
+                <h3 class="contents_title">${content.title}</h3>
+                <h4 class="name">${content.type}</h4>
+            </div>
+        `;
+        
+        swiperWrapper.appendChild(slide);
+    });
+    
+    // Swiper 업데이트
+    if (workSwiper) {
+        workSwiper.update();
+        workSwiper.slideTo(0, 0); // 첫 슬라이드로 이동
+    }
+    
+    // 슬라이드 이미지 클릭 이벤트 재설정
+    setupSlideClickEvents();
+}
+
+// 슬라이드 클릭 이벤트 설정
+function setupSlideClickEvents() {
+    const imageSlides = document.querySelectorAll('.swiper-slide .image');
+    
+    imageSlides.forEach(image => {
+        image.addEventListener('click', () => {
+            if (currentSection !== 2) {
+                listItems[2].click(); // 복용으로 전환
+            }
+        });
+    });
+}
+
 
 // 감정별 콘텐츠 데이터베이스 (8가지 감정 × 3개 콘텐츠)
 const emotionContentsDatabase = {
@@ -542,7 +615,7 @@ const emotionContentsDatabase = {
             {
                 type: 'Art',
                 title: 'Mark Rothko, Untitled (Yellow and Blue)',
-                info: 'Oil on canvas, 269 x 178 cm<br>Museum of Fine Arts, Houston Collection',
+                info: 'Oil on canvas, 269 × 178 cm<br>Museum of Fine Arts, Houston Collection',
                 image: './images/contents/joycontents_01.jpg',
                 caption: '화면은 두 개의 커다란 색면으로 구성되어 있으며, 밝은 노란색과 깊은 파란색이 상하로 배치되어 있다. 작가는 색채를 감정의 직접적인 매개로 사용하며, 물리적 형태나 구체적 이미지 없이 순수한 정서를 전달한다. 노란색은 따뜻함과 확산의 감정을, 파란색은 깊이와 안정의 감정을 상징한다. 두 색의 접점에서는 미세한 진동이 발생하며, 시각적 리듬이 감정의 상승을 유도한다. 작품은 기쁨을 외부 자극이 아닌 내면의 감각적 에너지로 인식하게 한다.'
             },
@@ -594,7 +667,7 @@ const emotionContentsDatabase = {
             {
                 type: 'Art',
                 title: 'Edward Hopper, Nighthawks',
-                info: 'Oil on canvas, 84.1 x 152.4 cm<br>Art Institute of Chicago Collection',
+                info: 'Oil on canvas, 84.1 × 152.4 cm<br>Art Institute of Chicago Collection',
                 image: './images/contents/sadnesscontents_01.jpg',
                 caption: '작품은 밤의 도시 속 식당 내부를 묘사한다. 네 명의 인물은 서로 마주보고 있으나 대화를 나누지 않는다. 강한 조명 아래 인물들의 고립감이 강조되며, 관람자는 유리창 바깥에서 내부를 바라보는 시점에 위치한다. 작가는 이러한 구도를 통해 도시인의 정서적 고독을 시각적으로 표현하며, 빛과 그림자의 대비가 정적인 긴장감을 형성하며, 슬픔의 감정을 정제된 형태로 전달한다.'
             },
@@ -620,7 +693,7 @@ const emotionContentsDatabase = {
             {
                 type: 'Art',
                 title: 'Francis Bacon, Study after Velázquez\'s Portrait of Pope Innocent X',
-                info: 'Oil on canvas, 152 x 118 cm<br>Des Moines Art Center Collection',
+                info: 'Oil on canvas, 152 × 118 cm<br>Des Moines Art Center Collection',
                 image: './images/contents/angercontents_01.jpg',
                 caption: '작품은 디에고 벨라스케스의 \'교황 인노첸시오 10세 초상\'을 재해석한 것이다. 원작의 권위적 인물상은 베이컨의 붓 아래서 극단적으로 왜곡된 형상으로 변형된다. 인물은 절규하듯 입을 벌리고 있으며, 세로 방향으로 흘러내린 붓자국이 화면 전체를 흔들고 있다. 작가는 신체를 뒤틀고 색면을 찢어내듯 표현하여, 내면의 불안과 억눌린 분노를 시각적으로 드러낸다.'
             },
@@ -672,7 +745,7 @@ const emotionContentsDatabase = {
             {
                 type: 'Art',
                 title: 'Jackson Pollock, Number 1A, 1948',
-                info: 'Enamel and oil on canvas, 172.7 x 264.2 cm<br>Museum of Modern Art, New York',
+                info: 'Enamel and oil on canvas, 172.7 × 264.2 cm<br>Museum of Modern Art, New York',
                 image: './images/contents/confusioncontents_01.jpg',
                 caption: '작품은 캔버스 전체에 무작위로 흩뿌려진 선, 점, 물감의 흐름으로 구성되어 있다. 작가는 행위의 즉흥성과 통제의 경계에서 감정의 혼란을 시각화한다. 표면의 밀도는 복잡하지만, 리듬과 방향성이 내재되어 있어 혼란 속의 질서를 암시한다. 작품은 감정의 폭발이 아닌, 내면의 불안정한 구조를 인식하게 한다. 해당 작품은 혼란의 감정이 파괴적이기보다 창조적 에너지로 작용함을 보여준다.'
             },
@@ -726,7 +799,7 @@ const emotionContentsDatabase = {
                 title: 'On Kawara, Date Paintings',
                 info: 'Gouache on canvas',
                 image: './images/contents/blankcontents_01.jpg',
-                caption: '작품은 특정한 날짜만이 새겨진 단색 화면으로 구성되어 있다. 작가는 매일 날짜를 기록하는 행위를 통해 \'존재의 확인\'과 \'시간의 흐름\'을 시각화한다. 화면에는 감정적 표현이 완전히 배제되어 있으며, 대신 반복과 규율이 감각의 구조를 이룬다. 색채는 날마다 다르지만 형식은 동일하게 유지되어, 감정의 소멸과 지속이 동시에 느껴진다. 작가의 방식은 무감각을 공허로 규정하지 않고, 의식의 절제와 존재의 지속성을 탐구하는 행위로 제시한다.'
+                caption: '작품은 특정한 날짜만이 새겨진 단색 화면으로 구성되어 있다. 작가는 매일 날짜를 기록하는 행위를 통해 "존재의 확인"과 "시간의 흐름"을 시각화한다. 화면에는 감정적 표현이 완전히 배제되어 있으며, 대신 반복과 규율이 감각의 구조를 이룬다. 색채는 날마다 다르지만 형식은 동일하게 유지되어, 감정의 소멸과 지속이 동시에 느껴진다. 작가의 방식은 무감각을 공허로 규정하지 않고, 의식의 절제와 존재의 지속성을 탐구하는 행위로 제시한다.'
             },
             {
                 type: 'Exhibit',
@@ -787,7 +860,13 @@ function initializeContentDatabase() {
     
     console.log('Initialized content database for emotion:', targetEmotion);
     console.log('Contents:', contentDatabase);
+    
+    // 슬라이드 콘텐츠 생성
+    setTimeout(() => {
+        generateSlideContents();
+    }, 100);
 }
+
 
 // 현재 사용자 감정에 맞는 콘텐츠 가져오기
 function getCurrentEmotionContents() {
